@@ -15,7 +15,7 @@
                 <input type="checkbox" value="remember" name="remember"> Angemeldet bleiben
             </label>
         </div>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Anmelden</button>
+        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect sucon-background-orange" type="submit">Anmelden</button>
     </form>
 
 @endsection

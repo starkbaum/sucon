@@ -9,8 +9,11 @@ Route::get('auth/logout', 'Auth\AuthController@getLogout');
 Route::get('auth/register', 'Auth\AuthController@getRegister');
 Route::post('auth/register', 'Auth\AuthController@postRegister');
 
+
+Route::get('/courses', 'CoursesController@index');
+
 Route::get('/home', function() {
-    return view('courses.index');
+    return redirect('/courses');
 });
 
 Route::get('/', function() {
