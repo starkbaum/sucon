@@ -13,8 +13,13 @@ class CreateDataTable extends Migration
     public function up()
     {
         Schema::create('customer', function (Blueprint $table) {
-            $table->increments('id');
-            $table->timestamps();
+            $table->increments('cus_id');   // primary key
+            $table->string('cus_name', 100);
+            $table->string('cus_city', 100);
+            $table->string('cus_zipCode', 30);
+            $table->string('cus_street',100);
+            $table->string('cus_mail', 100);
+            $table->string('cus_phoneNo', 100);
         });
     }
 

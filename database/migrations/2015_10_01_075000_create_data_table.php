@@ -13,8 +13,9 @@ class CreateDataTable extends Migration
     public function up()
     {
         Schema::create('user', function (Blueprint $table) {
-            $table->increments('id');
-            $table->timestamps();
+            $table->string('u_eMail', 100);     // primary key
+            $table->string('u_name', 100);
+            $table->integer('r_id');            // foreign key
         });
     }
 
