@@ -1,5 +1,9 @@
 @import "colors.css";
 
+body {
+    font-size: 16px;
+}
+
 
 /*sign in page*/
 
@@ -36,4 +40,20 @@
     margin-bottom: 10px;
     border-top-left-radius: 0;
     border-top-right-radius: 0;
+}
+
+
+/* sidebar links */
+
+.sidebar-link {
+    height: 2rem;
+    font-size: 1.2rem;
+    line-height: 2rem;
+    letter-spacing: 0.15rem;
+    text-transform: uppercase;
+}
+
+.divider {
+    border-bottom: 1px solid #444444;
+    margin: 0.8rem;
 }

@@ -16,10 +16,11 @@
     <link rel="stylesheet" href="{{ asset('/css/colors.css') }}">
 
 </head>
-<body class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
+<body class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header mdl-layout__header--waterfall">
 
 <header class="mdl-layout__header sucon-background-green">
     <div class="mdl-layout__header-row">
+        <span class="mdl-layout-title">Kurse</span>
         <div class="mdl-layout-spacer"></div>
         <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable
                   mdl-textfield--floating-label mdl-textfield--align-right">
@@ -33,30 +34,28 @@
             </div>
         </div>
     </div>
+    @yield('header')
 </header>
 <div class="mdl-layout__drawer">
-    <span class="mdl-layout-title">SUcon</span>
+    <span class="mdl-layout-title">
+        <img src="{{ asset('img/Logo.png') }}" alt="SUcon">
+    </span>
     <nav class="mdl-navigation">
-        <a class="mdl-navigation__link" href="">Kurse</a>
-        <a class="mdl-navigation__link" href="">Snippets</a>
-        <a class="mdl-navigation__link" href="">Link</a>
-        <a class="mdl-navigation__link" href="/auth/logout">Logout</a>
+        <a class="mdl-navigation__link sidebar-link" href="/courses">Kurse</a>
+        <a class="mdl-navigation__link sidebar-link" href="/repositories">Snippets</a>
+        <div class="divider"></div>
+        <a class="mdl-navigation__link sidebar-link" href="">Link</a>
+        <a class="mdl-navigation__link sidebar-link" href="/auth/logout">Logout</a>
     </nav>
 </div>
+
+
 <main class="mdl-layout__content">
     <div class="page-content">
         @yield('content')
     </div>
 </main>
 
-
-    @include('partials.header')
-
-
-
-
-
-    @include('partials.footer')
 
 
 
