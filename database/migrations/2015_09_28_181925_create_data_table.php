@@ -19,7 +19,7 @@ class CreateDataTable extends Migration
             $table->string('d_author', 100);
             $table->decimal('d_size',10,2);
             $table->integer('d_views');
-            $table->timestamps('d_created_at'); //adds created_at and updated_at columns
+            $table->timestamps(); //adds created_at and updated_at columns
             $table->timestamp('d_last_view');
             $table->increments('l_id');         // foreign key
         });
