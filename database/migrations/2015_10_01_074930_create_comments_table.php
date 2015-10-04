@@ -17,6 +17,9 @@ class CreateDataTable extends Migration
             $table->text('com_content');
             $table->timestamp('com_timestamp');
             $table->string('u_eMail');              // foreign key
+
+
+            $table->primary('com_id');      // set primary key
         });
     }
 

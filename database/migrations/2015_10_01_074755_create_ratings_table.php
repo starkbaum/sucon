@@ -15,6 +15,9 @@ class CreateDataTable extends Migration
         Schema::create('rating', function (Blueprint $table) {
             $table->increments('r_id');     // primary key
             $table->string('r_name', 30);
+
+
+            $table->primary('r_id');      // set primary key
         });
     }
 

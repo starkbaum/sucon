@@ -15,6 +15,10 @@ class CreateDataTable extends Migration
         Schema::create('data_has_comment', function (Blueprint $table) {
             $table->bigIncrements('d_id');          // primary key & foreign key
             $table->bigIncrements('com_id');        // primary key & foreign key
+
+
+            $table->primary('d_id');      // set primary key
+            $table->primary('com_id');      // set primary key
         });
     }
 

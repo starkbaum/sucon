@@ -15,6 +15,9 @@ class CreateDataTable extends Migration
         Schema::create('keyword', function (Blueprint $table) {
             $table->bigIncrements('k_id');  // primary key
             $table->string('k_name', 50);
+
+
+            $table->primary('k_id');      // set primary key
         });
     }
 

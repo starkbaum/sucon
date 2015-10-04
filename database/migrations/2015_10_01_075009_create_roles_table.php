@@ -15,6 +15,9 @@ class CreateDataTable extends Migration
         Schema::create('role', function (Blueprint $table) {
             $table->integer('r_id');     // primary key
             $table->string('r_name', 20);
+
+
+            $table->primary('r_id');      // set primary key
         });
     }
 

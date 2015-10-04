@@ -15,6 +15,10 @@ class CreateDataTable extends Migration
         Schema::create('data_has_customer', function (Blueprint $table) {
             $table->bigIncrements('d_id');  // primary key & foreign key
             $table->increments('cus_id');   // primary key & foreign key
+
+
+            $table->primary('d_id');      // set primary key
+            $table->primary('cus_id');      // set primary key
         });
     }
 

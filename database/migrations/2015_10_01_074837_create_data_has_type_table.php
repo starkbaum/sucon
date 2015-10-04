@@ -15,6 +15,10 @@ class CreateDataTable extends Migration
         Schema::create('data_has_type', function (Blueprint $table) {
             $table->bigIncrements('d_id');  // primary key & foreign key
             $table->increments('t_id');     // primary key & foreign key
+
+
+            $table->primary('d_id');      // set primary key
+            $table->primary('t_id');      // set primary key
         });
     }
 
