@@ -13,8 +13,8 @@ class CreateDataTable extends Migration
     public function up()
     {
         Schema::create('data_approved', function (Blueprint $table) {
-            $table->increments('id');
-            $table->timestamps();
+            $table->bigIncrements('d_id');  // primary key & foreign key
+            $table->integer('r_id');        // primary key & foreign key
         });
     }
 

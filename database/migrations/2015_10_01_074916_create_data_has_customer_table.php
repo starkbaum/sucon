@@ -13,8 +13,8 @@ class CreateDataTable extends Migration
     public function up()
     {
         Schema::create('data_has_customer', function (Blueprint $table) {
-            $table->increments('id');
-            $table->timestamps();
+            $table->bigIncrements('d_id');  // primary key & foreign key
+            $table->increments('cus_id');   // primary key & foreign key
         });
     }
 
