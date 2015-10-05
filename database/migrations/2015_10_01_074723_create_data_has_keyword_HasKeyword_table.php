@@ -13,8 +13,8 @@ class CreateDataHasKeywordTable extends Migration
     public function up()
     {
         Schema::create('data_has_keyword', function (Blueprint $table) {
-            $table->bigIncrements('d_id');  // primary key & foreign key
-            $table->bigIncrements('k_id');  // primary key & foreign key
+            $table->bigInteger('d_id');  // primary key & foreign key
+            $table->bigInteger('k_id');  // primary key & foreign key
 
 
             $table->primary(['d_id', 'k_id']);      // set primary key

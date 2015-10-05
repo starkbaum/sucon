@@ -13,8 +13,8 @@ class CreateDataHasCustomerTable extends Migration
     public function up()
     {
         Schema::create('data_has_customer', function (Blueprint $table) {
-            $table->bigIncrements('d_id');  // primary key & foreign key
-            $table->increments('cus_id');   // primary key & foreign key
+            $table->bigInteger('d_id');  // primary key & foreign key
+            $table->integer('cus_id');   // primary key & foreign key
 
 
             $table->primary(['d_id', 'cus_id']);      // set primary key

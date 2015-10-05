@@ -16,7 +16,7 @@ class CreatePersonTable extends Migration
             $table->bigIncrements('p_id');      // primary key
             $table->string('p_name', 100);
             $table->string('p_phoneNo', 100);
-            $table->increments('cus_id');       // foreign key
+            $table->integer('cus_id');       // foreign key
 
 
             $table->primary('p_id');      // set primary key

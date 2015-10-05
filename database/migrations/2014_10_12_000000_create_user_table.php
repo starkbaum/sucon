@@ -20,7 +20,7 @@ class CreateUserTable extends Migration
             $table->rememberToken();
             $table->timestamps();
 
-            $table->primary('u_id');      // set primary key
+            //$table->primary('u_id');      // set primary key
         });
     }
 
