@@ -17,8 +17,7 @@ class CreateDataApprovedTable extends Migration
             $table->integer('r_id');        // primary key & foreign key
 
 
-            $table->primary('d_id');      // set primary key
-            $table->primary('r_id');      // set primary key
+            $table->primary(['d_id', 'r_id']);      // set primary key
         });
     }
 

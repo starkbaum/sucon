@@ -17,8 +17,7 @@ class CreateDataHasKeywordTable extends Migration
             $table->bigIncrements('k_id');  // primary key & foreign key
 
 
-            $table->primary('d_id');      // set primary key
-            $table->primary('k_id');      // set primary key
+            $table->primary(['d_id', 'k_id']);      // set primary key
         });
     }
 
