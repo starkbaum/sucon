@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateKeywordTable extends Migration
+class CreateKeywordsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,12 +12,9 @@ class CreateKeywordTable extends Migration
      */
     public function up()
     {
-        Schema::create('keyword', function (Blueprint $table) {
+        Schema::create('keywords', function (Blueprint $table) {
             $table->bigIncrements('k_id');  // primary key
             $table->string('k_name', 50);
-
-
-            $table->primary('k_id');      // set primary key
         });
     }
 

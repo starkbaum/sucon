@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCommentTable extends Migration
+class CreateCommentsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -17,9 +17,6 @@ class CreateCommentTable extends Migration
             $table->text('com_content');
             $table->timestamp('com_timestamp');
             $table->string('u_eMail');              // foreign key
-
-
-            $table->primary('com_id');      // set primary key
         });
     }
 

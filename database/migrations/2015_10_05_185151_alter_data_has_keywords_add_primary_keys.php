@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateDataHasKeywordTable extends Migration
+class AlterDataHasKeywordsAddPrimaryKeys extends Migration
 {
     /**
      * Run the migrations.
@@ -12,11 +12,7 @@ class CreateDataHasKeywordTable extends Migration
      */
     public function up()
     {
-        Schema::create('data_has_keyword', function (Blueprint $table) {
-            $table->bigInteger('d_id');  // primary key & foreign key
-            $table->bigInteger('k_id');  // primary key & foreign key
-
-
+        Schema::table('data_has_keywords', function (Blueprint $table) {
             $table->primary(['d_id', 'k_id']);      // set primary key
         });
     }
@@ -28,6 +24,8 @@ class CreateDataHasKeywordTable extends Migration
      */
     public function down()
     {
-        Schema::drop('data_has_keyword');
+        Schema::table('data_has_keywords', function (Blueprint $table) {
+            $table->dropPrimary(['d_id', 'k_id']);
+        });
     }
 }

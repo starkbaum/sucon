@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class DataHasRating extends Migration
+class CreateDataHasKeywordTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,11 +12,9 @@ class DataHasRating extends Migration
      */
     public function up()
     {
-        Schema::create('data_has_rating', function (Blueprint $table) {
+        Schema::create('data_has_keywords', function (Blueprint $table) {
             $table->bigInteger('d_id');  // primary key & foreign key
-            $table->integer('r_id');     // primary key & foreign key
-
-            $table->primary(['d_id', 'r_id']);      // set primary key
+            $table->bigInteger('k_id');  // primary key & foreign key
         });
     }
 
@@ -27,6 +25,6 @@ class DataHasRating extends Migration
      */
     public function down()
     {
-        Schema::drop('data_has_rating');
+        Schema::drop('data_has_keyword');
     }
 }

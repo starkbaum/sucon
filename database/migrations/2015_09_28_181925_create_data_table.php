@@ -21,12 +21,7 @@ class CreateDataTable extends Migration
             $table->integer('d_views');
             $table->timestamps(); //adds created_at and updated_at columns
             $table->timestamp('d_last_view');
-            $table->integer('l_id');         // foreign key
-
-
-            $table->primary('d_id');      // set primary key
-            $table->foreign('l_id')->references('l_id')->on('language');
-
+            $table->unsignedInteger('l_id');         // foreign key
         });
     }
 

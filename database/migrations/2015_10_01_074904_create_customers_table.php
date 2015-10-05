@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCustomerTable extends Migration
+class CreateCustomersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -20,9 +20,6 @@ class CreateCustomerTable extends Migration
             $table->string('cus_street',100);
             $table->string('cus_mail', 100);
             $table->string('cus_phoneNo', 100);
-
-
-            $table->primary('cus_id');      // set primary key
         });
     }
 

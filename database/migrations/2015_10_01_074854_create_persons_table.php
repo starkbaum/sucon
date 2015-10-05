@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePersonTable extends Migration
+class CreatePersonsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -19,7 +19,7 @@ class CreatePersonTable extends Migration
             $table->integer('cus_id');       // foreign key
 
 
-            $table->primary('p_id');      // set primary key
+            //$table->primary('p_id');      // set primary key
         });
     }
 

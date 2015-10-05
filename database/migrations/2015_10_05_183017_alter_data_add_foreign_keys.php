@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateRolesTable extends Migration
+class AlterDataAddForeignKeys extends Migration
 {
     /**
      * Run the migrations.
@@ -12,9 +12,8 @@ class CreateRolesTable extends Migration
      */
     public function up()
     {
-        Schema::create('role', function (Blueprint $table) {
-            $table->increments('r_id');     // primary key
-            $table->string('r_name', 20);
+        Schema::table('data', function (Blueprint $table) {
+            $table->foreign('l_id')->references('l_id')->on('language');
         });
     }
 
@@ -25,6 +24,8 @@ class CreateRolesTable extends Migration
      */
     public function down()
     {
-        Schema::drop('role');
+        Schema::table('data', function (Blueprint $table) {
+            $table->dropForeign('l_id');
+        });
     }
 }
