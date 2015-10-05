@@ -25,6 +25,8 @@ class CreateDataTable extends Migration
 
 
             $table->primary('d_id');      // set primary key
+            $table->foreign('l_id')->references('l_id')->on('language');
+
         });
     }
 

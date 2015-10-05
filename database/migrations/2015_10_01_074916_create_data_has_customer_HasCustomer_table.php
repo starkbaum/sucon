@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateDataTable extends Migration
+class CreateDataHasCustomerTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,13 +12,13 @@ class CreateDataTable extends Migration
      */
     public function up()
     {
-        Schema::create('data_has_type', function (Blueprint $table) {
+        Schema::create('data_has_customer', function (Blueprint $table) {
             $table->bigIncrements('d_id');  // primary key & foreign key
-            $table->increments('t_id');     // primary key & foreign key
+            $table->increments('cus_id');   // primary key & foreign key
 
 
             $table->primary('d_id');      // set primary key
-            $table->primary('t_id');      // set primary key
+            $table->primary('cus_id');      // set primary key
         });
     }
 
@@ -29,6 +29,6 @@ class CreateDataTable extends Migration
      */
     public function down()
     {
-        Schema::drop('data_has_type');
+        Schema::drop('data_has_customer');
     }
 }

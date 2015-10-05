@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateDataTable extends Migration
+class CreateDataHasCommentTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,13 +12,13 @@ class CreateDataTable extends Migration
      */
     public function up()
     {
-        Schema::create('data_has_keyword', function (Blueprint $table) {
-            $table->bigIncrements('d_id');  // primary key & foreign key
-            $table->bigIncrements('k_id');  // primary key & foreign key
+        Schema::create('data_has_comment', function (Blueprint $table) {
+            $table->bigIncrements('d_id');          // primary key & foreign key
+            $table->bigIncrements('com_id');        // primary key & foreign key
 
 
             $table->primary('d_id');      // set primary key
-            $table->primary('k_id');      // set primary key
+            $table->primary('com_id');      // set primary key
         });
     }
 
@@ -29,6 +29,6 @@ class CreateDataTable extends Migration
      */
     public function down()
     {
-        Schema::drop('data_has_keyword');
+        Schema::drop('data_has_comment');
     }
 }
