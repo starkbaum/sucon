@@ -12,7 +12,7 @@ class CreatePersonsTable extends Migration
      */
     public function up()
     {
-        Schema::create('person', function (Blueprint $table) {
+        Schema::create('persons', function (Blueprint $table) {
             $table->bigIncrements('p_id');      // primary key
             $table->string('p_name', 100);
             $table->string('p_phoneNo', 100);
@@ -30,6 +30,6 @@ class CreatePersonsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('person');
+        Schema::drop('persons');
     }
 }

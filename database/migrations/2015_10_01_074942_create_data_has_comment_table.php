@@ -12,7 +12,7 @@ class CreateDataHasCommentTable extends Migration
      */
     public function up()
     {
-        Schema::create('data_has_comment', function (Blueprint $table) {
+        Schema::create('data_has_comments', function (Blueprint $table) {
             $table->bigInteger('d_id');          // primary key & foreign key
             $table->bigInteger('com_id');        // primary key & foreign key
 
@@ -28,6 +28,6 @@ class CreateDataHasCommentTable extends Migration
      */
     public function down()
     {
-        Schema::drop('data_has_comment');
+        Schema::drop('data_has_comments');
     }
 }

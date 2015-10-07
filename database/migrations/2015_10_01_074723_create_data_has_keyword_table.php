@@ -25,6 +25,6 @@ class CreateDataHasKeywordTable extends Migration
      */
     public function down()
     {
-        Schema::drop('data_has_keyword');
+        Schema::drop('data_has_keywords');
     }
 }

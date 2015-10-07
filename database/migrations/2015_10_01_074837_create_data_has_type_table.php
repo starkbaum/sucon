@@ -12,7 +12,7 @@ class CreateDataHasTypeTable extends Migration
      */
     public function up()
     {
-        Schema::create('data_has_type', function (Blueprint $table) {
+        Schema::create('data_has_types', function (Blueprint $table) {
             $table->bigInteger('d_id');  // primary key & foreign key
             $table->integer('t_id');     // primary key & foreign key
 
@@ -28,6 +28,6 @@ class CreateDataHasTypeTable extends Migration
      */
     public function down()
     {
-        Schema::drop('data_has_type');
+        Schema::drop('data_has_types');
     }
 }

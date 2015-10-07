@@ -27,6 +27,6 @@ class DataHasRatingsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('data_has_rating');
+        Schema::drop('data_has_ratings');
     }
 }

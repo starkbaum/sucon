@@ -12,7 +12,7 @@ class CreateCommentsTable extends Migration
      */
     public function up()
     {
-        Schema::create('comment', function (Blueprint $table) {
+        Schema::create('comments', function (Blueprint $table) {
             $table->bigIncrements('com_id');        // primary key
             $table->text('com_content');
             $table->timestamp('com_timestamp');
@@ -27,6 +27,6 @@ class CreateCommentsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('comment');
+        Schema::drop('comments');
     }
 }

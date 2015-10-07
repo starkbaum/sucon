@@ -12,7 +12,7 @@ class CreateRolesTable extends Migration
      */
     public function up()
     {
-        Schema::create('role', function (Blueprint $table) {
+        Schema::create('roles', function (Blueprint $table) {
             $table->increments('r_id');     // primary key
             $table->string('r_name', 20);
         });
@@ -25,6 +25,6 @@ class CreateRolesTable extends Migration
      */
     public function down()
     {
-        Schema::drop('role');
+        Schema::drop('roles');
     }
 }

@@ -12,7 +12,7 @@ class CreateDataHasCustomerTable extends Migration
      */
     public function up()
     {
-        Schema::create('data_has_customer', function (Blueprint $table) {
+        Schema::create('data_has_customers', function (Blueprint $table) {
             $table->bigInteger('d_id');  // primary key & foreign key
             $table->integer('cus_id');   // primary key & foreign key
 
@@ -28,6 +28,6 @@ class CreateDataHasCustomerTable extends Migration
      */
     public function down()
     {
-        Schema::drop('data_has_customer');
+        Schema::drop('data_has_customers');
     }
 }
