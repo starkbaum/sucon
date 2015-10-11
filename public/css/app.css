@@ -4,56 +4,6 @@ body {
     font-size: 16px;
 }
 
-
-/*sign in page*/
-
-.form-signin {
-    max-width: 330px;
-    padding: 15px;
-    margin: 0 auto;
-}
-.form-signin .form-signin-heading,
-.form-signin .checkbox {
-    margin-bottom: 10px;
-}
-.form-signin .checkbox {
-    font-weight: normal;
-}
-.form-signin .form-control {
-    position: relative;
-    height: auto;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    padding: 10px;
-    font-size: 16px;
-}
-.form-signin .form-control:focus {
-    z-index: 2;
-}
-.form-signin input[type="email"] {
-    margin-bottom: -1px;
-    border-bottom-right-radius: 0;
-    border-bottom-left-radius: 0;
-}
-.form-signin input[type="password"] {
-    margin-bottom: 10px;
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-}
-
-
-/* sidebar links */
-
-.sidebar-link {
-    height: 2rem;
-    font-size: 1.2rem;
-    line-height: 2rem;
-    letter-spacing: 0.15rem;
-    text-transform: uppercase;
-}
-
-.divider {
-    border-bottom: 1px solid #444444;
-    margin: 0.8rem;
+main {
+    margin-left: 270px;
 }

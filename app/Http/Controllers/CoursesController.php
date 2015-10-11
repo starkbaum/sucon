@@ -25,7 +25,7 @@ class CoursesController extends Controller
      */
     public function create()
     {
-        //
+        return view('courses.create');
     }
 
     /**
@@ -47,7 +47,7 @@ class CoursesController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('courses.show', compact('id'));
     }
 
     /**
