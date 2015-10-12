@@ -7,13 +7,17 @@
             <p>Nachdem die Datei hinzugefügt wird, muss noch die Freigabe eines Administrators erfolgen bevor sie ersichtlich wird</p>
             <form action="#">
                 <div class="row">
-                    <div class="input-field col s5">
+                    <div class="input-field col s12 m5">
                         <input id="upload-name" type="text" class="validate">
                         <label for="upload-name">Dateiname</label>
                     </div>
+                    <div class="input-field col s12 m5">
+                        <input id="upload-name" type="text" class="validate">
+                        <label for="upload-name">Author</label>
+                    </div>
                 </div>
                 <div class="row">
-                    <div class="file-field input-field col s5">
+                    <div class="file-field input-field col s12 m10">
                         <div class="btn">
                             <span>Datei</span>
                             <input type="file">

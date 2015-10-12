@@ -5,5 +5,6 @@ body {
 }
 
 main {
+    padding-top: 1rem;
     margin-left: 270px;
 }

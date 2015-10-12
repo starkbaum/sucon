@@ -11,8 +11,9 @@
                 </div>
                 <div class="card-content">
                     <p>
-                        I am a very simple card. I am good at containing small bits of information.
-                        I am convenient because I require little markup to use effectively.
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        Assumenda commodi corporis excepturi hic inventore libero modi officia perspiciatis, possimus,
+                        praesentium quas quasi quibusdam quidem reprehenderit sit sunt tempore unde, voluptate.
                     </p>
                 </div>
                 <div class="card-action">
