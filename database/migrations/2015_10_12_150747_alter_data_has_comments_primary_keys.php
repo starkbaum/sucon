@@ -12,7 +12,9 @@ class AlterDataHasCommentsPrimaryKeys extends Migration
      */
     public function up()
     {
-        //
+        Schema::table('data_has_comments', function (Blueprint $table) {
+            $table->primary(['d_id', 'com_id']);      // set primary key
+        });
     }
 
     /**
@@ -22,6 +24,8 @@ class AlterDataHasCommentsPrimaryKeys extends Migration
      */
     public function down()
     {
-        //
+        Schema::table('data_has_comments', function (Blueprint $table) {
+            $table->primary(['d_id', 'com_id']);
+        });
     }
 }

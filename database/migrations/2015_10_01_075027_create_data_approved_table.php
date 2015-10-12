@@ -14,7 +14,7 @@ class CreateDataApprovedTable extends Migration
     {
         Schema::create('data_approved', function (Blueprint $table) {
             $table->bigIncrements('d_id');  // primary key & foreign key
-            $table->integer('r_id');        // primary key & foreign key
+            $table->integer('role_id');        // primary key & foreign key
         });
     }
 

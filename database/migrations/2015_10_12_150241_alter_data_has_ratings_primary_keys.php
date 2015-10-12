@@ -12,7 +12,9 @@ class AlterDataHasRatingsPrimaryKeys extends Migration
      */
     public function up()
     {
-        //
+        Schema::table('data_has_ratings', function (Blueprint $table) {
+            $table->primary(['d_id', 'r_id']);      // set primary key
+        });
     }
 
     /**
@@ -22,6 +24,8 @@ class AlterDataHasRatingsPrimaryKeys extends Migration
      */
     public function down()
     {
-        //
+        Schema::table('data_has_ratings', function (Blueprint $table) {
+            $table->dropPrimary(['d_id', 'r_id']);
+        });
     }
 }
