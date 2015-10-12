@@ -25,7 +25,7 @@ class AlterDataForeignKeys extends Migration
     public function down()
     {
         Schema::table('data', function (Blueprint $table) {
-            $table->dropForeign('data_l_id_foreign');
+        $table->dropForeign('data_l_id_foreign');
         });
     }
 }
