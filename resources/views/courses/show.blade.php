@@ -43,8 +43,14 @@
 
         <!-- section for additional data -->
         <div class="col s12 m9">
-            <ul class="collection z-depth-1">
-                @for($i = 1; $i <= 5; $i++)
+            <ul class="collection with-header z-depth-1">
+                <li class="collection-header sucon-background-green">
+                    <h5>Unterlagen</h5>
+                    @if(Auth::user()->is_admin == true || true)
+                        <a class="btn-floating btn-large waves-effect waves-light sucon-background-orange modal-trigger" style="margin-bottom:-40px;" href="#modal1"><i class="material-icons">add</i></a>
+                    @endif
+                </li>
+            @for($i = 1; $i <= 5; $i++)
                 <li class="collection-item avatar">
                     <i class="material-icons circle">folder</i>
                     <span class="title">Title</span>
@@ -55,7 +61,7 @@
                         <a href="#"><i class="material-icons sucon-text-orange">delete</i></a>
                     </p>
                 </li>
-                @endfor
+            @endfor
             </ul>
         </div>
 
@@ -97,6 +103,8 @@
         </div>
 
     </div>
+
+    @include('partials.modals.addFileModal')
 
 
 @endsection
