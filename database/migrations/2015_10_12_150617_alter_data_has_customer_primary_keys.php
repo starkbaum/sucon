@@ -25,7 +25,7 @@ class AlterDataHasCustomerPrimaryKeys extends Migration
     public function down()
     {
         Schema::table('data_has_customers', function (Blueprint $table) {
-            $table->primary(['d_id', 'cus_id']);
+            $table->dropPrimary(['d_id', 'cus_id']);
         });
     }
 }

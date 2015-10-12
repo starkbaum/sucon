@@ -25,7 +25,7 @@ class AlterDataHasCommentsPrimaryKeys extends Migration
     public function down()
     {
         Schema::table('data_has_comments', function (Blueprint $table) {
-            $table->primary(['d_id', 'com_id']);
+            $table->dropPrimary(['d_id', 'com_id']);
         });
     }
 }

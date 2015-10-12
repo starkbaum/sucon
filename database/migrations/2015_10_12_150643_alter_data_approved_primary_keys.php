@@ -25,7 +25,7 @@ class AlterDataApprovedPrimaryKeys extends Migration
     public function down()
     {
         Schema::table('data_approved', function (Blueprint $table) {
-            $table->primary(['d_id', 'role_id']);
+            $table->dropPrimary(['d_id', 'role_id']);
         });
     }
 }
