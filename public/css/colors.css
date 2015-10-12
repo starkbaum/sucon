@@ -1,21 +1,21 @@
 /* colors */
 
 .sucon-background-green {
-    background: #ACCB17;
+    background: #ACCB17 !important;
 }
 
 .sucon-background-green-darker {
-    background: #96B114;
+    background: #96B114 !important;
 }
 
 .sucon-text-green {
-    color: #ACCB17;
+    color: #ACCB17 !important;
 }
 
 .sucon-background-orange {
-    background: #ECB104;
+    background: #ECB104 !important;
 }
 
 .sucon-text-orange {
-    color: #ECB104;
+    color: #ECB104 !important;
 }

@@ -13,6 +13,8 @@
 
     @include('partials.navbar')
 
+    @yield('header')
+
     <main class="container">
             @yield('content')
     </main>

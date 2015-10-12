@@ -62,7 +62,7 @@
         <!-- section for comments -->
         <div class="col s12 m9">
             <ul class="collection with-header z-depth-1">
-                <li class="collection-header">Kommentare</li>
+                <li class="collection-header sucon-background-green">Kommentare</li>
                 <!-- first level comment -->
                 <!-- TODO styling -->
                 <li class="collection-item avatar">
