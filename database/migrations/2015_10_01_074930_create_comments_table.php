@@ -16,7 +16,7 @@ class CreateCommentsTable extends Migration
             $table->bigIncrements('com_id');        // primary key
             $table->text('com_content');
             $table->timestamp('com_timestamp');
-            $table->string('u_eMail');              // foreign key
+            $table->unsignedInteger('id');              // foreign key
         });
     }
 
