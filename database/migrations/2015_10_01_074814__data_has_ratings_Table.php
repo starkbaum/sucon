@@ -16,7 +16,7 @@ class DataHasRatingsTable extends Migration
             $table->bigInteger('d_id');  // primary key & foreign key
             $table->integer('r_id');     // primary key & foreign key
 
-            $table->primary(['d_id', 'r_id']);      // set primary key
+           // $table->primary(['d_id', 'r_id']);      // set primary key
         });
     }
 

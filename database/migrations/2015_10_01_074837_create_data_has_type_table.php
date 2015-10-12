@@ -17,7 +17,7 @@ class CreateDataHasTypeTable extends Migration
             $table->integer('t_id');     // primary key & foreign key
 
 
-            $table->primary(['d_id', 't_id']);      // set primary key
+            //$table->primary(['d_id', 't_id']);      // set primary key
         });
     }
 

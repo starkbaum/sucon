@@ -17,7 +17,7 @@ class CreateDataHasCustomerTable extends Migration
             $table->integer('cus_id');   // primary key & foreign key
 
 
-            $table->primary(['d_id', 'cus_id']);      // set primary key
+            //$table->primary(['d_id', 'cus_id']);      // set primary key
         });
     }
 

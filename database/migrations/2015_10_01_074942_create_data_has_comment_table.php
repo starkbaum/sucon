@@ -17,7 +17,7 @@ class CreateDataHasCommentTable extends Migration
             $table->bigInteger('com_id');        // primary key & foreign key
 
 
-            $table->primary(['d_id', 'com_id']);      // set primary key
+            //$table->primary(['d_id', 'com_id']);      // set primary key
         });
     }
 
