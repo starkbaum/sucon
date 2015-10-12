@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AlterDataAddForeignKeys extends Migration
+class AlterDataHasKeywordsPrimaryKeys extends Migration
 {
     /**
      * Run the migrations.
@@ -12,8 +12,8 @@ class AlterDataAddForeignKeys extends Migration
      */
     public function up()
     {
-        Schema::table('data', function (Blueprint $table) {
-            $table->foreign('l_id')->references('l_id')->on('languages');
+        Schema::table('data_has_keywords', function (Blueprint $table) {
+            $table->primary(['d_id', 'k_id']);      // set primary key
         });
     }
 
@@ -24,8 +24,8 @@ class AlterDataAddForeignKeys extends Migration
      */
     public function down()
     {
-        Schema::table('data', function (Blueprint $table) {
-            $table->dropForeign('data_l_id_foreign');
+        Schema::table('data_has_keywords', function (Blueprint $table) {
+            $table->dropPrimary(['d_id', 'k_id']);
         });
     }
 }
