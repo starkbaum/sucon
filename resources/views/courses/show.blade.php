@@ -4,6 +4,7 @@
 
     <div class="row">
 
+        <!-- TODO check if course has video data -->
         @if(true)
 
         <div class="col s12 m9">
