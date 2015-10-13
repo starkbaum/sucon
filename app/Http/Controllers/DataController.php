@@ -2,12 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Course;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-class CoursesController extends Controller
+class DataController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +15,7 @@ class CoursesController extends Controller
      */
     public function index()
     {
-        return view('courses.index');
+        //
     }
 
     /**
@@ -26,7 +25,7 @@ class CoursesController extends Controller
      */
     public function create()
     {
-        return view('courses.create');
+        //
     }
 
     /**
@@ -37,8 +36,7 @@ class CoursesController extends Controller
      */
     public function store(Request $request)
     {
-        $course = Course::create($request->all());
-        return redirect('courses');
+        //
     }
 
     /**
@@ -49,7 +47,7 @@ class CoursesController extends Controller
      */
     public function show($id)
     {
-        return view('courses.show', compact('id'));
+        //
     }
 
     /**

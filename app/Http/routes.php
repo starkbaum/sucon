@@ -10,17 +10,13 @@ Route::get('auth/register', 'Auth\AuthController@getRegister');
 Route::post('auth/register', 'Auth\AuthController@postRegister');
 
 # Courses
-
-Route::get('/courses', 'CoursesController@index');
-Route::get('/courses/create', 'CoursesController@create');
-Route::get('/courses/{id}', 'CoursesController@show');
-Route::get('/courses/{id}/edit', 'CoursesController@edit');
-//TODO post methods for edit and create
+Route::resource('courses', 'CoursesController');
 
 # Snippets
-
 Route::get('/snippets', 'SnippetsController@index');
 
+
+# temporary helper routes
 //TODO set redirectPath in AuthController
 Route::get('/home', function() {
     return redirect('/courses');
