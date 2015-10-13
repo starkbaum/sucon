@@ -3,18 +3,17 @@
 @section('content')
 
     <div class="row">
+
+        @if(true)
+
         <div class="col s12 m9">
             <div class="card">
                 <div class="card-image">
                     <img src="https://placeholdit.imgix.net/~text?txtsize=60&txt=900%C3%97500&w=900&h=500">
-                    <span class="card-title">Kurs {{ $id }}</span>
+                    <span class="card-title">{{ $course->name }}</span>
                 </div>
                 <div class="card-content">
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                        Assumenda commodi corporis excepturi hic inventore libero modi officia perspiciatis, possimus,
-                        praesentium quas quasi quibusdam quidem reprehenderit sit sunt tempore unde, voluptate.
-                    </p>
+                    <p>{{ $course->description }}</p>
                 </div>
                 <div class="card-action">
                     <a href="#"><i class="small material-icons sucon-text-orange">thumb_up</i></a>
@@ -42,14 +41,29 @@
             </ul>
         </div>
 
+        @else
+
+        <div class="col s12 m9">
+            <div class="card">
+                <div class="card-content">
+                    <span class="card-title sucon-text-green">{{ $course->name }}</span>
+                    <p>{{ $course->description }}</p>
+                </div>
+                <div class="card-action">
+                    <a href="#"><i class="small material-icons sucon-text-orange">thumb_up</i></a>
+                    <a href="#"><i class="small material-icons sucon-text-orange">thumb_down</i></a>
+                </div>
+            </div>
+        </div>
+
+        @endif
+
         <!-- section for additional data -->
         <div class="col s12 m9">
             <ul class="collection with-header z-depth-1">
                 <li class="collection-header sucon-background-green">
                     <h5>Unterlagen</h5>
-                    @if(Auth::user()->is_admin == true || true)
-                        <a class="btn-floating btn-large waves-effect waves-light sucon-background-orange modal-trigger" style="margin-bottom:-40px;" href="#modal1"><i class="material-icons">add</i></a>
-                    @endif
+                    <a class="btn-floating btn-large waves-effect waves-light sucon-background-orange modal-trigger" style="margin-bottom:-40px;" href="#modal1"><i class="material-icons">add</i></a>
                 </li>
             @for($i = 1; $i <= 5; $i++)
                 <li class="collection-item avatar">

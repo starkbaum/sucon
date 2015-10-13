@@ -12,4 +12,6 @@ class Course extends Model
      * @var string
      */
     protected $table = 'courses';
+
+    protected $fillable = ['name', 'slug', 'description'];
 }
