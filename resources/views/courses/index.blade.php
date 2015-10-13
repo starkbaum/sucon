@@ -10,6 +10,7 @@
         <li><a href="#">HTML</a></li>
         <li><a href="#">PHP</a></li>
         <li><a href="#">SQL</a></li>
+        <li><a href="{{ url('/courses/create') }}"><i class="tiny material-icons">library_add</i></a></li>
     </ul>
 </nav>
 

@@ -1,5 +1,19 @@
 @extends('app')
 
+@section('header')
+
+    <nav class="sucon-background-green-darker">
+        <ul class="left hide-on-med-and-down" style="margin-left: 270px;">
+            <li><a href="{{ URL::previous() }}" style="font-size: 20px;">&#8592;</a></li>
+            <li><a href="" class="disabled">{{ $course->name }}</a></li>
+        </ul>
+        <ul class="right hide-on-med-and-down">
+            <li><a href="{{ url('/courses/create') }}"><i class="tiny material-icons">library_add</i></a></li>
+        </ul>
+    </nav>
+
+@endsection
+
 @section('content')
 
     <div class="row">
