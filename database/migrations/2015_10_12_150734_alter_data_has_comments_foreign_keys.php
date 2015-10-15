@@ -13,7 +13,7 @@ class AlterDataHasCommentsForeignKeys extends Migration
     public function up()
     {
         Schema::table('data_has_comments', function (Blueprint $table) {
-            $table->foreign('datId')->references('dataId')->on('data');
+            $table->foreign('dataId')->references('dataId')->on('data');
         });
         Schema::table('data_has_comments', function (Blueprint $table) {
             $table->foreign('commentId')->references('commentId')->on('comments');

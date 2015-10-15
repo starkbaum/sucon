@@ -20,7 +20,7 @@ class CreateUserTable extends Migration
             $table->rememberToken();
             $table->timestamps();
             //TODO make not nullable after testing
-            $table->unsignedInteger('role_id')->nullable();
+            $table->unsignedInteger('roleId')->nullable();
         });
     }
 

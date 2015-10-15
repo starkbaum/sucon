@@ -13,8 +13,8 @@ class DataHasRatingsTable extends Migration
     public function up()
     {
         Schema::create('data_has_ratings', function (Blueprint $table) {
-            $table->bigInteger('dataId');  // primary key & foreign key
-            $table->integer('ratingId');     // primary key & foreign key
+            $table->unsignedBigInteger('dataId');  // primary key & foreign key
+            $table->unsignedInteger('ratingId');     // primary key & foreign key
 
            // $table->primary(['d_id', 'r_id']);      // set primary key
         });

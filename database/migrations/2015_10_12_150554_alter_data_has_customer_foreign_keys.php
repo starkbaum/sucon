@@ -13,7 +13,7 @@ class AlterDataHasCustomerForeignKeys extends Migration
     public function up()
     {
         Schema::table('data_has_customers', function (Blueprint $table) {
-            $table->foreign('datId')->references('dataId')->on('data');
+            $table->foreign('dataId')->references('dataId')->on('data');
         });
         Schema::table('data_has_customers', function (Blueprint $table) {
             $table->foreign('customerId')->references('customerId')->on('customers');
