@@ -12,7 +12,12 @@ class AlterDataApprovedForeignKeys extends Migration
      */
     public function up()
     {
-        //
+        Schema::table('data_approved', function (Blueprint $table) {
+            $table->foreign('datId')->references('dataId')->on('data');
+        });
+        Schema::table('data_approved', function (Blueprint $table) {
+            $table->foreign('roleId')->references('roleId')->on('roless');
+        });
     }
 
     /**
@@ -22,6 +27,9 @@ class AlterDataApprovedForeignKeys extends Migration
      */
     public function down()
     {
-        //
+        Schema::table('data_approved', function (Blueprint $table) {
+            $table->dropForeign('data_approved_dataId_foreign');
+            $table->dropForeign('data_approved_roleId_foreign');
+        });
     }
 }

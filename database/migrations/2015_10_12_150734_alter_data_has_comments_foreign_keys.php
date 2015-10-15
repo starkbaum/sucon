@@ -12,7 +12,12 @@ class AlterDataHasCommentsForeignKeys extends Migration
      */
     public function up()
     {
-        //
+        Schema::table('data_has_comments', function (Blueprint $table) {
+            $table->foreign('datId')->references('dataId')->on('data');
+        });
+        Schema::table('data_has_comments', function (Blueprint $table) {
+            $table->foreign('commentId')->references('commentId')->on('comments');
+        });
     }
 
     /**
@@ -22,6 +27,9 @@ class AlterDataHasCommentsForeignKeys extends Migration
      */
     public function down()
     {
-        //
+        Schema::table('data_has_comments', function (Blueprint $table) {
+            $table->dropForeign('data_has_comments_dataId_foreign');
+            $table->dropForeign('data_has_comments_commentId_foreign');
+        });
     }
 }

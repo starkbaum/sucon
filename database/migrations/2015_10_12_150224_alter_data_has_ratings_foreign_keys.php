@@ -12,7 +12,12 @@ class AlterDataHasRatingsForeignKeys extends Migration
      */
     public function up()
     {
-        //
+        Schema::table('data_has_ratings', function (Blueprint $table) {
+            $table->foreign('datId')->references('dataId')->on('data');
+        });
+        Schema::table('data_has_keywords', function (Blueprint $table) {
+            $table->foreign('ratingId')->references('ratingId')->on('ratings');
+        });
     }
 
     /**
@@ -22,6 +27,9 @@ class AlterDataHasRatingsForeignKeys extends Migration
      */
     public function down()
     {
-        //
+        Schema::table('data_has_ratings', function (Blueprint $table) {
+            $table->dropForeign('data_has_ratings_dataId_foreign');
+            $table->dropForeign('data_has_ratings_ratingId_foreign');
+        });
     }
 }

@@ -12,7 +12,12 @@ class AlterDataHasCustomerForeignKeys extends Migration
      */
     public function up()
     {
-        //
+        Schema::table('data_has_customers', function (Blueprint $table) {
+            $table->foreign('datId')->references('dataId')->on('data');
+        });
+        Schema::table('data_has_customers', function (Blueprint $table) {
+            $table->foreign('customerId')->references('customerId')->on('customers');
+        });
     }
 
     /**
@@ -22,6 +27,9 @@ class AlterDataHasCustomerForeignKeys extends Migration
      */
     public function down()
     {
-        //
+        Schema::table('data_has_customers', function (Blueprint $table) {
+            $table->dropForeign('data_has_customers_dataId_foreign');
+            $table->dropForeign('data_has_customers_customerId_foreign');
+        });
     }
 }

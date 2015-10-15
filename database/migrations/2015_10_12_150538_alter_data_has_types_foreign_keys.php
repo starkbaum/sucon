@@ -12,7 +12,12 @@ class AlterDataHasTypesForeignKeys extends Migration
      */
     public function up()
     {
-        //
+        Schema::table('data_has_types', function (Blueprint $table) {
+            $table->foreign('datId')->references('dataId')->on('data');
+        });
+        Schema::table('data_has_types', function (Blueprint $table) {
+            $table->foreign('typeId')->references('typeId')->on('types');
+        });
     }
 
     /**
@@ -22,6 +27,9 @@ class AlterDataHasTypesForeignKeys extends Migration
      */
     public function down()
     {
-        //
+        Schema::table('data_has_types', function (Blueprint $table) {
+            $table->dropForeign('data_has_types_dataId_foreign');
+            $table->dropForeign('data_has_types_typeId_foreign');
+        });
     }
 }

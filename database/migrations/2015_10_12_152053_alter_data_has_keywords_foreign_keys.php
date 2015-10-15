@@ -12,7 +12,12 @@ class AlterDataHasKeywordsForeignKeys extends Migration
      */
     public function up()
     {
-        //
+        Schema::table('data_has_keywords', function (Blueprint $table) {
+            $table->foreign('datId')->references('dataId')->on('data');
+        });
+        Schema::table('data_has_keywords', function (Blueprint $table) {
+            $table->foreign('keywordId')->references('keywordId')->on('keywords');
+        });
     }
 
     /**
@@ -22,6 +27,9 @@ class AlterDataHasKeywordsForeignKeys extends Migration
      */
     public function down()
     {
-        //
+        Schema::table('data_has_keywords', function (Blueprint $table) {
+            $table->dropForeign('data_has_keywords_dataId_foreign');
+            $table->dropForeign('data_has_keywords_keywordId_foreign');
+        });
     }
 }
