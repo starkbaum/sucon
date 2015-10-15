@@ -13,7 +13,7 @@ class AlterDataHasTypesPrimaryKeys extends Migration
     public function up()
     {
         Schema::table('data_has_types', function (Blueprint $table) {
-            $table->primary(['d_id', 't_id']);      // set primary key
+            $table->primary(['dataId', 'typeId']);      // set primary key
         });
     }
 
@@ -25,7 +25,7 @@ class AlterDataHasTypesPrimaryKeys extends Migration
     public function down()
     {
         Schema::table('data_has_keywords', function (Blueprint $table) {
-            $table->dropPrimary(['d_id', 't_id']);
+            $table->dropPrimary(['dataId', 'typeId']);
         });
     }
 }

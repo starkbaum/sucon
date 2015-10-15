@@ -13,7 +13,7 @@ class CreateCoursesTable extends Migration
     public function up()
     {
         Schema::create('courses', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('courseId');
             $table->string('name');
             //TODO make slug not nullable
             $table->string('slug')->nullable();

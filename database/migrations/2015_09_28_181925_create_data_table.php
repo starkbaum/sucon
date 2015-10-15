@@ -13,15 +13,14 @@ class CreateDataTable extends Migration
     public function up()
     {
         Schema::create('data', function (Blueprint $table) {
-            $table->bigIncrements('d_id');      //caused by the possibility of expansion - primary key
-            $table->string('d_name', 100);
+            $table->bigIncrements('dataId');      //caused by the possibility of expansion - primary key
+            $table->string('name', 100);
             $table->string('path', 500);        //file-path can be very long
-            $table->string('d_author', 100)->nullable();
-            $table->decimal('d_size',10,2)->default(0);
-            $table->integer('d_views')->default(0);
+            $table->string('author', 100)->nullable();
+            $table->decimal('size',10,2)->default(0);
+            $table->integer('views')->default(0);
             $table->timestamps(); //adds created_at and updated_at columns
-            $table->timestamp('d_last_view');
-            $table->unsignedInteger('l_id');         // foreign key
+            $table->unsignedInteger('languageId');         // foreign key
         });
     }
 

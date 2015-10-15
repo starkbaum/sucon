@@ -13,8 +13,8 @@ class CreateDataHasTypeTable extends Migration
     public function up()
     {
         Schema::create('data_has_types', function (Blueprint $table) {
-            $table->bigInteger('d_id');  // primary key & foreign key
-            $table->integer('t_id');     // primary key & foreign key
+            $table->bigInteger('dataId');  // primary key & foreign key
+            $table->integer('typeId');     // primary key & foreign key
 
 
             //$table->primary(['d_id', 't_id']);      // set primary key

@@ -13,8 +13,8 @@ class CreateTypesTable extends Migration
     public function up()
     {
         Schema::create('types', function (Blueprint $table) {
-            $table->increments('t_id');     // primary key
-            $table->string('t_name', 50);
+            $table->increments('typeId');     // primary key
+            $table->string('name', 50);
         });
     }
 

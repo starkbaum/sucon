@@ -13,7 +13,7 @@ class AlterDataForeignKeys extends Migration
     public function up()
     {
         Schema::table('data', function (Blueprint $table) {
-            $table->foreign('l_id')->references('l_id')->on('languages');
+            $table->foreign('languageId')->references('languageId')->on('languages');
         });
     }
 
@@ -25,7 +25,7 @@ class AlterDataForeignKeys extends Migration
     public function down()
     {
         Schema::table('data', function (Blueprint $table) {
-        $table->dropForeign('data_l_id_foreign');
+        $table->dropForeign('data_languageId_foreign');
         });
     }
 }

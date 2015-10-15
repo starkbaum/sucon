@@ -13,8 +13,8 @@ class CreateRatingsTable extends Migration
     public function up()
     {
         Schema::create('ratings', function (Blueprint $table) {
-            $table->increments('r_id');     // primary key
-            $table->string('r_name', 30);
+            $table->increments('ratingId');     // primary key
+            $table->string('name', 30);
         });
     }
 

@@ -13,7 +13,7 @@ class AlterDataApprovedPrimaryKeys extends Migration
     public function up()
     {
         Schema::table('data_approved', function (Blueprint $table) {
-            $table->primary(['d_id', 'role_id']);      // set primary key
+            $table->primary(['dataId', 'roleId']);      // set primary key
         });
     }
 
@@ -25,7 +25,7 @@ class AlterDataApprovedPrimaryKeys extends Migration
     public function down()
     {
         Schema::table('data_approved', function (Blueprint $table) {
-            $table->dropPrimary(['d_id', 'role_id']);
+            $table->dropPrimary(['dataId', 'roleId']);
         });
     }
 }

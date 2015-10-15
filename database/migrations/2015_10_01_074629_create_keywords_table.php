@@ -13,8 +13,8 @@ class CreateKeywordsTable extends Migration
     public function up()
     {
         Schema::create('keywords', function (Blueprint $table) {
-            $table->bigIncrements('k_id');  // primary key
-            $table->string('k_name', 50);
+            $table->bigIncrements('keywordId');  // primary key
+            $table->string('name', 50);
         });
     }
 
