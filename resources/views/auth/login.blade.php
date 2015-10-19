@@ -3,7 +3,7 @@
 @section('content')
 
     <div class="row">
-        <div class="center-align">
+        <div class="container">
             <form method="POST" action="/auth/login" class="col s3 center-align">
                 {!! csrf_field() !!}
                 <div class="row">
@@ -26,8 +26,8 @@
                     <i class="material-icons right">send</i>
                 </button>
             </form>
+            @include('auth._errors')
         </div>
-
     </div>
 
 @endsection

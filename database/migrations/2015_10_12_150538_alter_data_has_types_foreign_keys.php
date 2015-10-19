@@ -13,10 +13,10 @@ class AlterDataHasTypesForeignKeys extends Migration
     public function up()
     {
         Schema::table('data_has_types', function (Blueprint $table) {
-            $table->foreign('dataId')->references('dataId')->on('data');
+            $table->foreign('dataId')->references('id')->on('data');
         });
         Schema::table('data_has_types', function (Blueprint $table) {
-            $table->foreign('typeId')->references('typeId')->on('types');
+            $table->foreign('typeId')->references('id')->on('types');
         });
     }
 

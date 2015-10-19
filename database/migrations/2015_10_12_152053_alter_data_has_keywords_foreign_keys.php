@@ -13,10 +13,10 @@ class AlterDataHasKeywordsForeignKeys extends Migration
     public function up()
     {
         Schema::table('data_has_keywords', function (Blueprint $table) {
-            $table->foreign('dataId')->references('dataId')->on('data');
+            $table->foreign('dataId')->references('id')->on('data');
         });
         Schema::table('data_has_keywords', function (Blueprint $table) {
-            $table->foreign('keywordId')->references('keywordId')->on('keywords');
+            $table->foreign('keywordId')->references('id')->on('keywords');
         });
     }
 

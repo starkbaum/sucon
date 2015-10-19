@@ -63,6 +63,7 @@
                 <div class="card-content">
                     <span class="card-title sucon-text-green">{{ $course->name }}</span>
                     <p>{{ $course->description }}</p>
+                    <p>{{ $course->name }}</p>
                 </div>
                 <div class="card-action">
                     <a href="#"><i class="small material-icons sucon-text-orange">thumb_up</i></a>

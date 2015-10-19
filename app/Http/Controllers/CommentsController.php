@@ -3,12 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Comment;
-use App\Course;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
-class CoursesController extends Controller
+class CommentsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,9 +17,7 @@ class CoursesController extends Controller
      */
     public function index()
     {
-
-        $courses = Course::all();
-        return view('courses.index', compact('courses'));
+        //
     }
 
     /**
@@ -29,7 +27,7 @@ class CoursesController extends Controller
      */
     public function create()
     {
-        return view('courses.create');
+        //
     }
 
     /**
@@ -40,8 +38,10 @@ class CoursesController extends Controller
      */
     public function store(Request $request)
     {
-        $course = Course::create($request->all());
-        return redirect('courses');
+        $comment = Comment::create($request->all());
+        $comment->id = Auth::user()->id;
+        $comment->save();
+        return redirect('/courses');
     }
 
     /**
@@ -52,10 +52,7 @@ class CoursesController extends Controller
      */
     public function show($id)
     {
-        //TODO not working atm -> new foreign key in data has comment -> referencing user id
-        $course = Course::findOrFail($id);
-        //$comments = Comment::all()->where('');
-        return view('courses.show', compact('course'));
+        //
     }
 
     /**

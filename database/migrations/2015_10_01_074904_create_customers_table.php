@@ -13,7 +13,7 @@ class CreateCustomersTable extends Migration
     public function up()
     {
         Schema::create('customers', function (Blueprint $table) {
-            $table->increments('customerId');   // primary key
+            $table->increments('id');   // primary key
             $table->string('name', 100);
             $table->string('city', 100);
             $table->string('zipCode', 30);

@@ -13,7 +13,7 @@ class AlterCommentsForeignKeys extends Migration
     public function up()
     {
         Schema::table('comments', function (Blueprint $table) {
-            $table->foreign('id')->references('id')->on('users');
+            $table->foreign('userId')->references('id')->on('users');
         });
     }
 

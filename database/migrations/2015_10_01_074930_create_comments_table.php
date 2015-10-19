@@ -13,10 +13,10 @@ class CreateCommentsTable extends Migration
     public function up()
     {
         Schema::create('comments', function (Blueprint $table) {
-            $table->bigIncrements('commentId');        // primary key
+            $table->bigIncrements('id');        // primary key
             $table->text('content');
             $table->timestamp('timestamp');
-            $table->unsignedInteger('id');              // foreign key from users
+            $table->unsignedInteger('userId');              // foreign key from users
         });
     }
 

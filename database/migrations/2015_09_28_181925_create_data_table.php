@@ -13,7 +13,7 @@ class CreateDataTable extends Migration
     public function up()
     {
         Schema::create('data', function (Blueprint $table) {
-            $table->bigIncrements('dataId');      //caused by the possibility of expansion - primary key
+            $table->bigIncrements('id');      //caused by the possibility of expansion - primary key
             $table->string('name', 100);
             $table->string('path', 500);        //file-path can be very long
             $table->string('author', 100)->nullable();

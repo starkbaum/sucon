@@ -13,7 +13,7 @@ class CreatePersonsTable extends Migration
     public function up()
     {
         Schema::create('persons', function (Blueprint $table) {
-            $table->bigIncrements('personId');      // primary key
+            $table->bigIncrements('id');      // primary key
             $table->string('name', 100);
             $table->string('phoneNo', 100);
             $table->unsignedInteger('customerId');       // foreign key

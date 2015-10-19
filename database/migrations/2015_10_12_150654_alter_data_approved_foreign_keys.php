@@ -13,10 +13,10 @@ class AlterDataApprovedForeignKeys extends Migration
     public function up()
     {
         Schema::table('data_approved', function (Blueprint $table) {
-            $table->foreign('dataId')->references('dataId')->on('data');
+            $table->foreign('dataId')->references('id')->on('data');
         });
         Schema::table('data_approved', function (Blueprint $table) {
-            $table->foreign('roleId')->references('roleId')->on('roles');
+            $table->foreign('roleId')->references('id')->on('roles');
         });
     }
 
