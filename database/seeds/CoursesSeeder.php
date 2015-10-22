@@ -3,7 +3,6 @@
 use Illuminate\Database\Seeder;
 use \App\Course;
 use \Faker\Factory as Faker;
-use \Faker\Provider\ as FProvider;
 
 class CoursesSeeder extends Seeder
 {
