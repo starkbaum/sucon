@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateDataHasCommentTable extends Migration
+class CreateCourseHasCommentsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,10 +12,9 @@ class CreateDataHasCommentTable extends Migration
      */
     public function up()
     {
-        Schema::create('data_has_comments', function (Blueprint $table) {
-            $table->unsignedbigInteger('dataId');          // primary key
-            $table->unsignedbigInteger('commentId');        // primary key
-
+        Schema::create('course_has_comments', function (Blueprint $table) {
+            $table->unsignedInteger('id');              // primary key
+            $table->unsignedbigInteger('commentId');    // primary key
         });
     }
 
@@ -26,6 +25,6 @@ class CreateDataHasCommentTable extends Migration
      */
     public function down()
     {
-        Schema::drop('data_has_comments');
+        Schema::drop('course_has_comments');
     }
 }
