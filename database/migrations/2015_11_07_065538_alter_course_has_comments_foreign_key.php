@@ -15,7 +15,7 @@ class AlterCourseHasCommentsForeignKey extends Migration
         Schema::table('course_has_comments', function (Blueprint $table) {
             $table->foreign('courseId')->references('id')->on('courses');
         });
-        Schema::table('data_has_comments', function (Blueprint $table) {
+        Schema::table('course_has_comments', function (Blueprint $table) {
             $table->foreign('commentId')->references('id')->on('comments');
         });
     }

@@ -13,8 +13,8 @@ class CreateCourseHasCommentsTable extends Migration
     public function up()
     {
         Schema::create('course_has_comments', function (Blueprint $table) {
-            $table->unsignedInteger('courseId');              // primary key
-            $table->unsignedbigInteger('commentId');    // primary key
+            $table->unsignedInteger('courseId');        // primary key
+            $table->unsignedBigInteger('commentId');    // primary key
         });
     }
 

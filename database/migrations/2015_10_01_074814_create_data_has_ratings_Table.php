@@ -16,7 +16,6 @@ class CreateDataHasRatingsTable extends Migration
             $table->unsignedBigInteger('dataId');  // primary key & foreign key
             $table->unsignedInteger('ratingId');     // primary key & foreign key
 
-           // $table->primary(['d_id', 'r_id']);      // set primary key
         });
     }
 
