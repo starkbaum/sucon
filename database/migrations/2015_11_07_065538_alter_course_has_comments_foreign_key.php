@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AlterDataHasCommentsForeignKeys extends Migration
+class AlterCourseHasCommentsForeignKey extends Migration
 {
     /**
      * Run the migrations.
@@ -12,8 +12,8 @@ class AlterDataHasCommentsForeignKeys extends Migration
      */
     public function up()
     {
-        Schema::table('data_has_comments', function (Blueprint $table) {
-            $table->foreign('dataId')->references('id')->on('data');
+        Schema::table('course_has_comments', function (Blueprint $table) {
+            $table->foreign('courseId')->references('id')->on('courses');
         });
         Schema::table('data_has_comments', function (Blueprint $table) {
             $table->foreign('commentId')->references('id')->on('comments');
@@ -27,9 +27,9 @@ class AlterDataHasCommentsForeignKeys extends Migration
      */
     public function down()
     {
-        Schema::table('data_has_comments', function (Blueprint $table) {
-            $table->dropForeign('data_has_comments_dataId_foreign');
-            $table->dropForeign('data_has_comments_commentId_foreign');
+        Schema::table('course_has_comments', function (Blueprint $table) {
+            $table->dropForeign('course_has_comments_courseId_foreign');
+            $table->dropForeign('course_has_comments_commentId_foreign');
         });
     }
 }
