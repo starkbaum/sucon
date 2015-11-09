@@ -9,6 +9,9 @@ Route::get('auth/logout', 'Auth\AuthController@getLogout');
 Route::get('auth/register', 'Auth\AuthController@getRegister');
 Route::post('auth/register', 'Auth\AuthController@postRegister');
 
+#File Management
+Route::post('courses/upload', 'DataController@upload');
+
 # Courses
 Route::resource('courses', 'CoursesController');
 

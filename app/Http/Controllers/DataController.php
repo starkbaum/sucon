@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Input;
+
 
 class DataController extends Controller
 {
@@ -34,9 +36,22 @@ class DataController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store()
     {
-        //
+        if(Input::hasFile('file')) {
+            echo 'Success, you uploaded a file';
+            $file = Input::file('file');
+            $name = $file->getClientOriginalName();
+            $file->move(storage_path().'/Uploads', $file->getClientOriginalName());
+            echo 'The filename is '.$file->getClientOriginalName();
+            echo '<br>';
+            echo '<img src="uploads/'.$file->getClientOriginalName() .'"/>';
+            $pathToFile = storage_path().'/Uploads/';
+            echo $pathToFile.$name;
+            // return response()->download($pathToFile.$name);
+            // file retrieving: $contents = Storage::get('file.jpg');
+            // deleting files: Storage::delete('file.jpg');
+        }
     }
 
     /**
@@ -82,5 +97,28 @@ class DataController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function upload()
+    {
+        echo 'Success, you uploaded a file';
+        echo Input::get('test');
+
+        if(Input::hasFile('file')) {
+            echo 'Success, you uploaded a file';
+            $file = Input::file('file');
+            $path = Input::get('test');
+            $name = $file->getClientOriginalName();
+            $file->move(storage_path().'/Uploads/'.$path, $file->getClientOriginalName());
+            echo 'The filename is '.$file->getClientOriginalName();
+            echo '<br>';
+            echo '<img src="uploads/'.$file->getClientOriginalName() .'"/>';
+            $pathToFile = storage_path().'/Uploads/';
+            echo $pathToFile.$name;
+
+            // return response()->download($pathToFile.$name);
+            // file retrieving: $contents = Storage::get('file.jpg');
+            // deleting files: Storage::delete('file.jpg');
+        }
     }
 }

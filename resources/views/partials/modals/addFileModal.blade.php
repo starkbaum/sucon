@@ -5,32 +5,21 @@
         <div class="modal-content">
             <h4>Datei hinzufügen</h4>
             <p>Nachdem die Datei hinzugefügt wird, muss noch die Freigabe eines Administrators erfolgen bevor sie ersichtlich wird</p>
-            <form action="#">
-                <div class="row">
-                    <div class="input-field col s12 m5">
-                        <input id="upload-name" type="text" class="validate">
-                        <label for="upload-name">Dateiname</label>
-                    </div>
-                    <div class="input-field col s12 m5">
-                        <input id="upload-name" type="text" class="validate">
-                        <label for="upload-name">Author</label>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="file-field input-field col s12 m10">
-                        <div class="btn">
-                            <span>Datei</span>
-                            <input type="file">
-                        </div>
-                        <div class="file-path-wrapper">
-                            <input class="file-path validate" type="text">
-                        </div>
-                    </div>
-                </div>
+            <p>{{ $course->slug }}</p>
+
+
+            <form action="{{URL::to('courses/upload')}}" method="post" enctype="multipart/form-data">
+                <label>Select Image to upload please</label>
+                <br>
+                <input type="file" name="file" id="file" />
+                <input type="hidden" name="test" value="{{ $course->slug }}"/>
+                <input type="submit" name="submit" value="submit"/>
+                <input type="hidden" value = "{{csrf_token()}}" name="_token"/>
             </form>
-        </div>
-        <div class="modal-footer">
-            <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Freigabe anfordern</a>
-        </div>
+
     </div>
+    <div class="modal-footer">
+        <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Freigabe anfordern</a>
+    </div>
+</div>
 </div>

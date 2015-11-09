@@ -12,4 +12,13 @@ class Data extends Model
      * @var string
      */
     protected $table = 'data';
+
+
+
+    /**
+     * Fillable Data Model
+     */
+    protected $fillable = [
+        'd_name', 'd_author', 'path'
+    ];
 }
