@@ -7,6 +7,7 @@ use App\Course;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\File;
 
 class CoursesController extends Controller
 {
@@ -41,6 +42,13 @@ class CoursesController extends Controller
     public function store(Request $request)
     {
         $course = Course::create($request->all());
+        $pathToCourse = storage_path() . '/courses/';
+        echo $pathToCourse;
+
+        if (!File::isDirectory($pathToCourse)) {
+            File::makeDirectory($pathToCourse);
+        }
+        File::makeDirectory($pathToCourse . $course->slug);
         return redirect('courses');
     }
 

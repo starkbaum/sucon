@@ -20,9 +20,9 @@ class CoursesSeeder extends Seeder
         for( $i = 1; $i <= 10; $i++) {
             DB::table('courses')->insert([
                 'id'            => $i,
-                'name'          => $faker->sentence(rand(1,6)),
+                'name'          => $faker->sentence(rand(3,7)),
                 'slug'          => $faker->slug,
-                'description'   => $faker->text
+                'description'   => $faker->sentence(rand(5,10))
             ]);
         }
 

@@ -3,8 +3,8 @@
 @section('content')
 
     <div class="row">
-        <div class="center-align">
-            <form method="POST" action="/auth/login" class="col s3 center-align">
+        <div class="container">
+            <form method="POST" action="/auth/login" class="col s6 offset-s2">
                 {!! csrf_field() !!}
                 <div class="row">
                     <div class="input-field col s12">
