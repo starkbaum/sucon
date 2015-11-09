@@ -43,11 +43,11 @@ class DataController extends Controller
             $file = Input::file('file');
             $name = $file->getClientOriginalName();
             $file->move(storage_path().'/Uploads', $file->getClientOriginalName());
-            echo 'The filename is '.$file->getClientOriginalName();
+            //echo 'The filename is '.$file->getClientOriginalName();
             echo '<br>';
-            echo '<img src="uploads/'.$file->getClientOriginalName() .'"/>';
+            //echo '<img src="uploads/'.$file->getClientOriginalName() .'"/>';
             $pathToFile = storage_path().'/Uploads/';
-            echo $pathToFile.$name;
+            //echo $pathToFile.$name;
             // return response()->download($pathToFile.$name);
             // file retrieving: $contents = Storage::get('file.jpg');
             // deleting files: Storage::delete('file.jpg');

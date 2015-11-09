@@ -42,6 +42,7 @@ class CoursesController extends Controller
     public function store(Request $request)
     {
         $course = Course::create($request->all());
+
         $pathToCourse = storage_path() . '/courses/';
         echo $pathToCourse;
 
@@ -49,6 +50,8 @@ class CoursesController extends Controller
             File::makeDirectory($pathToCourse);
         }
         File::makeDirectory($pathToCourse . $course->slug);
+        $course->path_to_material = $pathToCourse . $course->slug;
+        $course->save();
         return redirect('courses');
     }
 
@@ -63,6 +66,13 @@ class CoursesController extends Controller
         //TODO not working atm -> new foreign key in data has comment -> referencing user id
         $course = Course::findOrFail($id);
         //$comments = Comment::all()->where('');
+        return view('courses.show', compact('course'));
+    }
+
+    public function showParam($param) {
+        $course = Course::where('id', $param)
+            ->orWhere('slug', $param)
+            ->firstOrFail();
         return view('courses.show', compact('course'));
     }
 

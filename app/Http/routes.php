@@ -13,6 +13,7 @@ Route::post('auth/register', 'Auth\AuthController@postRegister');
 Route::post('courses/upload', 'DataController@upload');
 
 # Courses
+Route::get('courses/{param}', 'CoursesController@showParam');
 Route::resource('courses', 'CoursesController');
 
 # Snippets

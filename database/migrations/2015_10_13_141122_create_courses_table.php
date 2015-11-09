@@ -17,6 +17,8 @@ class CreateCoursesTable extends Migration
             $table->string('name');
             //TODO make slug not nullable
             $table->string('slug')->nullable();
+            //TODO maybe not nullable
+            $table->string('path_to_material')->nullable();
             $table->text('description');
             $table->timestamps();
         });
