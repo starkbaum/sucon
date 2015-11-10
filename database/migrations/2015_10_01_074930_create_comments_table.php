@@ -17,6 +17,7 @@ class CreateCommentsTable extends Migration
             $table->text('content');
             $table->timestamps();
             $table->unsignedInteger('userId');              // foreign key from users
+            $table->unsignedInteger('courseId');            // foreign key from courses
         });
     }
 

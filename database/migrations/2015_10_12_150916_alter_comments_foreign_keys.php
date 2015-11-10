@@ -14,6 +14,7 @@ class AlterCommentsForeignKeys extends Migration
     {
         Schema::table('comments', function (Blueprint $table) {
             $table->foreign('userId')->references('id')->on('users');
+            $table->foreign('courseId')->references('id')->on('courses');
         });
     }
 
@@ -26,6 +27,7 @@ class AlterCommentsForeignKeys extends Migration
     {
         Schema::table('comments', function (Blueprint $table) {
             $table->dropForeign('users_id_foreign');
+            $table->dropForeign('courses_id_foreign');
         });
     }
 }
