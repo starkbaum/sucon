@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Data;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Input;
+use URL;
 
 
 class DataController extends Controller
@@ -101,20 +103,30 @@ class DataController extends Controller
 
     public function upload()
     {
-        echo 'Success, you uploaded a file';
-        echo Input::get('test');
-
         if(Input::hasFile('file')) {
             echo 'Success, you uploaded a file';
             $file = Input::file('file');
             $path = Input::get('test');
             $name = $file->getClientOriginalName();
             $file->move($path, $file->getClientOriginalName());
-            echo 'The filename is '.$file->getClientOriginalName();
-            echo '<br>';
-            echo '<img src="uploads/'.$file->getClientOriginalName() .'"/>';
-            $pathToFile = storage_path().'/Uploads/';
-            echo $pathToFile.$name;
+
+            $data = new Data([
+                //TODO use given name from form
+                'name'          => "Testname",
+                'path'          => $name,
+                'author'        => \Auth::user()->name,
+                'size'          => $file->getSize(),
+                'courseId'      => Input::get('courseId'),
+                //TODO implement dynamicaly
+                'languageId'    => 1
+            ]);
+
+            $data->save();
+
+            return redirect(URL::previous());
+
+
+
 
             // return response()->download($pathToFile.$name);
             // file retrieving: $contents = Storage::get('file.jpg');

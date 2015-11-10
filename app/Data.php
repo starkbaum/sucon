@@ -19,6 +19,6 @@ class Data extends Model
      * Fillable Data Model
      */
     protected $fillable = [
-        'd_name', 'd_author', 'path'
+        'name', 'author', 'path', 'size', 'courseId', 'languageId'
     ];
 }

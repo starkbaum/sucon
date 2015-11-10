@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use URL;
 
 class CommentsController extends Controller
 {
@@ -39,9 +40,9 @@ class CommentsController extends Controller
     public function store(Request $request)
     {
         $comment = Comment::create($request->all());
-        $comment->id = Auth::user()->id;
+        $comment->userId = Auth::user()->id;
         $comment->save();
-        return redirect('/courses');
+        return redirect(URL::previous());
     }
 
     /**

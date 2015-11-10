@@ -81,18 +81,18 @@
                     <h5>Unterlagen</h5>
                     <a class="btn-floating btn-large waves-effect waves-light sucon-background-orange modal-trigger" style="margin-bottom:-40px;" href="#modal1"><i class="material-icons">add</i></a>
                 </li>
-            @for($i = 1; $i <= 5; $i++)
+            @foreach($data as $singleData)
                 <li class="collection-item avatar">
                     <i class="material-icons circle">folder</i>
-                    <span class="title">Title</span>
-                    <p>First Line</p>
+                    <span class="title">{{ $singleData->name }}</span>
+                    <p>{{ $singleData->author }}</p>
                     <p class="secondary-content">
                         <a href="#"><i class="material-icons sucon-text-orange">open_in_browser</i></a>
                         <a href="#"><i class="material-icons sucon-text-orange">system_update_alt</i></a>
                         <a href="#"><i class="material-icons sucon-text-orange">delete</i></a>
                     </p>
                 </li>
-            @endfor
+            @endforeach
             </ul>
         </div>
 
@@ -118,6 +118,9 @@
 
                 @endforeach
             </ul>
+            <div>
+                @include('comments.create')
+            </div>
         </div>
 
     </div>

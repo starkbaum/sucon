@@ -13,6 +13,7 @@
                 <br>
                 <input type="file" name="file" id="file" />
                 <input type="hidden" name="test" value="{{ $course->path_to_material }}"/>
+                <input type="hidden" name="courseId" value="{{ $course->id }}"/>
                 <input type="submit" name="submit" value="submit"/>
                 <input type="hidden" value = "{{csrf_token()}}" name="_token"/>
             </form>

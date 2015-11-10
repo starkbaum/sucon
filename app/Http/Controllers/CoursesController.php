@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Comment;
 use App\Course;
+use App\Data;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
@@ -66,8 +67,10 @@ class CoursesController extends Controller
         $course = Course::where('id', $id)
             ->orWhere('slug', $id)
             ->firstOrFail();
+        $data = Data::all()->where('courseId', $course->id);
+        //dd($data);
         $comments = Comment::all();
-        return view('courses.show', compact('course', 'comments'));
+        return view('courses.show', compact('course', 'comments', 'data'));
     }
 
     /**

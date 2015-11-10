@@ -20,8 +20,4 @@ class Course extends Model
      * @var array
      */
     protected $fillable = ['name', 'slug', 'description'];
-
-    public function comment() {
-        return $this->hasManyThrough('course_has_comments', 'courseId', 'commentId');
-    }
 }
