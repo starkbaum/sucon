@@ -109,7 +109,7 @@ class DataController extends Controller
             $file = Input::file('file');
             $path = Input::get('test');
             $name = $file->getClientOriginalName();
-            $file->move(storage_path().'/Uploads/'.$path, $file->getClientOriginalName());
+            $file->move($path, $file->getClientOriginalName());
             echo 'The filename is '.$file->getClientOriginalName();
             echo '<br>';
             echo '<img src="uploads/'.$file->getClientOriginalName() .'"/>';

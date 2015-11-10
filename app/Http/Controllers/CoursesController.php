@@ -63,17 +63,11 @@ class CoursesController extends Controller
      */
     public function show($id)
     {
-        //TODO not working atm -> new foreign key in data has comment -> referencing user id
-        $course = Course::findOrFail($id);
-        //$comments = Comment::all()->where('');
-        return view('courses.show', compact('course'));
-    }
-
-    public function showParam($param) {
-        $course = Course::where('id', $param)
-            ->orWhere('slug', $param)
+        $course = Course::where('id', $id)
+            ->orWhere('slug', $id)
             ->firstOrFail();
-        return view('courses.show', compact('course'));
+        $comments = Comment::all();
+        return view('courses.show', compact('course', 'comments'));
     }
 
     /**

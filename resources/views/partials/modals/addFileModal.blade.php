@@ -12,7 +12,7 @@
                 <label>Select Image to upload please</label>
                 <br>
                 <input type="file" name="file" id="file" />
-                <input type="hidden" name="test" value="{{ $course->slug }}"/>
+                <input type="hidden" name="test" value="{{ $course->path_to_material }}"/>
                 <input type="submit" name="submit" value="submit"/>
                 <input type="hidden" value = "{{csrf_token()}}" name="_token"/>
             </form>
