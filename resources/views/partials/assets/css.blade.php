@@ -1,5 +1,5 @@
 <!-- MaterializeCSS -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/css/materialize.min.css">
+<link rel="stylesheet" href="{{ asset('/css/materialize.min.css') }}">
 <!-- Material Design Lite CSS
 <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.4/material.indigo-pink.min.css">-->
 <!-- Google Roboto Font -->
