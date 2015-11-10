@@ -88,8 +88,8 @@
                     <p>{{ $singleData->author }}</p>
                     <p class="secondary-content">
                         <a href="#"><i class="material-icons sucon-text-orange">open_in_browser</i></a>
-                        <a href="#"><i class="material-icons sucon-text-orange">system_update_alt</i></a>
-                        <a href="#"><i class="material-icons sucon-text-orange">delete</i></a>
+                        <a href="{{ url('download') . '/' . $singleData->id }}"><i class="material-icons sucon-text-orange">system_update_alt</i></a>
+                        <a href="{{ url('data/delete') . '/' . $singleData->id }}"><i class="material-icons sucon-text-orange">delete</i></a>
                     </p>
                 </li>
             @endforeach

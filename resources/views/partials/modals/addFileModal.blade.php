@@ -9,8 +9,12 @@
 
 
             <form action="{{URL::to('courses/upload')}}" method="post" enctype="multipart/form-data">
-                <label>Select Image to upload please</label>
+
                 <br>
+                <label for="filename">Filename</label>
+                <input type="text" name="filename" id="filename"/>
+                <br>
+                <label for="file">Select Image to upload please</label>
                 <input type="file" name="file" id="file" />
                 <input type="hidden" name="test" value="{{ $course->path_to_material }}"/>
                 <input type="hidden" name="courseId" value="{{ $course->id }}"/>

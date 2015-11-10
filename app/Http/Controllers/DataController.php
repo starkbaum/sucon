@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Data;
+use File;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
@@ -12,25 +13,6 @@ use URL;
 
 class DataController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
 
     /**
      * Store a newly created resource in storage.
@@ -43,16 +25,23 @@ class DataController extends Controller
         if(Input::hasFile('file')) {
             echo 'Success, you uploaded a file';
             $file = Input::file('file');
+            $path = Input::get('test');
             $name = $file->getClientOriginalName();
-            $file->move(storage_path().'/Uploads', $file->getClientOriginalName());
-            //echo 'The filename is '.$file->getClientOriginalName();
-            echo '<br>';
-            //echo '<img src="uploads/'.$file->getClientOriginalName() .'"/>';
-            $pathToFile = storage_path().'/Uploads/';
-            //echo $pathToFile.$name;
-            // return response()->download($pathToFile.$name);
-            // file retrieving: $contents = Storage::get('file.jpg');
-            // deleting files: Storage::delete('file.jpg');
+            $file->move($path, $file->getClientOriginalName());
+
+            $data = new Data([
+                'name'          => Input::get('filename'),
+                'path'          => $path . '/' . $name,
+                'author'        => \Auth::user()->name,
+                'size'          => $file->getSize(),
+                'courseId'      => Input::get('courseId'),
+                //TODO implement dynamically
+                'languageId'    => 1
+            ]);
+
+            $data->save();
+
+            return redirect(URL::previous());
         }
     }
 
@@ -91,46 +80,28 @@ class DataController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Remove the specified resource from storage and database.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
-        //
+        $file = Data::findOrFail($id);
+        File::delete($file->path);
+        $file->delete();
+        return redirect(URL::previous());
     }
 
-    public function upload()
+    /**
+     * Downloads file with the given id
+     *
+     * @param $id
+     * @return \Symfony\Component\HttpFoundation\BinaryFileResponse
+     */
+    public function download($id)
     {
-        if(Input::hasFile('file')) {
-            echo 'Success, you uploaded a file';
-            $file = Input::file('file');
-            $path = Input::get('test');
-            $name = $file->getClientOriginalName();
-            $file->move($path, $file->getClientOriginalName());
-
-            $data = new Data([
-                //TODO use given name from form
-                'name'          => "Testname",
-                'path'          => $name,
-                'author'        => \Auth::user()->name,
-                'size'          => $file->getSize(),
-                'courseId'      => Input::get('courseId'),
-                //TODO implement dynamicaly
-                'languageId'    => 1
-            ]);
-
-            $data->save();
-
-            return redirect(URL::previous());
-
-
-
-
-            // return response()->download($pathToFile.$name);
-            // file retrieving: $contents = Storage::get('file.jpg');
-            // deleting files: Storage::delete('file.jpg');
-        }
+        $file = Data::findOrFail($id);
+        return response()->download($file->path);
     }
 }
