@@ -27,6 +27,13 @@ class DataController extends Controller
             $file = Input::file('file');
             $path = Input::get('test');
             $name = $file->getClientOriginalName();
+
+
+            if (Data::all()->where('path', $path . '/' . $name)) {
+                //TODO error message
+                return redirect(URL::previous());
+            }
+
             $file->move($path, $file->getClientOriginalName());
 
             $data = new Data([
@@ -41,7 +48,7 @@ class DataController extends Controller
 
             $data->save();
 
-            return redirect(URL::previous());
+            //return redirect(URL::previous());
         }
     }
 

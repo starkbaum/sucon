@@ -1,3 +1,4 @@
+<!-- TODO enctype security measure to prevent from uploading php and js files -->
 <form action="{{URL::to('courses/upload')}}" method="post" enctype="multipart/form-data">
 
 <!-- Modal Structure -->
@@ -7,8 +8,6 @@
         <div class="modal-content">
             <h4>Datei hinzufügen</h4>
             <p>Nachdem die Datei hinzugefügt wird, muss noch die Freigabe eines Administrators erfolgen bevor sie ersichtlich wird</p>
-
-
 
                 <!-- Filename -->
                 <div class="row">
