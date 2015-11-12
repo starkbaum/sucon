@@ -23,18 +23,17 @@ class DataController extends Controller
     public function store()
     {
         if(Input::hasFile('file')) {
-            echo 'Success, you uploaded a file';
             $file = Input::file('file');
             $path = Input::get('test');
             $name = $file->getClientOriginalName();
-
-
-            if (Data::all()->where('path', $path . '/' . $name)) {
+            //TODO doesnt work at the moment
+            //if (Data::all()->where('path', $path . '/' . $name)) {
                 //TODO error message
-                return redirect(URL::previous());
-            }
+              //  return redirect(URL::previous());
+            //}
 
             $file->move($path, $file->getClientOriginalName());
+
 
             $data = new Data([
                 'name'          => Input::get('filename'),
@@ -48,7 +47,7 @@ class DataController extends Controller
 
             $data->save();
 
-            //return redirect(URL::previous());
+            return redirect(URL::previous());
         }
     }
 

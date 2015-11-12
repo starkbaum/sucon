@@ -16,8 +16,8 @@ class CreateCommentsTable extends Migration
             $table->bigIncrements('id');        // primary key
             $table->text('content');
             $table->timestamps();
-            $table->unsignedInteger('userId');              // foreign key from users
-            $table->unsignedInteger('courseId');            // foreign key from courses
+            $table->unsignedInteger('userId')->nullable();              // foreign key from users
+            $table->unsignedInteger('courseId')->nullable();            // foreign key from courses
         });
     }
 

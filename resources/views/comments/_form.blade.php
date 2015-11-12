@@ -1,10 +1,18 @@
 
-<div class="input-field">
-    {!! Form::label('content', 'Kommentar:') !!}
-    {!! Form::text('content', null, ['class' => 'form-control']) !!}
-</div>
+<!-- TODO enctype security measure to prevent from uploading php and js files -->
+<form action="{{ URL::to('comments') }}" method="post">
 
-<!--- Submit Field --->
-<div class="form-group">
-    {!! Form::submit($submitButtonText, ['class' => 'btn btn-primary']) !!}
-</div>
+    <div class="row">
+        <div class="input-field col s6">
+            <input id="content" name="content" type="text" class="validate">
+            <label for="content">Dateiname</label>
+        </div>
+    </div>
+
+    <input type="hidden" name="courseId" value="{{ $course->id }}"/>
+    <input type="hidden" value = "{{csrf_token()}}" name="_token"/>
+
+    <button class="waves-effect waves-teal btn-flat" type="submit" name="action">Kommentieren</button>
+</form>
+
+

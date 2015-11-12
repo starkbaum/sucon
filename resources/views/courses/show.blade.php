@@ -97,31 +97,7 @@
         </div>
 
         <!-- section for comments -->
-        <div class="col s12 m9">
-            <ul class="collection with-header z-depth-1">
-                <li class="collection-header sucon-background-green">Kommentare</li>
-
-                @foreach($comments as $comment)
-
-                <!-- first level comment -->
-                <!-- TODO styling -->
-                <li class="collection-item avatar">
-                    <i class="material-icons circle"><img src="{{ asset('/img/user/avatar_jane.jpg') }}" alt="" style="height: 45px; width: 45px;"></i>
-                    <span class="title">{{ \App\User::findOrFail($comment->userId)->name }}</span>
-                    <p>{{ $comment->content }}</p>
-                    <p class="secondary-content">
-                        <a href="#"><i class="material-icons sucon-text-orange">open_in_new</i></a>
-                        <a href="#"><i class="material-icons sucon-text-orange">system_update_alt</i></a>
-                        <a href="#"><i class="material-icons sucon-text-orange">delete</i></a>
-                    </p>
-                </li>
-
-                @endforeach
-            </ul>
-            <div>
-                @include('comments.create')
-            </div>
-        </div>
+        @include('comments.index', $comments)
 
     </div>
 

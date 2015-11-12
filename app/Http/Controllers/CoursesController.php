@@ -64,12 +64,13 @@ class CoursesController extends Controller
      */
     public function show($id)
     {
-        $course = Course::where('id', $id)
-            ->orWhere('slug', $id)
-            ->firstOrFail();
+        //returns course with given id or slug
+        $course = Course::where('id', $id)->orWhere('slug', $id)->firstOrFail();
+        //fetches all data where course id is given id
         $data = Data::all()->where('courseId', $course->id);
-        //dd($data);
-        $comments = Comment::all();
+        //fetches all comments where course id is given id
+        $comments = Comment::where('courseId', $course->id)->get();
+        //returns view and gives it the fetched course, comments and data
         return view('courses.show', compact('course', 'comments', 'data'));
     }
 

@@ -20,6 +20,7 @@ Route::get('courses/{param}', 'CoursesController@showParam');
 
 # Comments
 Route::resource('comments', 'CommentsController');
+Route::get('comments/delete/{id}', 'CommentsController@destroy');
 
 # Snippets
 Route::get('/snippets', 'SnippetsController@index');
