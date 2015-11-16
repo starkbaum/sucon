@@ -83,8 +83,10 @@
                 </li>
             @foreach($data as $singleData)
                 <li class="collection-item avatar">
-                    <i class="material-icons circle">folder</i>
-                    <span class="title">{{ $singleData->name }}</span>
+                    <i class="circle">
+                        <img src="{{ asset('/img/extensions') . '/' . pathinfo($singleData->path, PATHINFO_EXTENSION) . '.png' }}" alt="" style="height: 45px; width: 45px;">
+                    </i>
+                    <span class="title">{{ $singleData->name }} Extension: {{ pathinfo($singleData->path, PATHINFO_EXTENSION) }}</span>
                     <p>{{ $singleData->author }}</p>
                     <p class="secondary-content">
                         <a href="#"><i class="material-icons sucon-text-orange">open_in_browser</i></a>
