@@ -90,10 +90,11 @@
                     <p>{{ $singleData->author }}</p>
                     <p>{{ $singleData->size }}</p>
                     <p class="secondary-content">
+                        <!-- TODO open file in browser -->
                         <a href="#"><i class="material-icons sucon-text-orange">open_in_browser</i></a>
                         <a href="{{ url('download') . '/' . $singleData->id }}"><i class="material-icons sucon-text-orange">system_update_alt</i></a>
                         <!-- TODO check if admin -->
-                        @if(Auth::user()->id == $singleData->userId)
+                        @if(Auth::user()->name === $singleData->author)
                         <a href="{{ url('data/delete') . '/' . $singleData->id }}"><i class="material-icons sucon-text-orange">delete</i></a>
                         @endif
                     </p>
