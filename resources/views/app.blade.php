@@ -8,6 +8,15 @@
 
     @include('partials.assets.css')
 
+    <link href="http://vjs.zencdn.net/5.0.2/video-js.css" rel="stylesheet">
+
+    <!-- If you'd like to support IE8 -->
+    <script src="http://vjs.zencdn.net/ie8/1.1.0/videojs-ie8.min.js"></script>
+
+    <style>
+
+    </style>
+
 </head>
 <body class="">
 
@@ -21,6 +30,8 @@
 
     <!-- including javascript -->
     @include('partials.assets.javascript')
+
+    <script src="http://vjs.zencdn.net/5.0.2/video.js"></script>
 
 </body>
 </html>

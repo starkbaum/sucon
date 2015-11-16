@@ -4,3 +4,4 @@
 <script src="{{ asset('/js/materialize.min.js') }}"></script>
 <!-- Initialize Materialize Components -->
 <script src="{{ asset('js/init.js') }}"></script>
+
