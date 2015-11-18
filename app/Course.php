@@ -18,16 +18,15 @@ class Course extends Model implements SluggableInterface
      */
     protected $table = 'courses';
 
-    protected $sluggable = [
-        'build_from' => 'name',
-        'save_to'    => 'slug',
-    ];
-
-
     /**
      * TODO
      *
      * @var array
      */
     protected $fillable = ['name', 'slug', 'description'];
+
+    protected $sluggable = [
+        'build_from' => 'name',
+        'save_to'    => 'slug',
+    ];
 }
