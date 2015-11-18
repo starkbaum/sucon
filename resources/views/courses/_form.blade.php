@@ -4,11 +4,6 @@
 </div>
 
 <div class="input-field">
-    {!! Form::label('slug', 'Slug:') !!}
-    {!! Form::text('slug', null, ['class' => 'form-control']) !!}
-</div>
-
-<div class="input-field">
     {!! Form::label('description', 'Description:') !!}
     {!! Form::textarea('description', null, ['class' => 'materialize-textarea', 'length' => '250']) !!}
 </div>
