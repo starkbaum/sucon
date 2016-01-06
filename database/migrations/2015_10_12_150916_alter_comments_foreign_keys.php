@@ -13,8 +13,8 @@ class AlterCommentsForeignKeys extends Migration
     public function up()
     {
         Schema::table('comments', function (Blueprint $table) {
-            $table->foreign('userId')->references('id')->on('users');
-            $table->foreign('courseId')->references('id')->on('courses');
+            $table->foreign('userId')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('courseId')->references('id')->on('courses')->onDelete('cascade');
         });
     }
 
