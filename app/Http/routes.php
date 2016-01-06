@@ -23,7 +23,7 @@ Route::resource('comments', 'CommentsController');
 Route::get('comments/delete/{id}', 'CommentsController@destroy');
 
 # Snippets
-Route::get('/snippets', 'SnippetsController@index');
+Route::resource('snippets', 'SnippetsController');
 
 
 # temporary helper routes
