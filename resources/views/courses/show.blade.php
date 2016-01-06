@@ -25,7 +25,7 @@
             <div class="card">
                 <div class="card-image">
                 <video id="my-video" class="video-js" controls preload="auto" data-setup="{}" width="auto" height="auto">
-                    <source src="{{ asset('/videos/fallout4.mp4') }}" type='video/mp4'>
+                    <source src="{{ asset('/videos/christmas.mp4') }}" type='video/mp4'>
                     <p class="vjs-no-js">
                         To view this video please enable JavaScript, and consider upgrading to a web browser that
                         <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>

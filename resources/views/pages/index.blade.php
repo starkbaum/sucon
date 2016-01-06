@@ -2,8 +2,11 @@
 
 @section('content')
 
+
+
     <div class="row">
         <div class="container">
+            <h2>Login</h2>
             <form method="POST" action="/auth/login" class="col s6 offset-s2">
                 {!! csrf_field() !!}
                 <div class="row">
