@@ -19,7 +19,8 @@ class CreateDataTable extends Migration
             $table->string('author', 100)->nullable();
             $table->decimal('size',10,2)->default(0);
             $table->integer('views')->default(0);
-            $table->unsignedInteger('courseId')->nullable();
+            $table->unsignedInteger('courseId')->nullable();    // foreign key
+            $table->unsignedInteger('snippetId')->nullable();   // foreign key
             $table->unsignedInteger('languageId')->nullable();  // foreign key
             $table->timestamps();                               //adds created_at and updated_at columns
         });
