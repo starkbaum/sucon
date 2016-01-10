@@ -19,6 +19,7 @@ class CreateSnippetsTable extends Migration
             $table->string('slug');
             //TODO maybe not nullable
             $table->string('path_to_material')->nullable();
+            $table->unsignedInteger('customer_id')->nullable();
             $table->text('description');
             $table->timestamps();
         });
