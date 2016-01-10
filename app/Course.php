@@ -25,8 +25,23 @@ class Course extends Model implements SluggableInterface
      */
     protected $fillable = ['name', 'slug', 'description'];
 
+    /**
+     * Array to build Slugs
+     *
+     * @var array
+     */
     protected $sluggable = [
         'build_from' => 'name',
         'save_to'    => 'slug',
     ];
+
+    /**
+     * get the Keywords associated with the Course
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function keywords() {
+        return $this->belongsToMany('App\Keyword');
+    }
+
 }

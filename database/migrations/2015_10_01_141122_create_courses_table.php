@@ -15,7 +15,6 @@ class CreateCoursesTable extends Migration
         Schema::create('courses', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            //TODO make slug not nullable
             $table->string('slug');
             //TODO maybe not nullable
             $table->string('path_to_material')->nullable();

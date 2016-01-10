@@ -12,9 +12,15 @@ class CreateDataHasKeywordTable extends Migration
      */
     public function up()
     {
-        Schema::create('data_has_keywords', function (Blueprint $table) {
-            $table->unsignedbigInteger('dataId');  // primary key & foreign key
-            $table->unsignedbigInteger('keywordId');  // primary key & foreign key
+        Schema::create('data_keyword', function (Blueprint $table) {
+            $table->unsignedbigInteger('data_id');  // primary key & foreign key
+            $table->foreign('data_id')->references('id')->on('data')->onDelete('cascade');
+
+            $table->unsignedbigInteger('keyword_id');  // primary key & foreign key
+            $table->foreign('keyword_id')->references('id')->on('keywords')->onDelete('cascade');
+
+            $table->timestamps();
+
         });
     }
 
