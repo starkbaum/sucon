@@ -40,6 +40,8 @@
             @endforeach
             </tbody>
         </table>
+
+        {!! $customers->render()  !!}
     </div>
 
 @endsection

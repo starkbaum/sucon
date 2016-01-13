@@ -16,3 +16,10 @@ main {
 #my-video {
     width: 100%;
 }
+
+/*Pagination*/
+
+.pagination li.active {
+    background: #ACCB17;
+    color: white;
+}

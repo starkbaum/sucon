@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\DB;
 
 class CustomersController extends Controller
 {
@@ -17,7 +18,7 @@ class CustomersController extends Controller
      */
     public function index()
     {
-        $customers = Customer::all()->sortBy('name');
+        $customers = DB::table('customers')->paginate(10);
 
         return view('customers.index', compact('customers'));
     }
