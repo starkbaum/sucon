@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Customer;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -16,7 +17,9 @@ class CustomersController extends Controller
      */
     public function index()
     {
-        //
+        $customers = Customer::all()->sortBy('name');
+
+        return view('customers.index', compact('customers'));
     }
 
     /**
@@ -26,7 +29,9 @@ class CustomersController extends Controller
      */
     public function create()
     {
-        //
+        $customersList = Customer::all()->lists('name', 'id');
+
+        return view('customers.create', compact('customersList'));
     }
 
     /**
@@ -37,7 +42,9 @@ class CustomersController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $customer = Customer::create($request->all());
+
+        return redirect('customers');
     }
 
     /**

@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\File;
 
 class SnippetsController extends Controller
 {
@@ -29,7 +30,7 @@ class SnippetsController extends Controller
      */
     public function create()
     {
-        //
+        return view('snippets.create');
     }
 
     /**
@@ -40,7 +41,18 @@ class SnippetsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $snippet = Snippet::create($request->all());
+
+        $pathToSnippet = storage_path() . '/courses/';
+        echo $pathToSnippet;
+
+        if (!File::isDirectory($pathToSnippet)) {
+            File::makeDirectory($pathToSnippet);
+        }
+        File::makeDirectory($pathToSnippet . $snippet->slug);
+        $snippet->path_to_material = $pathToSnippet . $snippet->slug;
+        $snippet->save();
+        return redirect('courses');
     }
 
     /**

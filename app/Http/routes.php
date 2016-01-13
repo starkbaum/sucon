@@ -22,6 +22,9 @@ Route::get('courses/{param}', 'CoursesController@showParam');
 Route::resource('comments', 'CommentsController');
 Route::get('comments/delete/{id}', 'CommentsController@destroy');
 
+# Customers
+Route::resource('customers', 'CustomersController');
+
 # Snippets
 Route::resource('snippets', 'SnippetsController');
 

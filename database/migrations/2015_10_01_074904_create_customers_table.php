@@ -20,7 +20,9 @@ class CreateCustomersTable extends Migration
             $table->string('street',100);
             $table->string('email', 100);
             $table->string('phoneNo', 100);
+            $table->string('slug');
             $table->unsignedInteger('snippetId')->nullable();   // foreign key
+            $table->timestamps();
         });
     }
 
