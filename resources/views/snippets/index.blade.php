@@ -2,39 +2,30 @@
 
 @section('header')
 
-    <nav class="sucon-background-green-darker">
-        <ul class="right hide-on-med-and-down">
-            <li><a href="#">Neue</a></li>
-            <li><a href="#">Java</a></li>
-            <li><a href="#">ABAP</a></li>
-            <li><a href="#">HTML</a></li>
-            <li><a href="#">PHP</a></li>
-            <li><a href="#">SQL</a></li>
-            <li><a href="{{ url('/snippets/create') }}"><i class="tiny material-icons">library_add</i></a></li>
-        </ul>
-    </nav>
+    @include('partials.filter', ['page' => 'snippets'])
 
 @endsection
 
 @section('content')
 
     <div class="row">
-        @foreach($snippets as $snippet)
-            <div class="col s12 m4 l4">
-                <div class="card medium hoverable">
-                    <div class="card-image">
-                        <img src="{{ asset('/img/cards/java_code.png') }}">
-                        <span class="card-title">{{ $snippet->name }}</span>
-                    </div>
-                    <div class="card-content">
-                        <p>{{ $snippet->description }}</p>
-                    </div>
-                    <div class="card-action">
-                        <a href="/courses/{{ $snippet->slug }}">Zum Snippet</a>
-                    </div>
+
+        <ul class="collection">
+            @foreach($snippets as $snippet)
+            <li class="collection-item avatar">
+                <img src="http://www.brandsoftheworld.com/sites/default/files/styles/logo-thumbnail/public/0021/9878/brand.gif?itok=038iFTom" alt="" class="circle">
+                <span class="title">{{ $snippet->name }}</span>
+                <p>Kunde: {{ $snippet->customer()->first()->name }}</p>
+                <p>Programmiersprache: {{ $snippet->languages()->first()->name }}</p>
+                <div>
+                    @foreach($snippet->keywords as $keyword)
+                    <div class="chip">{{ $keyword->name }}</div>
+                    @endforeach
                 </div>
-            </div>
-        @endforeach
+                <a href="/snippets/{{ $snippet->slug }}" class="secondary-content">Zum Snippet</a>
+            </li>
+            @endforeach
+        </ul>
     </div>
 
 @endsection

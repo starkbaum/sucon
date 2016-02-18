@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Customer;
+use App\Keyword;
+use App\Language;
 use App\Snippet;
 use Illuminate\Http\Request;
 
@@ -18,9 +21,10 @@ class SnippetsController extends Controller
      */
     public function index()
     {
-        $snippets = Snippet::all();
+        $snippets = Snippet::with('customer')->get();
+        $languages = Language::lists('name', 'id');
 
-        return view('snippets.index', compact('snippets'));
+        return view('snippets.index', compact('snippets', 'languages'));
     }
 
     /**
@@ -30,7 +34,11 @@ class SnippetsController extends Controller
      */
     public function create()
     {
-        return view('snippets.create');
+        $customers = Customer::lists('name', 'id')->all();
+        $languages = Language::lists('name', 'id')->all();
+        $keywords = Keyword::lists('name', 'id')->all();
+
+        return view('snippets.create', compact('customers', 'languages', 'keywords'));
     }
 
     /**
@@ -41,18 +49,26 @@ class SnippetsController extends Controller
      */
     public function store(Request $request)
     {
+        //create snippet with all provided data
         $snippet = Snippet::create($request->all());
+        //create storage path
+        $pathToSnippet = storage_path() . '/snippets/';
 
-        $pathToSnippet = storage_path() . '/courses/';
-        echo $pathToSnippet;
+        //add customer id to customer_snippet
+        $snippet->customer()->attach($request->input('customer'));
+        //add languages id to language_snippet
+        $snippet->languages()->attach($request->input('languages'));
+        //add keywords id to keyword_snippet
+        $snippet->keywords()->attach($request->input('keywords'));
 
+        //create directory for snippet
         if (!File::isDirectory($pathToSnippet)) {
             File::makeDirectory($pathToSnippet);
         }
         File::makeDirectory($pathToSnippet . $snippet->slug);
         $snippet->path_to_material = $pathToSnippet . $snippet->slug;
         $snippet->save();
-        return redirect('courses');
+        return redirect('snippets');
     }
 
     /**
@@ -63,7 +79,8 @@ class SnippetsController extends Controller
      */
     public function show($id)
     {
-        //
+        $snippet = Snippet::where('id', $id)->orWhere('slug', $id)->firstOrFail();
+        return view('snippets.show', compact('snippet'));
     }
 
     /**
