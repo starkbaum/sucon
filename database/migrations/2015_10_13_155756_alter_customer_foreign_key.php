@@ -24,6 +24,8 @@ class AlterCustomerForeignKey extends Migration
      */
     public function down()
     {
-        Schema::drop('alter_snippet_foreign_key');
+        Schema::table('snippets', function (Blueprint $table) {
+            $table->dropForeign('snippets_customer_id_foreign');
+        });
     }
 }

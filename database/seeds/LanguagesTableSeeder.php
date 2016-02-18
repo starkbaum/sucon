@@ -1,7 +1,8 @@
 <?php
 
+use App\Language;
 use Illuminate\Database\Seeder;
-use Faker\Factory as Faker;
+
 
 class LanguagesTableSeeder extends Seeder
 {
@@ -12,13 +13,21 @@ class LanguagesTableSeeder extends Seeder
      */
     public function run()
     {
-        $faker = Faker::create();
+        Language::create([
+            'name' => 'Java'
+        ]);
+        Language::create([
+            'name' => 'PHP'
+        ]);
+        Language::create([
+            'name' => 'Ruby'
+        ]);
+        Language::create([
+            'name' => 'ABAP'
+        ]);
+        Language::create([
+            'name' => 'C#'
+        ]);
 
-        for( $i = 1; $i <= 10; $i++) {
-
-            DB::table('languages')->insert([
-                'id' => $i
-            ]);
-        }
     }
 }

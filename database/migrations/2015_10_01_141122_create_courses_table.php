@@ -16,7 +16,6 @@ class CreateCoursesTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('slug');
-            //TODO maybe not nullable
             $table->string('path_to_material')->nullable();
             $table->text('description');
             $table->timestamps();
@@ -30,6 +29,9 @@ class CreateCoursesTable extends Migration
      */
     public function down()
     {
+        DB::statement('SET FOREIGN_KEY_CHECKS = 0');
         Schema::drop('courses');
+        DB::statement('SET FOREIGN_KEY_CHECKS = 1');
+
     }
 }

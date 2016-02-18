@@ -26,8 +26,8 @@ class AlterCommentsForeignKeys extends Migration
     public function down()
     {
         Schema::table('comments', function (Blueprint $table) {
-            $table->dropForeign('users_id_foreign');
-            $table->dropForeign('courses_id_foreign');
+            $table->dropForeign('comments_userid_foreign');
+            $table->dropForeign('comments_courseid_foreign');
         });
     }
 }

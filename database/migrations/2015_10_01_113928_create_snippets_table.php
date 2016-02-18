@@ -17,10 +17,11 @@ class CreateSnippetsTable extends Migration
             $table->string('name');
             //TODO make slug not nullable
             $table->string('slug');
+            $table->text('description')->nullable();
             //TODO maybe not nullable
             $table->string('path_to_material')->nullable();
             $table->unsignedInteger('customer_id')->nullable();
-            $table->text('description');
+            $table->unsignedInteger('language_id')->nullable();
             $table->timestamps();
         });
     }
@@ -32,6 +33,9 @@ class CreateSnippetsTable extends Migration
      */
     public function down()
     {
+
+        DB::statement('SET FOREIGN_KEY_CHECKS = 0');
         Schema::drop('snippets');
+        DB::statement('SET FOREIGN_KEY_CHECKS = 1');
     }
 }

@@ -14,6 +14,7 @@ class CreateLanguageTable extends Migration
     {
         Schema::create('languages', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('name');
             $table->timestamps();
         });
     }
@@ -25,6 +26,8 @@ class CreateLanguageTable extends Migration
      */
     public function down()
     {
+        DB::statement('SET FOREIGN_KEY_CHECKS = 0');
         Schema::drop('languages');
+        DB::statement('SET FOREIGN_KEY_CHECKS = 1');
     }
 }

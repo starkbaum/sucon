@@ -27,7 +27,6 @@ class AlterDataForeignKeys extends Migration
     public function down()
     {
         Schema::table('data', function (Blueprint $table) {
-        $table->dropForeign('data_languageId_foreign');
        });
     }
 }

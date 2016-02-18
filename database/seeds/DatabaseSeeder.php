@@ -19,6 +19,7 @@ class DatabaseSeeder extends Seeder
         $this->call(UsersSeeder::class);
         $this->call(LanguagesTableSeeder::class);
         $this->call(CustomersTableSeeder::class);
+        $this->call(KeywordsTableSeeder::class);
 
         Model::reguard();
     }

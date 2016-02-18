@@ -17,9 +17,6 @@ class CreatePersonsTable extends Migration
             $table->string('name', 100);
             $table->string('phoneNo', 100);
             $table->unsignedInteger('customerId');       // foreign key
-
-
-            //$table->primary('p_id');      // set primary key
         });
     }
 
