@@ -27,18 +27,14 @@ class DataController extends Controller
             $file = Input::file('file');
             $path = Input::get('test');
             $name = $file->getClientOriginalName();
-
             $courseId = NULL;
             $snippetId = NULL;
 
-            //TODO doesnt work at the moment
-            //if (Data::all()->where('path', $path . '/' . $name)) {
-                //TODO error message
-              //  return redirect(URL::previous());
-            //}
+            //TODO implement if data is already uploaded
 
             $file->move($path, $file->getClientOriginalName());
 
+            //check if course or snippet
             if (Input::get('typeClass') == 'course') {
                 $courseId = Input::get('id');
             }
