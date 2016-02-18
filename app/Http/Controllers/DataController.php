@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Data;
+use Auth;
 use File;
 use Illuminate\Http\Request;
 use App\Http\Requests;
@@ -26,6 +27,10 @@ class DataController extends Controller
             $file = Input::file('file');
             $path = Input::get('test');
             $name = $file->getClientOriginalName();
+
+            $courseId = NULL;
+            $snippetId = NULL;
+
             //TODO doesnt work at the moment
             //if (Data::all()->where('path', $path . '/' . $name)) {
                 //TODO error message
@@ -34,13 +39,20 @@ class DataController extends Controller
 
             $file->move($path, $file->getClientOriginalName());
 
+            if (Input::get('typeClass') == 'course') {
+                $courseId = Input::get('id');
+            }
+            if (Input::get('typeClass') == 'snippet') {
+                $snippetId = Input::get('id');
+            }
 
             $data = new Data([
                 'name'          => Input::get('filename'),
                 'path'          => $path . '/' . $name,
-                'author'        => \Auth::user()->name,
+                'author'        => Auth::user()->name,
                 'size'          => $file->getSize(),
-                'courseId'      => Input::get('courseId'),
+                'courseId'      => $courseId,
+                'snippetId'     => $snippetId,
                 //TODO implement dynamically
                 'languageId'    => 1
             ]);

@@ -1,5 +1,6 @@
 <!-- TODO enctype security measure to prevent from uploading php and js files -->
-<form action="{{URL::to('courses/upload')}}" method="post" enctype="multipart/form-data">
+<form action="{{URL::to('data/upload')}}" method="post" enctype="multipart/form-data">
+
 
 <!-- Modal Structure -->
 <div id="modal1" class="modal bottom-sheet">
@@ -29,8 +30,9 @@
                     </div>
                 </div>
 
-                <input type="hidden" name="test" value="{{ $course->path_to_material }}"/>
-                <input type="hidden" name="courseId" value="{{ $course->id }}"/>
+                <input type="hidden" name="test" value="{{ $type->path_to_material }}"/>
+                <input type="hidden" name="id" value="{{ $type->id }}"/>
+                <input type="hidden" name="typeClass" value="{{ $typeClass }}"/>
                 <input type="hidden" value = "{{csrf_token()}}" name="_token"/>
     </div>
     <div class="modal-footer">

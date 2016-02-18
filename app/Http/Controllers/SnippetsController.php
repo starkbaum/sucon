@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Customer;
+use App\Data;
 use App\Keyword;
 use App\Language;
 use App\Snippet;
@@ -80,7 +81,9 @@ class SnippetsController extends Controller
     public function show($id)
     {
         $snippet = Snippet::where('id', $id)->orWhere('slug', $id)->firstOrFail();
-        return view('snippets.show', compact('snippet'));
+        //fetch all data associated with the snippet
+        $data = Data::where('snippetId', $snippet->id)->get();
+        return view('snippets.show', compact('snippet', 'data'));
     }
 
     /**

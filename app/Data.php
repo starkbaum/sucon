@@ -19,7 +19,7 @@ class Data extends Model
      * Fillable Data Model
      */
     protected $fillable = [
-        'name', 'author', 'path', 'size', 'courseId', 'languageId'
+        'name', 'author', 'path', 'size', 'courseId', 'snippetId', 'languageId'
     ];
 
     public function keywords()

@@ -10,7 +10,7 @@ Route::get('auth/register', 'Auth\AuthController@getRegister');
 Route::post('auth/register', 'Auth\AuthController@postRegister');
 
 #File Management
-Route::post('courses/upload', 'DataController@store');
+Route::post('data/upload', 'DataController@store');
 Route::get('download/{id}', 'DataController@download');
 Route::get('data/delete/{id}', 'DataController@destroy');
 
