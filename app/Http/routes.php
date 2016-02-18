@@ -27,9 +27,9 @@ Route::resource('customers', 'CustomersController');
 
 # Snippets
 Route::resource('snippets', 'SnippetsController');
+Route::get('/snippets/delete/{id}', 'SnippetsController@destroy');
 
 # Keywords
-
 Route::resource('keywords', 'KeywordsController');
 
 

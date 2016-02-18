@@ -29,8 +29,7 @@
                     <p>{{ $snippet->languages()->first()->name }}</p>
                 </div>
                 <div class="card-action">
-                    <a href="#"><i class="small material-icons sucon-text-orange">thumb_up</i></a>
-                    <a href="#"><i class="small material-icons sucon-text-orange">thumb_down</i></a>
+                    <a href="{{ url('/snippets/delete') . '/' . $snippet->id }}"><i class="small material-icons sucon-text-orange">delete</i></a>
                 </div>
             </div>
         </div>

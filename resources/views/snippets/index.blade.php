@@ -8,7 +8,8 @@
 
 @section('content')
 
-    <div class="row">
+<div class="row">
+    <div class="col s12 m9">
 
         <ul class="collection">
             @foreach($snippets as $snippet)
@@ -26,6 +27,7 @@
             </li>
             @endforeach
         </ul>
-    </div>
 
+    </div>
+</div>
 @endsection

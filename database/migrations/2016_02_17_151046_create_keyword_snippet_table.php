@@ -14,9 +14,9 @@ class CreateKeywordSnippetTable extends Migration
     {
         Schema::create('keyword_snippet', function (Blueprint $table) {
             $table->unsignedBigInteger('keyword_id')->index();
-            $table->foreign('keyword_id')->references('id')->on('keywords');
+            $table->foreign('keyword_id')->references('id')->on('keywords')->onDelete('cascade');
             $table->unsignedInteger('snippet_id')->index();
-            $table->foreign('snippet_id')->references('id')->on('snippets');
+            $table->foreign('snippet_id')->references('id')->on('snippets')->onDelete('cascade');
             $table->timestamps();
         });
     }
