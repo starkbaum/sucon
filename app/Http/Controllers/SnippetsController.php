@@ -91,7 +91,7 @@ class SnippetsController extends Controller
      */
     public function edit($id)
     {
-        //
+        //TODO
     }
 
     /**
@@ -103,7 +103,7 @@ class SnippetsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        //TODO
     }
 
     /**
