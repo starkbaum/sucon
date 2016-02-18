@@ -9,8 +9,6 @@ main {
     margin-left: 270px;
 }
 
-
-
 /* video */
 
 #my-video {
@@ -22,4 +20,12 @@ main {
 .pagination li.active {
     background: #ACCB17;
     color: white;
+}
+
+/* Chips */
+
+.chip {
+    background: #ECB104;
+    height: 28px;
+    line-height: 28px;
 }

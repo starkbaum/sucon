@@ -28,6 +28,8 @@
             @yield('content')
     </main>
 
+    @yield('footer')
+
     <!-- including javascript -->
     @include('partials.assets.javascript')
 
