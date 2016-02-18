@@ -28,6 +28,10 @@ Route::resource('customers', 'CustomersController');
 # Snippets
 Route::resource('snippets', 'SnippetsController');
 
+# Keywords
+
+Route::resource('keywords', 'KeywordsController');
+
 
 # temporary helper routes
 //TODO set redirectPath in AuthController

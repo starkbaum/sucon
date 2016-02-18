@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Comment;
 use App\Course;
 use App\Data;
+use App\Language;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
@@ -19,9 +20,10 @@ class CoursesController extends Controller
      */
     public function index()
     {
-
         $courses = Course::all();
-        return view('courses.index', compact('courses'));
+        $languages = Language::lists('name', 'id');
+
+        return view('courses.index', compact('courses', 'languages'));
     }
 
     /**

@@ -7,6 +7,7 @@
     {!! Form::label('description', 'Description:') !!}
     {!! Form::textarea('description', null, ['class' => 'materialize-textarea', 'length' => '250']) !!}
 </div>
+
 <div class="input-field">
     {!! Form::submit($submitButtonText, ['class' => 'btn btn-primary form-control']) !!}
 </div>

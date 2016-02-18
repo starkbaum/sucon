@@ -21,4 +21,9 @@ class Data extends Model
     protected $fillable = [
         'name', 'author', 'path', 'size', 'courseId', 'languageId'
     ];
+
+    public function keywords()
+    {
+        return $this->belongsToMany('App\Keyword')->withTimestamps();
+    }
 }

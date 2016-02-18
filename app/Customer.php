@@ -38,4 +38,14 @@ class Customer extends Model implements SluggableInterface
         'build_from' => 'name',
         'save_to'    => 'slug',
     ];
+
+    /**
+     * Get the Snippets associated with the given Customer
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function snippets()
+    {
+        return $this->belongsToMany('App\Snippet')->withTimestamps();
+    }
 }

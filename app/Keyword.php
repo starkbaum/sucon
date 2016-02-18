@@ -19,4 +19,8 @@ class Keyword extends Model
     public function courses() {
         return $this->belongsToMany('App\Course');
     }
+
+    public function snippets() {
+        return $this->belongsToMany('App\Data');
+    }
 }

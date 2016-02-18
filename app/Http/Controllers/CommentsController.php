@@ -12,25 +12,6 @@ use URL;
 
 class CommentsController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
 
     /**
      * Store a newly created resource in storage.
@@ -48,17 +29,6 @@ class CommentsController extends Controller
         ]);
         $comment->save();
         return redirect(URL::previous());
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-
     }
 
     /**
@@ -80,7 +50,7 @@ class CommentsController extends Controller
      */
     public function edit($id)
     {
-        //
+        //TODO
     }
 
     /**
@@ -92,7 +62,7 @@ class CommentsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        //TODO
     }
 
     /**
@@ -104,7 +74,6 @@ class CommentsController extends Controller
     public function destroy($id)
     {
         $comment = Comment::findOrFail($id);
-        echo $comment->content;
         //if($comment->userId == Auth::user()->id) {
             $comment->delete();
         //}
