@@ -32,6 +32,12 @@ Route::get('/snippets/delete/{id}', 'SnippetsController@destroy');
 # Keywords
 Route::resource('keywords', 'KeywordsController');
 
+# Search
+Route::get('search', 'SearchController@index');
+Route::get('search/show', 'SearchController@search');
+Route::get('search/courses', 'SearchController@searchCourses');
+Route::get('search/snippets', 'SearchController@searchSnippets');
+
 
 # temporary helper routes
 //TODO set redirectPath in AuthController

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Comment;
 use App\Course;
 use App\Data;
+use App\Keyword;
 use App\Language;
 use Illuminate\Http\Request;
 use App\Http\Requests;
@@ -72,8 +73,10 @@ class CoursesController extends Controller
         $data = Data::where('courseId', $course->id)->get();
         //fetches all comments where course id is given id
         $comments = Comment::where('courseId', $course->id)->get();
+        //fetches all keywords
+        $keywords = Keyword::lists('name', 'id')->all();
         //returns view and gives it the fetched course, comments and data
-        return view('courses.show', compact('course', 'comments', 'data'));
+        return view('courses.show', compact('course', 'comments', 'data', 'keywords'));
     }
 
     /**

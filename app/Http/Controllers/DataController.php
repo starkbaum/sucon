@@ -21,7 +21,7 @@ class DataController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store()
+    public function store(Request $request)
     {
         if(Input::hasFile('file')) {
             $file = Input::file('file');
@@ -52,8 +52,9 @@ class DataController extends Controller
                 //TODO implement dynamically
                 'languageId'    => 1
             ]);
-
             $data->save();
+            //must be after save method because of sql error (Integrity constraint violation)
+            $data->keywords()->attach($request->input('keywords'));
 
             return redirect(URL::previous());
         }

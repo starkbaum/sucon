@@ -6,4 +6,6 @@
 <!-- Application specific Styles -->
 <link rel="stylesheet" href="{{ asset('/css/app.css') }}">
 
+<link rel="stylesheet" href="{{ asset('/css/selectize.css') }}">
+
 <link href="{{ asset('/css/select2.css') }}" rel="stylesheet" />

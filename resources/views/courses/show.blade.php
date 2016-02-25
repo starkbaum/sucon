@@ -114,7 +114,6 @@
 
     </div>
 
-    @include('partials.modals.addFileModal', ['type' => $course, 'typeClass' => 'course'])
-
+    @include('partials.modals.addFileModal', ['type' => $course, 'typeClass' => 'course', 'keywords' => $keywords])
 
 @endsection

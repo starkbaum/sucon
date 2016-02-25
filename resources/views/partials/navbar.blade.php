@@ -15,6 +15,7 @@
             <li><a href="{{ url('/courses') }}">Kurse</a></li>
             <li><a href="{{ url('/snippets') }}">Snippets</a></li>
             <li><a href="{{ url('/customers') }}">Kunden</a></li>
+            <li><a href="{{ url('/search') }}">Suche</a></li>
         </ul>
         <a href="#" data-activates="slide-out" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
     </nav>

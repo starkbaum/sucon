@@ -10,8 +10,8 @@
 
 <div class="row">
     @foreach($courses as $course)
-    <div class="col s12 m4 l4">
-        <div class="card medium hoverable">
+    <div class="col s12 m3 l3">
+        <div class="card small hoverable">
             <div class="card-image">
                 <img src="{{ asset('/img/cards/java_code.png') }}">
                 <span class="card-title">{{ $course->name }}</span>

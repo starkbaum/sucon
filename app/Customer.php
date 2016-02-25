@@ -5,13 +5,14 @@ namespace App;
 use Cviebrock\EloquentSluggable\SluggableInterface;
 use Cviebrock\EloquentSluggable\SluggableTrait;
 use Illuminate\Database\Eloquent\Model;
+use Nicolaslopezj\Searchable\SearchableTrait;
 
 class Customer extends Model implements SluggableInterface
 {
     /**
      * makes Model use the needed methods of SluggableInterface
      */
-    use SluggableTrait;
+    use SluggableTrait, SearchableTrait;
 
     protected $table = 'customers';
 
@@ -37,6 +38,17 @@ class Customer extends Model implements SluggableInterface
     protected $sluggable = [
         'build_from' => 'name',
         'save_to'    => 'slug',
+    ];
+
+    /**
+     * Searchable rules.
+     *
+     * @var array
+     */
+    protected $searchable = [
+        'columns' => [
+            'customers.name' => 10,
+        ]
     ];
 
     /**

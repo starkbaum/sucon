@@ -1,4 +1,10 @@
 <nav class="sucon-background-green-darker">
+
+    <ul class="left">
+        <li>@include('partials.searchForm', ['page' => $page])</li>
+    </ul>
+
+
     <ul class="right hide-on-med-and-down">
         @foreach($languages as $language)
             <li><a href="#">{{ $language }}</a></li>
