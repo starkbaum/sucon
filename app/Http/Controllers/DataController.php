@@ -9,11 +9,17 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Input;
+use RobbieP\CloudConvertLaravel\Facades\CloudConvert;
 use URL;
 
 
 class DataController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
 
     /**
      * Store a newly created resource in storage.
@@ -32,7 +38,10 @@ class DataController extends Controller
 
             //TODO implement if data is already uploaded
 
-            $file->move($path, $file->getClientOriginalName());
+            //$file->move($path, $file->getClientOriginalName());
+
+            //TODO NOT WORKING AT THE MOMENT
+            $convertedFile = CloudConvert::file($file)->to($path . '/' . $file->getClientOriginalName() . '.pdf');
 
             //check if course or snippet
             if (Input::get('typeClass') == 'course') {
@@ -68,7 +77,7 @@ class DataController extends Controller
      */
     public function show($id)
     {
-        //
+        //TODO implement link to google docs viewer
     }
 
     /**
