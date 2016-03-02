@@ -16,7 +16,7 @@
     <style>
 
     </style>
-
+    @include('partials.googleAnalytics')
 </head>
 <body class="">
 
@@ -31,6 +31,7 @@
     @yield('footer')
 
     <!-- including javascript -->
+
     @include('partials.assets.javascript')
 
     <script src="http://vjs.zencdn.net/5.0.2/video.js"></script>

@@ -97,13 +97,15 @@
                     <p>{{ $singleData->size }}</p>
                     <p class="secondary-content">
                         <!-- TODO open file in browser -->
-                        <a href="#"><i class="material-icons sucon-text-orange">open_in_browser</i></a>
+                        <a href="/pdfViewer/web/viewer.html?file=/data/showPdf/{{ $singleData->id }}"><i class="material-icons sucon-text-orange">open_in_browser</i></a>
                         <a href="{{ url('download') . '/' . $singleData->id }}"><i class="material-icons sucon-text-orange">system_update_alt</i></a>
                         <!-- TODO check if admin -->
                         @if(Auth::user()->name === $singleData->author)
                         <a href="{{ url('data/delete') . '/' . $singleData->id }}"><i class="material-icons sucon-text-orange">delete</i></a>
                         @endif
                     </p>
+                    <!-- TODO only testing -->
+                    <p>{{ $singleData->path }}</p>
                 </li>
             @endforeach
             </ul>

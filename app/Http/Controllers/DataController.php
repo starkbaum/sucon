@@ -38,7 +38,7 @@ class DataController extends Controller
 
             //TODO implement if data is already uploaded
 
-            //$file->move($path, $file->getClientOriginalName());
+            $file->move($path, $file->getClientOriginalName());
 
             //TODO NOT WORKING AT THE MOMENT
             $convertedFile = CloudConvert::file($file)->to($path . '/' . $file->getClientOriginalName() . '.pdf');
@@ -127,5 +127,26 @@ class DataController extends Controller
     {
         $file = Data::findOrFail($id);
         return response()->download($file->path);
+    }
+
+    //TODO wenn keine fehlermeldung
+    //TODO check is_accepted flag
+    public function showPdf($id) {
+
+        $foundFile = Data::findOrFail($id);
+
+
+        $filename = '.' . $foundFile->path . '.pdf'; /* Note: Always use .pdf at the end. */
+
+
+
+        header('Content-type: application/pdf');
+        header('Content-Disposition: inline; filename="' . $filename . '"');
+        header('Content-Transfer-Encoding: binary');
+
+        header('Accept-Ranges: bytes');
+
+        return readfile($filename);
+
     }
 }

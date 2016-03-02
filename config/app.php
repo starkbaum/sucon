@@ -148,8 +148,7 @@ return [
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
         Cviebrock\EloquentSluggable\SluggableServiceProvider::class,
-
-
+        PragmaRX\Tracker\Vendor\Laravel\ServiceProvider::class,
     ),
 
     /*
@@ -201,6 +200,8 @@ return [
 
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
+        'Tracker' => 'PragmaRX\Tracker\Vendor\Laravel\Facade',
+
 
     ],
 

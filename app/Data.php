@@ -26,4 +26,5 @@ class Data extends Model
     {
         return $this->belongsToMany('App\Keyword')->withTimestamps();
     }
+
 }

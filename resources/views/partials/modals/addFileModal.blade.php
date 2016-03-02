@@ -22,7 +22,7 @@
                     <div class="file-field input-field col s6">
                         <div class="btn">
                             <span>Datei</span>
-                            <input type="file" name="file" id="file">
+                            <input type="file" name="file" id="file" accept=".pdf">
                         </div>
                         <div class="file-path-wrapper">
                             <input class="file-path validate" type="text">
