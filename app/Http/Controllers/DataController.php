@@ -40,8 +40,7 @@ class DataController extends Controller
 
             $file->move($path, $file->getClientOriginalName());
 
-            //TODO NOT WORKING AT THE MOMENT
-            $convertedFile = CloudConvert::file($file)->to($path . '/' . $file->getClientOriginalName() . '.pdf');
+
 
             //check if course or snippet
             if (Input::get('typeClass') == 'course') {
@@ -136,9 +135,8 @@ class DataController extends Controller
         $foundFile = Data::findOrFail($id);
 
 
-        $filename = '.' . $foundFile->path . '.pdf'; /* Note: Always use .pdf at the end. */
 
-
+        $filename = $foundFile->path; /* Note: Always use .pdf at the end. */
 
         header('Content-type: application/pdf');
         header('Content-Disposition: inline; filename="' . $filename . '"');
