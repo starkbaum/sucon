@@ -46,9 +46,8 @@
                         <i class="circle">
                             <img src="{{ asset('/img/extensions') . '/' . pathinfo($singleData->path, PATHINFO_EXTENSION) . '.png' }}" alt="" style="height: 50px; width: 50px;">
                         </i>
-                        <span class="title">{{ $singleData->name }} Extension: {{ pathinfo($singleData->path, PATHINFO_EXTENSION) }}</span>
+                        <span class="title">{{ $singleData->name }}</span>
                         <p>{{ $singleData->author }}</p>
-                        <p>{{ $singleData->size }}</p>
                         <p class="secondary-content">
                             <!-- TODO open file in browser -->
                             <a href="#"><i class="material-icons sucon-text-orange">open_in_browser</i></a>
