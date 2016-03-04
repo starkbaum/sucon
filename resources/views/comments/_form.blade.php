@@ -5,7 +5,7 @@
     <div class="row">
         <div class="input-field col s6">
             <input id="content" name="content" type="text" class="validate">
-            <label for="content">Dateiname</label>
+            <label for="content">Füge hier dein Kommentar ein</label>
         </div>
     </div>
 
