@@ -6,6 +6,8 @@
 <!-- Initialize Materialize Components -->
 <script src="{{ asset('js/init.js') }}"></script>
 
+<script src="{{ asset('js/Chart.js') }}"></script>
+
 <script src="{{ asset('/js/selectize.js') }}"></script>
 
 <script src="{{ asset('/js/select2.full.min.js') }}"></script>

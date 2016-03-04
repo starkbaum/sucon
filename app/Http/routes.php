@@ -13,7 +13,6 @@ Route::post('auth/register', 'Auth\AuthController@postRegister');
 Route::post('data/upload', 'DataController@store');
 Route::get('download/{id}', 'DataController@download');
 Route::get('data/delete/{id}', 'DataController@destroy');
-
 Route::get('data/showPdf/{id}', 'DataController@showPdf');
 
 # Courses
@@ -35,20 +34,15 @@ Route::get('/snippets/delete/{id}', 'SnippetsController@destroy');
 Route::resource('keywords', 'KeywordsController');
 
 # Search
-Route::get('search', 'SearchController@index');
 Route::get('search/show', 'SearchController@search');
 Route::get('search/courses', 'SearchController@searchCourses');
 Route::get('search/snippets', 'SearchController@searchSnippets');
 
 # Statistics
-
 Route::get('statistics', 'StatisticsController@index');
 
-
-
-
-
-
+# Admin
+Route::get('admin/statistics', 'StatisticsController@index');
 
 # temporary helper routes
 //TODO set redirectPath in AuthController

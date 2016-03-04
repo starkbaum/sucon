@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Comment;
 use App\Course;
 use App\Data;
+use App\Http\Requests\CoursesRequest;
 use App\Keyword;
 use App\Language;
 use Illuminate\Http\Request;
@@ -49,7 +50,7 @@ class CoursesController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CoursesRequest $request)
     {
         $course = Course::create($request->all());
 

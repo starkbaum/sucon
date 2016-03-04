@@ -149,6 +149,7 @@ return [
         Collective\Html\HtmlServiceProvider::class,
         Cviebrock\EloquentSluggable\SluggableServiceProvider::class,
         PragmaRX\Tracker\Vendor\Laravel\ServiceProvider::class,
+        Fx3costa\Laravelchartjs\Providers\ChartjsServiceProvider::class
     ),
 
     /*

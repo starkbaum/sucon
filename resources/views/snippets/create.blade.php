@@ -14,21 +14,21 @@
 
 @section('content')
 
-    <h5>Ein neues Snippet anlegen</h5>
-    <div class="divider"></div>
+    <div class="row">
+        <div class="col s12 m9">
 
-    @if($errors->any())
-        <ul class="alert alert-danger">
-            @foreach($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    @endif
+            <h5>Ein neues Snippet anlegen</h5>
+            <div class="divider"></div>
 
-    {!! Form::open(['url' => 'snippets']) !!}
+            @include('errors.errorListing')
 
-    @include('snippets._form', ['submitButtonText' => 'Snippet anlegen'])
+            {!! Form::open(['url' => 'snippets']) !!}
 
-    {!! Form::close() !!}
+            @include('snippets._form', ['submitButtonText' => 'Snippet anlegen'])
+
+            {!! Form::close() !!}
+
+        </div>
+    </div>
 
 @endsection

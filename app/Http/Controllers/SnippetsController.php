@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Customer;
 use App\Data;
+use App\Http\Requests\SnippetsRequest;
 use App\Keyword;
 use App\Language;
 use App\Snippet;
@@ -54,7 +55,7 @@ class SnippetsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(SnippetsRequest $request)
     {
         //create snippet with all provided data
         $snippet = Snippet::create($request->all());
