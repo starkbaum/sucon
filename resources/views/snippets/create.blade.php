@@ -15,7 +15,7 @@
 @section('content')
 
     <div class="row">
-        <div class="col s12 m9">
+        <div class="col s12 m9 m9">
 
             <h5>Ein neues Snippet anlegen</h5>
             <div class="divider"></div>
