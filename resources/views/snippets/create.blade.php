@@ -17,9 +17,17 @@
     <h5>Ein neues Snippet anlegen</h5>
     <div class="divider"></div>
 
+    @if($errors->any())
+        <ul class="alert alert-danger">
+            @foreach($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    @endif
+
     {!! Form::open(['url' => 'snippets']) !!}
 
-    @include('snippets._form', ['submitButtonText' => 'Add Snippet'])
+    @include('snippets._form', ['submitButtonText' => 'Snippet anlegen'])
 
     {!! Form::close() !!}
 
