@@ -9,7 +9,7 @@
 </div>
 
 <div class="input-field">
-    {!! Form::label('zipCode', 'Zip Code:') !!}
+    {!! Form::label('zipCode', 'Postleitzahl:') !!}
     {!! Form::text('zipCode', null, ['class' => 'form-control']) !!}
 </div>
 
