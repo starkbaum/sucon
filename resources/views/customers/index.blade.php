@@ -4,7 +4,6 @@
 
     <nav class="sucon-background-green-darker">
         <ul class="right hide-on-med-and-down">
-            <li><a href="#">Neue</a></li>
             <li><a href="{{ url('/customers/create') }}"><i class="tiny material-icons">library_add</i></a></li>
         </ul>
     </nav>
