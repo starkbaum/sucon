@@ -25,6 +25,7 @@ Route::get('comments/delete/{id}', 'CommentsController@destroy');
 
 # Customers
 Route::resource('customers', 'CustomersController');
+Route::get('/customers/delete/{id}', 'CustomersController@destroy');
 
 # Snippets
 Route::resource('snippets', 'SnippetsController');

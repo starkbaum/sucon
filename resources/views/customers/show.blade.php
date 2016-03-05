@@ -34,7 +34,7 @@
                 </div>
                 <div class="card-action">
                     <a href="#">Ändern</a>
-                    <a href="#">Löschen</a>
+                    <a href="{{ url('/customers/delete', $customer->id) }}">Löschen</a>
                 </div>
             </div>
         </div>

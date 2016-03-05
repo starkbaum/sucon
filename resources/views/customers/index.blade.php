@@ -29,7 +29,7 @@
             <tbody>
             @foreach($customers as $customer)
                 <tr>
-                    <td><a href="{{ url('customers') . '/' . $customer->name }}">{{ $customer->name }}</a></td>
+                    <td><a href="{{ url('customers') . '/' . $customer->slug }}">{{ $customer->name }}</a></td>
                     <td>{{ $customer->city }}</td>
                     <td>{{ $customer->zipCode }}</td>
                     <td>{{ $customer->street }}</td>

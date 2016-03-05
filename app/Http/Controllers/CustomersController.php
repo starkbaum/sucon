@@ -37,9 +37,7 @@ class CustomersController extends Controller
      */
     public function create()
     {
-        $customersList = Customer::all()->lists('name', 'id');
-
-        return view('customers.create', compact('customersList'));
+        return view('customers.create');
     }
 
     /**
@@ -101,6 +99,8 @@ class CustomersController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Customer::findOrFail($id)->delete();
+
+        return redirect('customers');
     }
 }

@@ -1,5 +1,6 @@
 <?php
 
+use App\Customer;
 use Illuminate\Database\Seeder;
 use \Faker\Factory as Faker;
 
@@ -12,16 +13,23 @@ class CustomersTableSeeder extends Seeder
      */
     public function run()
     {
-        for($i = 0; $i < 100; $i++) {
-            $faker = Faker::create();
-            $customer = new \App\Customer();
-            $customer->name = $faker->company;
-            $customer->city = $faker->city;
-            $customer->zipCode = $faker->postcode;
-            $customer->street = $faker->streetAddress;
-            $customer->email = $faker->companyEmail;
-            $customer->phoneNo = $faker->phoneNumber;
-            $customer->save();
-        }
+        $treeleaf = new Customer();
+        $treeleaf->name = 'Treeleaf Dev';
+        $treeleaf->city = 'Wien';
+        $treeleaf->zipCode = '1220';
+        $treeleaf->street = 'Doningasse 20/2/1';
+        $treeleaf->email = 'contact@treeleaf.dev';
+        $treeleaf->phoneNo = '0660606060';
+        $treeleaf->save();
+
+        $spengergasse = new Customer();
+        $spengergasse->name = 'HTL Spengergasse';
+        $spengergasse->city = 'Wien';
+        $spengergasse->zipCode = '1050';
+        $spengergasse->street = 'Spengergassse 20';
+        $spengergasse->email = 'contact@spengergasse.at';
+        $spengergasse->phoneNo = '0660606060';
+        $spengergasse->save();
+
     }
 }
