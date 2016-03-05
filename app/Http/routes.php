@@ -25,11 +25,12 @@ Route::get('comments/delete/{id}', 'CommentsController@destroy');
 
 # Customers
 Route::resource('customers', 'CustomersController');
-Route::get('/customers/delete/{id}', 'CustomersController@destroy');
+Route::get('customers/update/{id}', 'CustomersController@edit');
+Route::get('customers/delete/{id}', 'CustomersController@destroy');
 
 # Snippets
 Route::resource('snippets', 'SnippetsController');
-Route::get('/snippets/delete/{id}', 'SnippetsController@destroy');
+Route::get('snippets/delete/{id}', 'SnippetsController@destroy');
 
 # Keywords
 Route::resource('keywords', 'KeywordsController');

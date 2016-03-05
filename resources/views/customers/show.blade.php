@@ -33,7 +33,7 @@
                     </table>
                 </div>
                 <div class="card-action">
-                    <a href="#">Ändern</a>
+                    <a href="{{ url('/customers/update', $customer->id) }}">Ändern</a>
                     <a href="{{ url('/customers/delete', $customer->id) }}">Löschen</a>
                 </div>
             </div>

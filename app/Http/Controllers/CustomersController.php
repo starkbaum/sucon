@@ -76,7 +76,9 @@ class CustomersController extends Controller
      */
     public function edit($id)
     {
-        //
+        $customer = Customer::findOrFail($id);
+
+        return view('customers.edit', compact('customer'));
     }
 
     /**
@@ -88,7 +90,10 @@ class CustomersController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $customer = Customer::findOrFail($id);
+        $customer->update($request->all());
+
+        return redirect('customers');
     }
 
     /**
