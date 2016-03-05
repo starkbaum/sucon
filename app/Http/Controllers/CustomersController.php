@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Customer;
+use App\Snippet;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -62,7 +63,11 @@ class CustomersController extends Controller
      */
     public function show($id)
     {
-        //
+        $customer = Customer::where('id', $id)->orWhere('slug', $id)->firstOrFail();
+
+        $snippets = $customer->snippets;
+
+        return view('customers.show', compact('customer', 'snippets'));
     }
 
     /**

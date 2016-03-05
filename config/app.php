@@ -148,8 +148,11 @@ return [
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
         Cviebrock\EloquentSluggable\SluggableServiceProvider::class,
+        Fx3costa\Laravelchartjs\Providers\ChartjsServiceProvider::class,
+
+        //TODO hast to be commented out when migratin db, check if normal
         PragmaRX\Tracker\Vendor\Laravel\ServiceProvider::class,
-        Fx3costa\Laravelchartjs\Providers\ChartjsServiceProvider::class
+
     ),
 
     /*

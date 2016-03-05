@@ -19,7 +19,7 @@
             <tr>
                 <th data-field="id">Name</th>
                 <th data-field="name">Stadt</th>
-                <th data-field="price">Zip Code</th>
+                <th data-field="price">Postleitzahl</th>
                 <th data-field="price">Straße</th>
                 <th data-field="price">Kontaktemail</th>
                 <th data-field="price">Telefon</th>
@@ -29,7 +29,7 @@
             <tbody>
             @foreach($customers as $customer)
                 <tr>
-                    <td>{{ $customer->name }}</td>
+                    <td><a href="{{ url('customers') . '/' . $customer->name }}">{{ $customer->name }}</a></td>
                     <td>{{ $customer->city }}</td>
                     <td>{{ $customer->zipCode }}</td>
                     <td>{{ $customer->street }}</td>
