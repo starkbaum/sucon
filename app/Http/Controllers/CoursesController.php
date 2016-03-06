@@ -77,13 +77,15 @@ class CoursesController extends Controller
         //returns course with given id or slug
         $course = Course::where('id', $id)->orWhere('slug', $id)->firstOrFail();
         //fetches all data where course id is given id
-        $data = Data::where('courseId', $course->id)->get();
+        $data = Data::where('courseId', $course->id)->accepted()->get();
+        //fetches all Videos
+        $videos = Data::where('extension', 'AVI')->orWhere('extension', 'avi')->get();
         //fetches all comments where course id is given id
         $comments = Comment::where('courseId', $course->id)->get();
         //fetches all keywords
         $keywords = Keyword::lists('name', 'id')->all();
         //returns view and gives it the fetched course, comments and data
-        return view('courses.show', compact('course', 'comments', 'data', 'keywords'));
+        return view('courses.show', compact('course', 'comments', 'data', 'videos', 'keywords'));
     }
 
     /**

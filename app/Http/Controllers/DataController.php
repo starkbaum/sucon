@@ -30,6 +30,7 @@ class DataController extends Controller
     public function store(Request $request)
     {
         if(Input::hasFile('file')) {
+
             $file = Input::file('file');
             $path = Input::get('test');
             $name = $file->getClientOriginalName();
@@ -55,6 +56,7 @@ class DataController extends Controller
                 'path'          => $path . '/' . $name,
                 'author'        => Auth::user()->name,
                 'size'          => $file->getSize(),
+                'extension'     => $file->getClientOriginalExtension(),
                 'courseId'      => $courseId,
                 'snippetId'     => $snippetId,
                 //TODO implement dynamically

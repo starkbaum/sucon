@@ -18,6 +18,7 @@ class CreateDataTable extends Migration
             $table->string('path', 500);                        //file-path can be very long
             $table->string('author', 100)->nullable();
             $table->decimal('size',10,2)->default(0);
+            $table->string('extension');
             $table->boolean('is_accepted')->defaul(false);
             $table->unsignedInteger('courseId')->nullable();    // foreign key
             $table->unsignedInteger('snippetId')->nullable();   // foreign key

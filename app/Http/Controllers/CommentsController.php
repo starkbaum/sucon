@@ -55,10 +55,11 @@ class CommentsController extends Controller
      */
     public function destroy($id)
     {
-        $comment = Comment::findOrFail($id);
-        //if($comment->userId == Auth::user()->id) {
+            $comment = Comment::findOrFail($id);
+            if($comment->userId == Auth::user()->id || Auth::user()->isUserAdmin()) {
             $comment->delete();
-        //}
-        return redirect(URL::previous());
+            }
+            return redirect(URL::previous());
+
     }
 }

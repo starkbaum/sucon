@@ -15,6 +15,9 @@
             <li><a href="{{ url('/courses') }}">Kurse</a></li>
             <li><a href="{{ url('/snippets') }}">Snippets</a></li>
             <li><a href="{{ url('/customers') }}">Kunden</a></li>
+            @if(Auth::user()->is_admin == true)
+                <li><a href="{{ url('/admin') }}">Administration</a></li>
+            @endif
         </ul>
         <a href="#" data-activates="slide-out" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
     </nav>

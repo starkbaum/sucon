@@ -127,7 +127,7 @@ class SnippetsController extends Controller
     public function destroy($id)
     {
         //TODO check if user is admin
-        if (true) {
+        if (\Auth::user()->isUserAdmin()) {
             $snippet = Snippet::where('id', $id)->orWhere('slug', $id)->firstOrFail();
             File::deleteDirectory($snippet->path_to_material);
             $snippet->delete();
