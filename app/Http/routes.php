@@ -28,6 +28,11 @@ Route::resource('customers', 'CustomersController');
 Route::get('customers/update/{id}', 'CustomersController@edit');
 Route::get('customers/delete/{id}', 'CustomersController@destroy');
 
+# Persons
+Route::resource('persons', 'PersonsController');
+Route::get('persons/update/{id}', 'PersonsController@edit');
+Route::get('persons/destroy/{id}', 'PersonsController@destroy');
+
 # Snippets
 Route::resource('snippets', 'SnippetsController');
 Route::get('snippets/delete/{id}', 'SnippetsController@destroy');

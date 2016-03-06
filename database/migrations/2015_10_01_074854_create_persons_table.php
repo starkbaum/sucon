@@ -16,7 +16,8 @@ class CreatePersonsTable extends Migration
             $table->bigIncrements('id');      // primary key
             $table->string('name', 100);
             $table->string('phoneNo', 100);
-            $table->unsignedInteger('customerId');       // foreign key
+            $table->unsignedInteger('customer_id');       // foreign key
+            $table->timestamps();
         });
     }
 

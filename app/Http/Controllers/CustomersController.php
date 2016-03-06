@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Customer;
+use App\Person;
 use App\Snippet;
 use Illuminate\Http\Request;
 
@@ -65,7 +66,10 @@ class CustomersController extends Controller
 
         $snippets = $customer->snippets;
 
-        return view('customers.show', compact('customer', 'snippets'));
+
+        $persons = $customer->persons;
+
+        return view('customers.show', compact('customer', 'snippets', 'persons'));
     }
 
     /**

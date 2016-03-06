@@ -3,7 +3,7 @@
 @section('content')
 
     <div class="row">
-        <div class="col s12 m4">
+        <div class="col s12 m4 l4">
             <div class="card white">
                 <div class="card-content black-text">
                     <span class="card-title">{{ $customer->name }}</span>
@@ -38,12 +38,26 @@
                 </div>
             </div>
         </div>
+
+        <div class="col s12 m4 l4">
+            @if (true)
+                @foreach($persons as $person)
+                    {{ $person->name }}
+                @endforeach
+            @else
+
+            @endif
+        </div>
     </div>
 
     <div class="row">
         @foreach($snippets as $snippet)
             <h5>{{ $snippet->name }}</h5>
         @endforeach
+    </div>
+
+    <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
+        <a href="{{ url('persons/create') }}" class="btn-floating sucon-background-orange modal-trigger"><i class="tiny material-icons">library_add</i></a>
     </div>
 
 

@@ -60,4 +60,8 @@ class Customer extends Model implements SluggableInterface
     {
         return $this->belongsToMany('App\Snippet')->withTimestamps();
     }
+
+    public function persons() {
+        return $this->hasMany('\App\Person');
+    }
 }

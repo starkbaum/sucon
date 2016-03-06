@@ -151,7 +151,7 @@ return [
         Fx3costa\Laravelchartjs\Providers\ChartjsServiceProvider::class,
 
         //TODO hast to be commented out when migratin db, check if normal
-        PragmaRX\Tracker\Vendor\Laravel\ServiceProvider::class,
+        //PragmaRX\Tracker\Vendor\Laravel\ServiceProvider::class,
 
     ),
 

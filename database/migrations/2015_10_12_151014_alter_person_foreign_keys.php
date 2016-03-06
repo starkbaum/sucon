@@ -13,7 +13,7 @@ class AlterPersonForeignKeys extends Migration
     public function up()
     {
         Schema::table('persons', function (Blueprint $table) {
-            $table->foreign('customerId')->references('id')->on('customers');
+            $table->foreign('customer_id')->references('id')->on('customers');
         });
     }
 
@@ -25,7 +25,7 @@ class AlterPersonForeignKeys extends Migration
     public function down()
     {
         Schema::table('persons', function (Blueprint $table) {
-            $table->dropForeign('persons_customerId_foreign');
+            $table->dropForeign('persons_customer_id_foreign');
         });
     }
 }

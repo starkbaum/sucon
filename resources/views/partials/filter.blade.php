@@ -11,4 +11,7 @@
         @endforeach
         <li><a href="{{ url('/' . $page . '/create') }}"><i class="tiny material-icons">library_add</i></a></li>
     </ul>
+    <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
+        <a href="{{ url('/' . $page . '/create') }}" class="btn-floating sucon-background-orange"><i class="tiny material-icons">library_add</i></a>
+    </div>
 </nav>
