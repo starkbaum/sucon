@@ -51,6 +51,9 @@ Route::get('statistics', 'StatisticsController@index');
 
 # Admin
 Route::get('admin', 'AdminController@index');
+Route::get('admin/users', 'AdminController@userManagement');
+Route::get('admin/files', 'AdminController@fileAcceptance');
+Route::get('admin/changeUserAdminRole/{id}', 'AdminController@changeUserAdminRole');
 Route::get('admin/statistics', 'StatisticsController@index');
 
 # temporary helper routes

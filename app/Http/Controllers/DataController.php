@@ -160,6 +160,6 @@ class DataController extends Controller
 
         $dataForAcceptance = Data::notAccepted()->get();
 
-        return view('admin.index', compact('dataForAcceptance'));
+        return \Redirect::to('admin/files')->withInput([$dataForAcceptance]);
     }
 }
