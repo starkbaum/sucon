@@ -36,17 +36,11 @@ class AdminController extends Controller
 
         $user = User::findOrFail($id);
 
-        if ( $user->is_admin == true ) {
-            $user->is_admin = false;
-        } else {
-            $user->is_admin = true;
-        }
-
+        $user->is_admin ? $user->is_admin = false : $user->is_admin = true;
 
         $user->save();
 
         $users = User::all();
-
 
         return Redirect::to('admin/users')->withInput([$users]);
 

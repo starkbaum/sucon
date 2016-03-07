@@ -14,7 +14,7 @@
 
                 @foreach($users as $user)
                     <li class="collection-item avatar">
-                        <img src="images/yuna.jpg" alt="" class="circle">
+                        <img src="{{ Avatar::create($user->name)->toBase64() }}" alt="" class="circle">
                         <span class="title">{{ $user->name }}</span>
                         <p>{{ $user->email }} <br />
                             {{ $user->is_admin ? "Admin" : "Mitarbeiter" }}

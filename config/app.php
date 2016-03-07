@@ -149,9 +149,11 @@ return [
         Collective\Html\HtmlServiceProvider::class,
         Cviebrock\EloquentSluggable\SluggableServiceProvider::class,
         Fx3costa\Laravelchartjs\Providers\ChartjsServiceProvider::class,
+        Intervention\Image\ImageServiceProvider::class,
+        Laravolt\Avatar\ServiceProvider::class,
 
         //TODO hast to be commented out when migratin db, check if normal
-        //PragmaRX\Tracker\Vendor\Laravel\ServiceProvider::class,
+        PragmaRX\Tracker\Vendor\Laravel\ServiceProvider::class,
 
     ),
 
@@ -204,6 +206,8 @@ return [
 
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
+        'Avatar'    => Laravolt\Avatar\Facade::class,
+
         'Tracker' => 'PragmaRX\Tracker\Vendor\Laravel\Facade',
 
 

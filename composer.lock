@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "9b9aa7d1ed224dfa9c230fbb56125f11",
-    "content-hash": "b7becdd0098258dea2f93609bf0bd7dc",
+    "hash": "9c29b9a9dc378368e0b3bd4949195974",
+    "content-hash": "6913d6147df0ef97d36e41c99fc517aa",
     "packages": [
         {
             "name": "barryvdh/laravel-ide-helper",
@@ -653,6 +653,68 @@
             "time": "2016-02-18 21:54:00"
         },
         {
+            "name": "intervention/image",
+            "version": "2.3.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Intervention/image.git",
+                "reference": "e368d262887dbb2fdfaf710880571ede51e9c0e6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Intervention/image/zipball/e368d262887dbb2fdfaf710880571ede51e9c0e6",
+                "reference": "e368d262887dbb2fdfaf710880571ede51e9c0e6",
+                "shasum": ""
+            },
+            "require": {
+                "ext-fileinfo": "*",
+                "guzzlehttp/psr7": "~1.1",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "~0.9.2",
+                "phpunit/phpunit": "3.*"
+            },
+            "suggest": {
+                "ext-gd": "to use GD library based image processing.",
+                "ext-imagick": "to use Imagick based image processing.",
+                "intervention/imagecache": "Caching extension for the Intervention Image library"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.3-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Intervention\\Image\\": "src/Intervention/Image"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Oliver Vogel",
+                    "email": "oliver@olivervogel.net",
+                    "homepage": "http://olivervogel.net/"
+                }
+            ],
+            "description": "Image handling and manipulation library with support for Laravel integration",
+            "homepage": "http://image.intervention.io/",
+            "keywords": [
+                "gd",
+                "image",
+                "imagick",
+                "laravel",
+                "thumbnail",
+                "watermark"
+            ],
+            "time": "2016-02-26 18:18:19"
+        },
+        {
             "name": "jakub-onderka/php-console-color",
             "version": "0.1",
             "source": {
@@ -1078,6 +1140,62 @@
                 }
             ],
             "time": "2015-11-28 08:27:09"
+        },
+        {
+            "name": "laravolt/avatar",
+            "version": "0.3.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laravolt/avatar.git",
+                "reference": "98d39041ccb6cb16b6806d5a0bd33c654a6543ae"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laravolt/avatar/zipball/98d39041ccb6cb16b6806d5a0bd33c654a6543ae",
+                "reference": "98d39041ccb6cb16b6806d5a0bd33c654a6543ae",
+                "shasum": ""
+            },
+            "require": {
+                "danielstjules/stringy": "~1.8",
+                "illuminate/cache": "~5.1",
+                "illuminate/support": "~5.1",
+                "intervention/image": "^2.1",
+                "php": ">=5.5.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "4.*"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Laravolt\\Avatar\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Bayu Hendra Winata",
+                    "email": "uyab.exe@gmail.com",
+                    "homepage": "http://id-laravel.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Display avatar as base64",
+            "homepage": "https://github.com/laravolt/avatar",
+            "keywords": [
+                "avatar",
+                "laravel",
+                "laravolt"
+            ],
+            "time": "2016-01-24 03:53:48"
         },
         {
             "name": "league/flysystem",
