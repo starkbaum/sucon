@@ -10,5 +10,3 @@
 
 <script src="{{ asset('/js/select2.full.min.js') }}"></script>
 
-<div><img src="http://fc.webmasterpro.de/as_noscript.php?name=starkbaum" style="width:1px;height:1px;" alt="" /></div>
-
