@@ -89,7 +89,7 @@ class SnippetsController extends Controller
     {
         $snippet = Snippet::where('id', $id)->orWhere('slug', $id)->firstOrFail();
         //fetch all data associated with the snippet
-        $data = Data::where('snippetId', $snippet->id)->get();
+        $data = Data::where('snippetId', $snippet->id)->accepted()->get();
         //fetches all keywords
         $keywords = Keyword::lists('name', 'id')->all();
         return view('snippets.show', compact('snippet', 'data', 'keywords'));

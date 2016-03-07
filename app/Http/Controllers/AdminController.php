@@ -1,0 +1,21 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Data;
+use Illuminate\Http\Request;
+
+use App\Http\Requests;
+use App\Http\Controllers\Controller;
+
+class AdminController extends Controller
+{
+    public function index()
+    {
+
+        $dataForAcceptance = Data::notAccepted()->get();
+
+
+        return view('admin.index', compact('dataForAcceptance'));
+    }
+}

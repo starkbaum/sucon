@@ -14,6 +14,7 @@ Route::post('data/upload', 'DataController@store');
 Route::get('download/{id}', 'DataController@download');
 Route::get('data/delete/{id}', 'DataController@destroy');
 Route::get('data/showPdf/{id}', 'DataController@showPdf');
+Route::get('data/accept/{id}', 'DataController@acceptData');
 
 # Courses
 Route::resource('courses', 'CoursesController');
@@ -49,6 +50,7 @@ Route::get('search/snippets', 'SearchController@searchSnippets');
 Route::get('statistics', 'StatisticsController@index');
 
 # Admin
+Route::get('admin', 'AdminController@index');
 Route::get('admin/statistics', 'StatisticsController@index');
 
 # temporary helper routes

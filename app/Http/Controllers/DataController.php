@@ -149,4 +149,17 @@ class DataController extends Controller
         return readfile($filename);
 
     }
+
+    public function acceptData($id)
+    {
+        $data = Data::findOrFail($id);
+
+        $data->is_accepted = true;
+
+        $data->save();
+
+        $dataForAcceptance = Data::notAccepted()->get();
+
+        return view('admin.index', compact('dataForAcceptance'));
+    }
 }
