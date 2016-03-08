@@ -30,10 +30,6 @@
                     </div>
                 </div>
 
-                <div class="row">
-                    {!! Form::select('keywords[]', $keywords, null, ['multiple' , 'class' => 'browser-default', 'id' => 'keywords_list']) !!}
-                </div>
-
                 <input type="hidden" name="test" value="{{ $type->path_to_material }}"/>
                 <input type="hidden" name="id" value="{{ $type->id }}"/>
                 <input type="hidden" name="typeClass" value="{{ $typeClass }}"/>

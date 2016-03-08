@@ -65,8 +65,6 @@ class DataController extends Controller
                 'languageId'    => 1
             ]);
             $data->save();
-            //must be after save method because of sql error (Integrity constraint violation)
-            $data->keywords()->attach($request->input('keywords'));
 
             return redirect(URL::previous());
         }
