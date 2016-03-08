@@ -26,7 +26,6 @@
                     <p>{{ $snippet->description }}</p>
                     <p>{{ $snippet->name }}</p>
                     <p>{{ $snippet->customer()->first()->name }}</p>
-                    <p>{{ $snippet->languages()->first()->name }}</p>
                 </div>
                 <div class="card-action">
                     <a href="{{ url('/snippets/delete') . '/' . $snippet->id }}"><i class="small material-icons sucon-text-orange">delete</i></a>
@@ -34,6 +33,7 @@
             </div>
         </div>
 
+        @if(!$data->isEmpty())
         <!-- section for additional data -->
         <div class="col s12 m9">
             <ul class="collection with-header z-depth-1">
@@ -61,6 +61,7 @@
                 @endforeach
             </ul>
         </div>
+        @endif
 
     </div>
 
