@@ -18,6 +18,7 @@ Route::get('data/accept/{id}', 'DataController@acceptData');
 
 # Courses
 Route::resource('courses', 'CoursesController');
+Route::get('courses/like/{id}', 'CoursesController@toggleLike');
 Route::get('courses/{param}', 'CoursesController@showParam');
 
 # Comments
@@ -56,12 +57,7 @@ Route::get('admin/files', 'AdminController@fileAcceptance');
 Route::get('admin/changeUserAdminRole/{id}', 'AdminController@changeUserAdminRole');
 Route::get('admin/statistics', 'StatisticsController@index');
 
-# temporary helper routes
-//TODO set redirectPath in AuthController
-Route::get('/home', function() {
-    return redirect('/courses');
-});
 
-Route::get('/', function() {
-    return view('pages.index');
-});
+
+
+Route::get('get-video/{id}', 'DataController@getVideo')->name('getVideo');

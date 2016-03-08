@@ -9,6 +9,8 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Storage;
+use Response;
 use RobbieP\CloudConvertLaravel\Facades\CloudConvert;
 use URL;
 
@@ -135,19 +137,14 @@ class DataController extends Controller
     public function showPdf($id) {
 
         $foundFile = Data::findOrFail($id);
-
-
-
         $filename = $foundFile->path; /* Note: Always use .pdf at the end. */
 
         header('Content-type: application/pdf');
         header('Content-Disposition: inline; filename="' . $filename . '"');
         header('Content-Transfer-Encoding: binary');
-
         header('Accept-Ranges: bytes');
 
         return readfile($filename);
-
     }
 
     public function acceptData($id)
@@ -162,4 +159,5 @@ class DataController extends Controller
 
         return \Redirect::to('admin/files')->withInput([$dataForAcceptance]);
     }
+    
 }

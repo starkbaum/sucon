@@ -2,6 +2,7 @@
 
 namespace App;
 
+use Auth;
 use Cviebrock\EloquentSluggable\SluggableInterface;
 use Cviebrock\EloquentSluggable\SluggableTrait;
 use Illuminate\Database\Eloquent\Model;
@@ -10,7 +11,7 @@ use Nicolaslopezj\Searchable\SearchableTrait;
 class Course extends Model implements SluggableInterface
 {
 
-    use SluggableTrait, SearchableTrait;
+    use SluggableTrait, SearchableTrait, Likeability;
 
     /**
      * The table associated with the model.

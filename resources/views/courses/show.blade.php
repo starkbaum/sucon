@@ -17,17 +17,15 @@
 @section('content')
 
     <div class="row">
-        <!-- TODO check if course has video data -->
-        @if( $videos != null )
-
         <div class="col s12 m9 l8">
 
+            @if( !$videos->isEmpty() )
             <div class="slider">
                 <ul class="slides">
                     @foreach($videos as $video)
                         <li>
-                            <video id="my-video" class="video-js" controls preload="auto" data-setup="{}" width="auto" height="auto">
-                                <source src="{{ storage_path() . '/' . $course->slug . '/Adam Ruins Everything - Why the TSA Doesnt Stop Terrorist Attacks.AVI' }}" type='video/mp4'>
+                            <video id="my-video" class="video-js" controls preload="none" data-setup="{}">
+                                <source src="{{ route('getVideo', $video->id)  }}" type='{{ File::mimeType($video->path) }}'>
                                 <p class="vjs-no-js">
                                     To view this video please enable JavaScript, and consider upgrading to a web browser that
                                     <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
@@ -37,37 +35,17 @@
                     @endforeach
                 </ul>
             </div>
-
-        <div class="card">
-            <div class="card-content">
-                <p>{{ $course->description }}</p>
-
-            </div>
-            <div class="card-action">
-                <a href="#"><i class="small material-icons sucon-text-orange">thumb_up</i></a>
-                <a href="#"><i class="small material-icons sucon-text-orange">thumb_down</i></a>
-            </div>
-        </div>
-
-        @else
-
+            @endif
 
             <div class="card">
                 <div class="card-content">
-                    <span class="card-title sucon-text-green">{{ $course->name }}</span>
                     <p>{{ $course->description }}</p>
-                    <p>{{ $course->name }}</p>
+
                 </div>
                 <div class="card-action">
-                    <a href="#"><i class="small material-icons sucon-text-orange">thumb_up</i></a>
-                    <a href="#"><i class="small material-icons sucon-text-orange">thumb_down</i></a>
+                    <a href="{{ url('courses/like', $course->id) }}">{{ $course->likesCount }}<i class="small material-icons sucon-text-orange">thumb_up</i></a>
                 </div>
             </div>
-        </div>
-
-        @endif
-
-        <!-- section for additional data -->
 
             <ul class="collection with-header z-depth-1">
                 <li class="collection-header sucon-background-green">
@@ -100,6 +78,5 @@
 
     @include('partials.modals.addFileModal', ['type' => $course, 'typeClass' => 'course', 'keywords' => $keywords])
 
-    <scrip></scrip>
 
 @endsection

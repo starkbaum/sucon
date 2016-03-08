@@ -12,6 +12,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\File;
+use Redirect;
 
 class CoursesController extends Controller
 {
@@ -79,7 +80,8 @@ class CoursesController extends Controller
         //fetches all data where course id is given id
         $data = Data::where('courseId', $course->id)->accepted()->get();
         //fetches all Videos
-        $videos = Data::where('extension', 'AVI')->orWhere('extension', 'avi')->get();
+        $videos = Data::where('extension', 'AVI')->orWhere('extension', 'avi')->orWhere('extension', 'MP4')->get();
+        //dd($videos);
         //fetches all comments where course id is given id
         $comments = Comment::where('courseId', $course->id)->get();
         //fetches all keywords
@@ -121,4 +123,12 @@ class CoursesController extends Controller
     {
         //
     }
+
+    public function toggleLike($id)
+    {
+        $course = Course::findOrFail($id);
+        $course->toggleLike();
+        return Redirect::action('CoursesController@show', [$course->slug]);
+    }
+
 }
