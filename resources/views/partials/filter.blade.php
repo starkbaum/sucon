@@ -4,6 +4,6 @@
         <li>@include('partials.searchForm', ['page' => $page])</li>
     </ul>
     <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
-        <a href="{{ url('/' . $page . '/create') }}" class="btn-floating sucon-background-orange"><i class="tiny material-icons">library_add</i></a>
+        <a href="{{ url('/' . $page . '/create') }}" class="btn-floating sucon-background-orange"><i class="small material-icons">library_add</i></a>
     </div>
 </nav>

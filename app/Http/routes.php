@@ -57,6 +57,10 @@ Route::get('admin/files', 'AdminController@fileAcceptance');
 Route::get('admin/changeUserAdminRole/{id}', 'AdminController@changeUserAdminRole');
 Route::get('admin/statistics', 'StatisticsController@index');
 
+# Mail
+
+Route::get('mail/test', 'MailingController@sendTestMail');
+
 
 
 

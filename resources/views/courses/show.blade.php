@@ -43,7 +43,7 @@
 
                 </div>
                 <div class="card-action">
-                    <a href="{{ url('courses/like', $course->id) }}">{{ $course->likesCount }}<i class="small material-icons sucon-text-orange">thumb_up</i></a>
+                    <a href="{{ url('courses/like', $course->id) }}">{{ $course->likesCount }}<i class="small material-icons sucon-text-orange">loyalty</i></a>
                 </div>
             </div>
 

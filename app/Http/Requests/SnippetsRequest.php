@@ -27,8 +27,6 @@ class SnippetsRequest extends Request
             'name'          => 'required|unique:snippets|min:5|max:50',
             'description'   => 'required|min:5|max:1000',
             'customer'      => 'required',
-            'languages'     => 'required',
-            'keywords'      => 'required'
         ];
     }
 }

@@ -4,21 +4,21 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "9c29b9a9dc378368e0b3bd4949195974",
-    "content-hash": "6913d6147df0ef97d36e41c99fc517aa",
+    "hash": "5e9e8fe1af7390a6112a59cbb6df0014",
+    "content-hash": "ce749fba5ab216ad6b8b5c480b5469ae",
     "packages": [
         {
             "name": "barryvdh/laravel-ide-helper",
-            "version": "v2.1.2",
+            "version": "v2.1.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/barryvdh/laravel-ide-helper.git",
-                "reference": "d82e8f191fb043a0f8cbf2de64fd3027bfa4f772"
+                "reference": "f1ebd847aac9a4545325d35108cafc285fe1605f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/barryvdh/laravel-ide-helper/zipball/d82e8f191fb043a0f8cbf2de64fd3027bfa4f772",
-                "reference": "d82e8f191fb043a0f8cbf2de64fd3027bfa4f772",
+                "url": "https://api.github.com/repos/barryvdh/laravel-ide-helper/zipball/f1ebd847aac9a4545325d35108cafc285fe1605f",
+                "reference": "f1ebd847aac9a4545325d35108cafc285fe1605f",
                 "shasum": ""
             },
             "require": {
@@ -26,8 +26,8 @@
                 "illuminate/filesystem": "5.0.x|5.1.x|5.2.x",
                 "illuminate/support": "5.0.x|5.1.x|5.2.x",
                 "php": ">=5.4.0",
-                "phpdocumentor/reflection-docblock": "2.0.4",
-                "symfony/class-loader": "~2.3"
+                "phpdocumentor/reflection-docblock": "^2.0.4",
+                "symfony/class-loader": "~2.3|~3.0"
             },
             "require-dev": {
                 "doctrine/dbal": "~2.3"
@@ -68,7 +68,7 @@
                 "phpstorm",
                 "sublime"
             ],
-            "time": "2015-12-21 19:48:06"
+            "time": "2016-03-03 08:45:00"
         },
         {
             "name": "classpreloader/classpreloader",
@@ -395,16 +395,16 @@
         },
         {
             "name": "fx3costa/laravelchartjs",
-            "version": "1.3.2",
+            "version": "1.3.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/fxcosta/laravel-chartjs.git",
-                "reference": "3d529fe0c65455d985e4c7bf3aef9a4d06602cee"
+                "reference": "916e95b4e3da38d7fc822919177ccf69303c1adf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fxcosta/laravel-chartjs/zipball/3d529fe0c65455d985e4c7bf3aef9a4d06602cee",
-                "reference": "3d529fe0c65455d985e4c7bf3aef9a4d06602cee",
+                "url": "https://api.github.com/repos/fxcosta/laravel-chartjs/zipball/916e95b4e3da38d7fc822919177ccf69303c1adf",
+                "reference": "916e95b4e3da38d7fc822919177ccf69303c1adf",
                 "shasum": ""
             },
             "require": {
@@ -436,7 +436,7 @@
                 "laravel5",
                 "reports"
             ],
-            "time": "2016-02-09 03:54:01"
+            "time": "2016-03-04 03:42:40"
         },
         {
             "name": "google/apiclient",
@@ -545,16 +545,16 @@
         },
         {
             "name": "guzzlehttp/promises",
-            "version": "1.0.3",
+            "version": "1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/promises.git",
-                "reference": "b1e1c0d55f8083c71eda2c28c12a228d708294ea"
+                "reference": "bb9024c526b22f3fe6ae55a561fd70653d470aa8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/promises/zipball/b1e1c0d55f8083c71eda2c28c12a228d708294ea",
-                "reference": "b1e1c0d55f8083c71eda2c28c12a228d708294ea",
+                "url": "https://api.github.com/repos/guzzle/promises/zipball/bb9024c526b22f3fe6ae55a561fd70653d470aa8",
+                "reference": "bb9024c526b22f3fe6ae55a561fd70653d470aa8",
                 "shasum": ""
             },
             "require": {
@@ -592,7 +592,7 @@
             "keywords": [
                 "promise"
             ],
-            "time": "2015-10-15 22:28:00"
+            "time": "2016-03-08 01:15:46"
         },
         {
             "name": "guzzlehttp/psr7",
@@ -850,16 +850,16 @@
         },
         {
             "name": "jenssegers/agent",
-            "version": "v2.3.1",
+            "version": "v2.3.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jenssegers/agent.git",
-                "reference": "ffd9e144c4d2abc2405b6f06112adb83f2c3365e"
+                "reference": "5713303d76c4707333ace41bb343261693de1cb9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jenssegers/agent/zipball/ffd9e144c4d2abc2405b6f06112adb83f2c3365e",
-                "reference": "ffd9e144c4d2abc2405b6f06112adb83f2c3365e",
+                "url": "https://api.github.com/repos/jenssegers/agent/zipball/5713303d76c4707333ace41bb343261693de1cb9",
+                "reference": "5713303d76c4707333ace41bb343261693de1cb9",
                 "shasum": ""
             },
             "require": {
@@ -903,7 +903,7 @@
                 "user agent",
                 "useragent"
             ],
-            "time": "2015-11-26 09:13:14"
+            "time": "2016-03-02 14:40:19"
         },
         {
             "name": "jeremeamia/SuperClosure",
@@ -1199,16 +1199,16 @@
         },
         {
             "name": "league/flysystem",
-            "version": "1.0.17",
+            "version": "1.0.18",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/flysystem.git",
-                "reference": "02f5b6c9a8b9278c8381e3361e7bd9d641c740ca"
+                "reference": "b334d6c5f95364948e06d2f620ab93d084074c6e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/02f5b6c9a8b9278c8381e3361e7bd9d641c740ca",
-                "reference": "02f5b6c9a8b9278c8381e3361e7bd9d641c740ca",
+                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/b334d6c5f95364948e06d2f620ab93d084074c6e",
+                "reference": "b334d6c5f95364948e06d2f620ab93d084074c6e",
                 "shasum": ""
             },
             "require": {
@@ -1278,7 +1278,7 @@
                 "sftp",
                 "storage"
             ],
-            "time": "2016-02-19 15:35:38"
+            "time": "2016-03-07 21:01:43"
         },
         {
             "name": "mobiledetect/mobiledetectlib",
@@ -1336,16 +1336,16 @@
         },
         {
             "name": "monolog/monolog",
-            "version": "1.17.2",
+            "version": "1.18.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Seldaek/monolog.git",
-                "reference": "bee7f0dc9c3e0b69a6039697533dca1e845c8c24"
+                "reference": "e19b764b5c855580e8ffa7e615f72c10fd2f99cc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/bee7f0dc9c3e0b69a6039697533dca1e845c8c24",
-                "reference": "bee7f0dc9c3e0b69a6039697533dca1e845c8c24",
+                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/e19b764b5c855580e8ffa7e615f72c10fd2f99cc",
+                "reference": "e19b764b5c855580e8ffa7e615f72c10fd2f99cc",
                 "shasum": ""
             },
             "require": {
@@ -1374,6 +1374,7 @@
                 "ext-amqp": "Allow sending log messages to an AMQP server (1.0+ required)",
                 "ext-mongo": "Allow sending log messages to a MongoDB server",
                 "graylog2/gelf-php": "Allow sending log messages to a GrayLog2 server",
+                "mongodb/mongodb": "Allow sending log messages to a MongoDB server via PHP Driver",
                 "php-console/php-console": "Allow sending log messages to Google Chrome",
                 "raven/raven": "Allow sending log messages to a Sentry server",
                 "rollbar/rollbar": "Allow sending log messages to Rollbar",
@@ -1383,7 +1384,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.16.x-dev"
+                    "dev-master": "2.0.x-dev"
                 }
             },
             "autoload": {
@@ -1409,7 +1410,7 @@
                 "logging",
                 "psr-3"
             ],
-            "time": "2015-10-14 12:51:02"
+            "time": "2016-03-01 18:00:40"
         },
         {
             "name": "mtdowling/cron-expression",
@@ -2150,16 +2151,16 @@
         },
         {
             "name": "robbiep/cloudconvert-laravel",
-            "version": "v2.2.7",
+            "version": "v2.2.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/robbiepaul/cloudconvert-laravel.git",
-                "reference": "dfe19212dd2d0e17b0cc5a0c3937c1dea84b2508"
+                "reference": "8ff4aa5842f6b2b4ba11e70269e2e3e12aa79b75"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/robbiepaul/cloudconvert-laravel/zipball/dfe19212dd2d0e17b0cc5a0c3937c1dea84b2508",
-                "reference": "dfe19212dd2d0e17b0cc5a0c3937c1dea84b2508",
+                "url": "https://api.github.com/repos/robbiepaul/cloudconvert-laravel/zipball/8ff4aa5842f6b2b4ba11e70269e2e3e12aa79b75",
+                "reference": "8ff4aa5842f6b2b4ba11e70269e2e3e12aa79b75",
                 "shasum": ""
             },
             "require": {
@@ -2200,7 +2201,7 @@
                 "office",
                 "screenshot"
             ],
-            "time": "2016-02-22 17:16:28"
+            "time": "2016-03-04 16:24:01"
         },
         {
             "name": "snowplow/referer-parser",
@@ -2359,29 +2360,32 @@
         },
         {
             "name": "symfony/class-loader",
-            "version": "v2.8.3",
+            "version": "v3.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/class-loader.git",
-                "reference": "517ab0554b6a5744d04480cb06873ffbd9442d73"
+                "reference": "92e7cf1af2bc1695daabb4ac972db169606e9030"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/class-loader/zipball/517ab0554b6a5744d04480cb06873ffbd9442d73",
-                "reference": "517ab0554b6a5744d04480cb06873ffbd9442d73",
+                "url": "https://api.github.com/repos/symfony/class-loader/zipball/92e7cf1af2bc1695daabb4ac972db169606e9030",
+                "reference": "92e7cf1af2bc1695daabb4ac972db169606e9030",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.9",
-                "symfony/polyfill-apcu": "~1.1"
+                "php": ">=5.5.9"
             },
             "require-dev": {
-                "symfony/finder": "~2.0,>=2.0.5|~3.0.0"
+                "symfony/finder": "~2.8|~3.0",
+                "symfony/polyfill-apcu": "~1.1"
+            },
+            "suggest": {
+                "symfony/polyfill-apcu": "For using ApcClassLoader on HHVM"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.8-dev"
+                    "dev-master": "3.0-dev"
                 }
             },
             "autoload": {
@@ -2408,7 +2412,7 @@
             ],
             "description": "Symfony ClassLoader Component",
             "homepage": "https://symfony.com",
-            "time": "2016-01-30 15:58:35"
+            "time": "2016-02-03 09:33:23"
         },
         {
             "name": "symfony/console",
@@ -2928,62 +2932,6 @@
             "description": "Symfony HttpKernel Component",
             "homepage": "https://symfony.com",
             "time": "2016-02-28 20:37:08"
-        },
-        {
-            "name": "symfony/polyfill-apcu",
-            "version": "v1.1.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/polyfill-apcu.git",
-                "reference": "d1911e6caeb4b6a4c8e2d5c46b978a66b3745e4c"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-apcu/zipball/d1911e6caeb4b6a4c8e2d5c46b978a66b3745e4c",
-                "reference": "d1911e6caeb4b6a4c8e2d5c46b978a66b3745e4c",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.3"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.1-dev"
-                }
-            },
-            "autoload": {
-                "files": [
-                    "bootstrap.php"
-                ],
-                "classmap": [
-                    "Resources/stubs"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Nicolas Grekas",
-                    "email": "p@tchwork.com"
-                },
-                {
-                    "name": "Symfony Community",
-                    "homepage": "https://symfony.com/contributors"
-                }
-            ],
-            "description": "Symfony polyfill backporting apcu_* functions to lower PHP versions",
-            "homepage": "https://symfony.com",
-            "keywords": [
-                "apcu",
-                "compatibility",
-                "polyfill",
-                "portable",
-                "shim"
-            ],
-            "time": "2016-01-20 09:13:37"
         },
         {
             "name": "symfony/polyfill-php56",
