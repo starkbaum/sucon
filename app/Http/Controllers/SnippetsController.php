@@ -30,9 +30,8 @@ class SnippetsController extends Controller
     public function index()
     {
         $snippets = Snippet::with('customer')->get();
-        $languages = Language::lists('name', 'id');
 
-        return view('snippets.index', compact('snippets', 'languages'));
+        return view('snippets.index', compact('snippets'));
     }
 
     /**
@@ -43,16 +42,14 @@ class SnippetsController extends Controller
     public function create()
     {
         $customers = Customer::lists('name', 'id')->all();
-        $languages = Language::lists('name', 'id')->all();
-        $keywords = Keyword::lists('name', 'id')->all();
 
-        return view('snippets.create', compact('customers', 'languages', 'keywords'));
+        return view('snippets.create', compact('customers'));
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param SnippetsRequest|Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(SnippetsRequest $request)
@@ -64,10 +61,6 @@ class SnippetsController extends Controller
 
         //add customer id to customer_snippet
         $snippet->customer()->attach($request->input('customer'));
-        //add languages id to language_snippet
-        $snippet->languages()->attach($request->input('languages'));
-        //add keywords id to keyword_snippet
-        $snippet->keywords()->attach($request->input('keywords'));
 
         //create directory for snippet
         if (!File::isDirectory($pathToSnippet)) {
@@ -90,9 +83,8 @@ class SnippetsController extends Controller
         $snippet = Snippet::where('id', $id)->orWhere('slug', $id)->firstOrFail();
         //fetch all data associated with the snippet
         $data = Data::where('snippetId', $snippet->id)->accepted()->get();
-        //fetches all keywords
-        $keywords = Keyword::lists('name', 'id')->all();
-        return view('snippets.show', compact('snippet', 'data', 'keywords'));
+
+        return view('snippets.show', compact('snippet', 'data'));
     }
 
     /**
