@@ -2,6 +2,7 @@ $(document).ready(function(){
     $('.button-collapse').sideNav();
     $(".dropdown-button").dropdown();
     $('.parallax').parallax();
+    $('.tooltipped').tooltip({delay: 50});
     $('.slider').slider({
         interval: 50
     });

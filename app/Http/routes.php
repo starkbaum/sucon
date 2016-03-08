@@ -60,6 +60,7 @@ Route::get('admin/statistics', 'StatisticsController@index');
 # Mail
 
 Route::get('mail/test', 'MailingController@sendTestMail');
+Route::get('mail/sendFile/{id}', 'MailingController@sendFile');
 
 
 

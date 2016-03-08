@@ -41,24 +41,7 @@
                     <h5>Unterlagen</h5>
                     <a class="btn-floating btn-large waves-effect waves-light sucon-background-orange modal-trigger" style="margin-bottom:-40px;" href="#modal1"><i class="material-icons">add</i></a>
                 </li>
-                @foreach($data as $singleData)
-                    <li class="collection-item avatar">
-                        <i class="circle">
-                            <img src="{{ asset('/img/extensions') . '/' . pathinfo($singleData->path, PATHINFO_EXTENSION) . '.png' }}" alt="" style="height: 50px; width: 50px;">
-                        </i>
-                        <span class="title">{{ $singleData->name }}</span>
-                        <p>{{ $singleData->author }}</p>
-                        <p class="secondary-content">
-                            <!-- TODO open file in browser -->
-                            <a href="#"><i class="material-icons sucon-text-orange">open_in_browser</i></a>
-                            <a href="{{ url('download') . '/' . $singleData->id }}"><i class="material-icons sucon-text-orange">system_update_alt</i></a>
-                            <!-- TODO check if admin -->
-                            @if(Auth::user()->name === $singleData->author)
-                                <a href="{{ url('data/delete') . '/' . $singleData->id }}"><i class="material-icons sucon-text-orange">delete</i></a>
-                            @endif
-                        </p>
-                    </li>
-                @endforeach
+                @include('partials.dataListing', $data)
             </ul>
         </div>
         @endif
