@@ -40,10 +40,7 @@ class AdminController extends Controller
 
         $user->save();
 
-        $users = User::all();
-
-        return Redirect::to('admin/users')->withInput([$users]);
-
+        return Redirect::action('AdminController@userManagement');
     }
 
 }

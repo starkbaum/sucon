@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "5e9e8fe1af7390a6112a59cbb6df0014",
-    "content-hash": "ce749fba5ab216ad6b8b5c480b5469ae",
+    "hash": "5756cf4e39d17177d77334ade9f0b221",
+    "content-hash": "b1d322e8dc78394e9725e5d6fd149cef",
     "packages": [
         {
             "name": "barryvdh/laravel-ide-helper",
@@ -2148,6 +2148,52 @@
                 "uuid"
             ],
             "time": "2015-12-17 16:54:24"
+        },
+        {
+            "name": "rap2hpoutre/laravel-log-viewer",
+            "version": "v0.5.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/rap2hpoutre/laravel-log-viewer.git",
+                "reference": "120ed1834f4be9b60cca3d2a5b80e408287874de"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/rap2hpoutre/laravel-log-viewer/zipball/120ed1834f4be9b60cca3d2a5b80e408287874de",
+                "reference": "120ed1834f4be9b60cca3d2a5b80e408287874de",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "4.2.*|5.*",
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "src/controllers"
+                ],
+                "psr-0": {
+                    "Rap2hpoutre\\LaravelLogViewer\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "rap2hpoutre",
+                    "email": "raphael@ornikar.com"
+                }
+            ],
+            "description": "A Laravel log reader",
+            "keywords": [
+                "log",
+                "log-reader",
+                "log-viewer",
+                "logging"
+            ],
+            "time": "2016-01-25 20:12:40"
         },
         {
             "name": "robbiep/cloudconvert-laravel",

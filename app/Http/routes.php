@@ -1,5 +1,7 @@
 <?php
 
+Route::get('/', 'CoursesController@index');
+
 # Authentication routes...
 Route::get('auth/login', 'Auth\AuthController@getLogin');
 Route::post('auth/login', 'Auth\AuthController@postLogin');
@@ -21,6 +23,10 @@ Route::resource('courses', 'CoursesController');
 Route::get('courses/like/{id}', 'CoursesController@toggleLike');
 Route::get('courses/{param}', 'CoursesController@showParam');
 
+# Snippets
+Route::resource('snippets', 'SnippetsController');
+Route::get('snippets/delete/{id}', 'SnippetsController@destroy');
+
 # Comments
 Route::resource('comments', 'CommentsController');
 Route::get('comments/delete/{id}', 'CommentsController@destroy');
@@ -34,10 +40,6 @@ Route::get('customers/delete/{id}', 'CustomersController@destroy');
 Route::resource('persons', 'PersonsController');
 Route::get('persons/update/{id}', 'PersonsController@edit');
 Route::get('persons/destroy/{id}', 'PersonsController@destroy');
-
-# Snippets
-Route::resource('snippets', 'SnippetsController');
-Route::get('snippets/delete/{id}', 'SnippetsController@destroy');
 
 # Keywords
 Route::resource('keywords', 'KeywordsController');
@@ -60,9 +62,12 @@ Route::get('admin/statistics', 'StatisticsController@index');
 # Mail
 
 Route::get('mail/test', 'MailingController@sendTestMail');
-Route::get('mail/sendFile/{id}', 'MailingController@sendFile');
+Route::get('mail/create/{id}', 'MailingController@create');
+Route::get('mail/sendMail/{id}', 'MailingController@sendMail');
 
 
+# Log
 
+Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
 
 Route::get('get-video/{id}', 'DataController@getVideo')->name('getVideo');

@@ -155,6 +155,8 @@ return [
         //TODO hast to be commented out when migratin db, check if normal
         PragmaRX\Tracker\Vendor\Laravel\ServiceProvider::class,
 
+        Rap2hpoutre\LaravelLogViewer\LaravelLogViewerServiceProvider::class,
+
     ),
 
     /*

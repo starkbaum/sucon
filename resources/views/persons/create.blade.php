@@ -7,7 +7,7 @@
 
     {!! Form::open(['url' => 'persons']) !!}
 
-    @include('persons._form', ['submitButtonText' => 'Kontakperson anlegen'])
+        @include('persons._form', ['submitButtonText' => 'Kontakperson anlegen'])
 
     {!! Form::close() !!}
 
