@@ -10,6 +10,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Storage;
+use Redirect;
 use Response;
 use RobbieP\CloudConvertLaravel\Facades\CloudConvert;
 use URL;
@@ -155,7 +156,7 @@ class DataController extends Controller
 
         $dataForAcceptance = Data::notAccepted()->get();
 
-        return \Redirect::to('admin/files')->withInput([$dataForAcceptance]);
+        return Redirect::action('AdminController@fileAcceptance');
     }
     
 }
