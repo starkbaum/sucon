@@ -154,9 +154,7 @@ class DataController extends Controller
 
         $data->save();
 
-        $dataForAcceptance = Data::notAccepted()->get();
-
-        return Redirect::action('AdminController@fileAcceptance');
+                return Redirect::action('AdminController@fileAcceptance');
     }
     
 }
