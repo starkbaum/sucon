@@ -9,7 +9,6 @@
     <div class="row">
         @if(isset($searchResults))
 
-
             @foreach($searchResults as $singleSearchResult)
                 <div class="col s12 m3 l3">
                     <div class="card small hoverable">
@@ -26,7 +25,6 @@
                     </div>
                 </div>
             @endforeach
-
 
         @endif
     </div>

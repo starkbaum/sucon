@@ -26,14 +26,9 @@ class SearchController extends Controller
      */
     public function index()
     {
-
-
         $searchResults = Customer::search('ger')->get();
 
         return view('search.index', compact('searchResults'));
-
-
-
     }
 
     public function search() {
@@ -46,14 +41,16 @@ class SearchController extends Controller
     }
 
     public function searchCourses() {
-        $searchResults = Course::search(Input::get('search-term'))->get();
-        return view('search.show', compact('searchResults'));
+        $searchTerm = Input::get('search-term');
+        $searchResults = Course::search($searchTerm)->get();
+        return view('search.showCourses', compact('searchResults', 'searchTerm'));
 
     }
 
     public function searchSnippets() {
-        $searchResults = Snippet::search(Input::get('search-term'))->get();
-        return view('search.show', compact('searchResults'));
+        $searchTerm = Input::get('search-term');
+        $searchResults = Snippet::search($searchTerm)->get();
+        return view('search.showSnippets', compact('searchResults', 'searchTerm'));
     }
 
 
