@@ -41,9 +41,18 @@
 
         <div class="col s12 m4 l4">
             @if (true)
-                @foreach($persons as $person)
-                    {{ $person->name }}
-                @endforeach
+                <div class="col s12 m12 l12">
+                    <ul class="collection">
+                        @foreach($persons as $person)
+                            <li class="collection-item avatar">
+                                <img src="{{ Avatar::create($person->name)->toBase64() }}" alt="" class="circle">
+                                <span class="title">{{ $person->name }}</span>
+                                <p>{{ $person->phoneNo }}</p>
+                                <p><a href="mailto:{{ $person->email }}">{{ $person->email }}</a></p>
+                            </li>
+                        @endforeach
+                    </ul>
+                </div>
             @else
 
             @endif
@@ -51,9 +60,21 @@
     </div>
 
     <div class="row">
-        @foreach($snippets as $snippet)
-            <h5>{{ $snippet->name }}</h5>
-        @endforeach
+        <div class="col s12 m9 l8">
+
+            <ul class="collection">
+                @foreach($snippets as $snippet)
+                    <li class="collection-item avatar">
+                        <img src="{{ Avatar::create($snippet->customer()->first()->name)->toBase64() }}" alt="" class="circle">
+                        <span class="title">{{ $snippet->name }}</span>
+                        <p>Beschreibung:</p>
+                        <p>{{ $snippet->description }}</p>
+                        <a href="/snippets/{{ $snippet->slug }}" class="secondary-content">Zum Snippet</a>
+                    </li>
+                @endforeach
+            </ul>
+
+        </div>
     </div>
 
     <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">

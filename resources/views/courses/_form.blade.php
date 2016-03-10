@@ -5,7 +5,7 @@
 
 <div class="input-field">
     {!! Form::label('description', 'Description:') !!}
-    {!! Form::textarea('description', null, ['class' => 'materialize-textarea', 'length' => '250']) !!}
+    {!! Form::textarea('description', null, ['class' => 'materialize-textarea', 'length' => '500']) !!}
 </div>
 
 <div class="input-field">

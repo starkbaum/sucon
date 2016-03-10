@@ -9,6 +9,11 @@
 </div>
 
 <div class="input-field">
+    {!! Form::label('email', 'Email:') !!}
+    {!! Form::text('email', null, ['class' => 'form-control']) !!}
+</div>
+
+<div class="input-field">
     {!! Form::select('customer_id', $customers, null,  ['class' => 'customer-select']) !!}
 </div>
 
