@@ -31,7 +31,6 @@ class AdminController extends Controller
         return view('admin.management.fileAcceptance', compact('dataForAcceptance'));
     }
 
-
     public function changeUserAdminRole($id) {
 
         $user = User::findOrFail($id);
@@ -41,6 +40,11 @@ class AdminController extends Controller
         $user->save();
 
         return Redirect::action('AdminController@userManagement');
+    }
+
+    public function showLog()
+    {
+        return view('admin.log');
     }
 
 }

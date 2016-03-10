@@ -21,7 +21,9 @@ class StatisticsController extends Controller
     public function index() {
 
         $numberOfPageViews = $this->numberOfPageVisits();
+        //dd($numberOfPageViews);
         $numberOfViewsPerCourse = $this->numberOfViewsPerCourse();
+        //dd($numberOfViewsPerCourse);
 
         return view('admin.statistics.index', compact('numberOfPageViews', 'numberOfViewsPerCourse'));
     }

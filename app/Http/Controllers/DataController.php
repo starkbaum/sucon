@@ -44,8 +44,6 @@ class DataController extends Controller
 
             $file->move($path, $file->getClientOriginalName());
 
-
-
             //check if course or snippet
             if (Input::get('typeClass') == 'course') {
                 $courseId = Input::get('id');
@@ -55,7 +53,7 @@ class DataController extends Controller
             }
 
             $data = new Data([
-                'name'          => Input::get('filename'),
+                'name'          => $request->input('filename'),
                 'path'          => $path . '/' . $name,
                 'author'        => Auth::user()->name,
                 'size'          => $file->getSize(),

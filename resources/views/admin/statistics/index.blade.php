@@ -16,8 +16,8 @@
             <canvas id="LineChart" style="width:50%;"></canvas>
         </div>
 
-        {!! app()->chartline->render("LineChart", $numberOfPageViews) !!}
 
+        {!! app()->chartline->render("LineChart", $numberOfPageViews) !!}
 
 
         <div class="container-fluid">

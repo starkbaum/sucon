@@ -3,5 +3,6 @@
         <li><a href="{{ url('admin/statistics') }}">Statistiken</a></li>
         <li><a href="{{ url('admin/users') }}">Userverwaltung</a></li>
         <li><a href="{{ url('admin/files') }}">Dateifreigabe</a></li>
+        <li><a href="{{ url('admin/log') }}" target="_blank">Log</a></li>
     </ul>
 </nav>

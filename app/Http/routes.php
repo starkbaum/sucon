@@ -58,6 +58,7 @@ Route::get('admin/users', 'AdminController@userManagement');
 Route::get('admin/files', 'AdminController@fileAcceptance');
 Route::get('admin/changeUserAdminRole/{id}', 'AdminController@changeUserAdminRole');
 Route::get('admin/statistics', 'StatisticsController@index');
+Route::get('admin/log', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
 
 # Mail
 
@@ -66,8 +67,5 @@ Route::get('mail/create/{id}', 'MailingController@create');
 Route::get('mail/sendMail/{id}', 'MailingController@sendMail');
 
 
-# Log
-
-Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
 
 Route::get('get-video/{id}', 'DataController@getVideo')->name('getVideo');

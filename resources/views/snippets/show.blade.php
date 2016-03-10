@@ -17,25 +17,21 @@
 @section('content')
 
     <div class="row">
-
-
-        <div class="col s12 m9">
+        <div class="col s12 m9 l8">
             <div class="card">
                 <div class="card-content">
                     <span class="card-title sucon-text-green">{{ $snippet->name }}</span>
+                    <p>programmiert für: {{ $snippet->customer()->first()->name }}</p>
                     <p>{{ $snippet->description }}</p>
-                    <p>{{ $snippet->name }}</p>
-                    <p>{{ $snippet->customer()->first()->name }}</p>
                 </div>
                 <div class="card-action">
                     <a href="{{ url('/snippets/delete') . '/' . $snippet->id }}"><i class="small material-icons sucon-text-orange">delete</i></a>
                 </div>
             </div>
         </div>
-
-        @if(!$data->isEmpty())
+        @unless($data->isEmpty())
         <!-- section for additional data -->
-        <div class="col s12 m9">
+        <div class="col s12 m9 l8">
             <ul class="collection with-header z-depth-1">
                 <li class="collection-header sucon-background-green">
                     <h5>Unterlagen</h5>
@@ -44,11 +40,9 @@
                 @include('partials.dataListing', $data)
             </ul>
         </div>
-        @endif
-
+        @endunless
     </div>
 
     @include('partials.modals.addFileModal', ['type' => $snippet, 'typeClass' => 'snippet'])
-
 
 @endsection
