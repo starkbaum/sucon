@@ -17,12 +17,25 @@
     <h5>Einen neuen Kurs anlegen</h5>
     <div class="divider"></div>
 
-    @include('errors.errorListing')
+    <div class="row">
+        <div class="col s12 m9 l8">
+            @include('errors.errorListing')
+        </div>
+    </div>
 
-    {!! Form::open(['url' => 'courses']) !!}
+    <div class="row">
+        <div class="col s12 m9 l8">
 
-        @include('courses._form', ['submitButtonText' => 'Add Course'])
+            {!! Form::open(['url' => 'courses']) !!}
 
-    {!! Form::close() !!}
+            @include('courses._form', ['submitButtonText' => 'Add Course'])
+
+            {!! Form::close() !!}
+
+        </div>
+    </div>
+
+
+
 
 @endsection

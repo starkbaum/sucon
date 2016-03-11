@@ -7,9 +7,6 @@
             <li><a href="{{ URL::previous() }}" style="font-size: 20px;">&#8592;</a></li>
             <li><a href="" class="disabled">{{ $course->name }}</a></li>
         </ul>
-        <ul class="right hide-on-med-and-down">
-            <li><a href="{{ url('/courses/create') }}"><i class="tiny material-icons">library_add</i></a></li>
-        </ul>
     </nav>
 
 @endsection
@@ -42,7 +39,7 @@
                     <p>{{ $course->description }}</p>
 
                 </div>
-                <div class="card-action">
+                <div class="card-action right-align">
                     <a href="{{ url('courses/like', $course->id) }}">{{ $course->likesCount }}<i class="small material-icons sucon-text-orange">loyalty</i></a>
                 </div>
             </div>
@@ -50,15 +47,26 @@
             <ul class="collection with-header z-depth-1">
                 <li class="collection-header sucon-background-green">
                     <h5>Unterlagen</h5>
-                    <a class="btn-floating btn-large waves-effect waves-light sucon-background-orange modal-trigger" style="margin-bottom:-40px;" href="#modal1"><i class="material-icons">add</i></a>
                 </li>
                 @include('partials.dataListing', $data)
             </ul>
         </div>
 
+
         <!-- section for comments -->
         @include('comments.index', $comments)
 
+    </div>
+
+    <div class="fixed-action-btn vertical" style="bottom: 45px; right: 24px;">
+        <a class="btn-floating btn-large sucon-background-orange">
+            <i class="large material-icons">mode_edit</i>
+        </a>
+        <ul>
+            <li><a href="#modal1" class="teal btn-floating waves-effect waves-light sucon-background-orange modal-trigger tooltipped" data-position="left" data-delay="20" data-tooltip="Neue Datei hinzufügen"><i class="material-icons">description</i></a></li>
+            <li><a href="{{ url('courses/create') }}" class="btn-floating deep-orange tooltipped" data-position="left" data-delay="20" data-tooltip="Neuen Kurs anlegen"><i class="material-icons">library_books</i></a></li>
+        </ul>
+    </div>
 
     @include('partials.modals.addFileModal', ['type' => $course, 'typeClass' => 'course', 'keywords' => $keywords])
 

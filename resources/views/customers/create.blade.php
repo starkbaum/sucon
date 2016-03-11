@@ -17,10 +17,24 @@
     <h5>Neuen Kunden hinzufügen</h5>
     <div class="divider"></div>
 
-    {!! Form::open(['url' => 'customers']) !!}
+    <div class="row">
+        <div class="col s12 m9 l8">
+            @include('errors.errorListing')
+        </div>
+    </div>
 
-        @include('customers._form', ['submitButtonText' => 'Kunden anlegen'])
+    <div class="row">
+        <div class="col s12 m9 l8">
 
-    {!! Form::close() !!}
+            {!! Form::open(['url' => 'customers']) !!}
+
+            @include('customers._form', ['submitButtonText' => 'Kunden anlegen'])
+
+            {!! Form::close() !!}
+
+        </div>
+    </div>
+
+
 
 @endsection

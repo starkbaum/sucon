@@ -12,7 +12,9 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\File;
+use MercurySeries\Flashy\Flashy;
 use Redirect;
+use UxWeb\SweetAlert\SweetAlert;
 
 class CoursesController extends Controller
 {
@@ -64,6 +66,7 @@ class CoursesController extends Controller
         File::makeDirectory($pathToCourse . $course->slug);
         $course->path_to_material = $pathToCourse . $course->slug;
         $course->save();
+
         return redirect('courses');
     }
 

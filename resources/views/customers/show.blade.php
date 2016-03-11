@@ -42,7 +42,7 @@
         <div class="col s12 m4 l4">
             @if (true)
                 <div class="col s12 m12 l12">
-                    <ul class="collection">
+                    <ul class="collection z-depth-1">
                         @foreach($persons as $person)
                             <li class="collection-item avatar">
                                 <img src="{{ Avatar::create($person->name)->toBase64() }}" alt="" class="circle">
@@ -62,7 +62,7 @@
     <div class="row">
         <div class="col s12 m9 l8">
 
-            <ul class="collection">
+            <ul class="collection z-depth-1">
                 @foreach($snippets as $snippet)
                     <li class="collection-item avatar">
                         <img src="{{ Avatar::create($snippet->customer()->first()->name)->toBase64() }}" alt="" class="circle">
@@ -77,8 +77,14 @@
         </div>
     </div>
 
-    <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
-        <a href="{{ url('persons/create') }}" class="btn-floating sucon-background-orange modal-trigger"><i class="tiny material-icons">library_add</i></a>
+    <div class="fixed-action-btn vertical" style="bottom: 45px; right: 24px;">
+        <a class="btn-floating btn-large sucon-background-orange">
+            <i class="large material-icons">mode_edit</i>
+        </a>
+        <ul>
+            <li><a href="{{ url('persons/create') }}" class="btn-floating teal"><i class="material-icons">contacts</i></a></li>
+            <li><a href="{{ url('snippets/create') }}" class="btn-floating deep-orange"><i class="material-icons">receipt</i></a></li>
+        </ul>
     </div>
 
 

@@ -7,9 +7,6 @@
             <li><a href="{{ URL::previous() }}" style="font-size: 20px;">&#8592;</a></li>
             <li><a href="" class="disabled">{{ $snippet->name }}</a></li>
         </ul>
-        <ul class="right hide-on-med-and-down">
-            <li><a href="{{ url('/snippets/create') }}"><i class="tiny material-icons">library_add</i></a></li>
-        </ul>
     </nav>
 
 @endsection
@@ -35,12 +32,21 @@
             <ul class="collection with-header z-depth-1">
                 <li class="collection-header sucon-background-green">
                     <h5>Unterlagen</h5>
-                    <a class="btn-floating btn-large waves-effect waves-light sucon-background-orange modal-trigger" style="margin-bottom:-40px;" href="#modal1"><i class="material-icons">add</i></a>
                 </li>
                 @include('partials.dataListing', $data)
             </ul>
         </div>
         @endunless
+    </div>
+
+    <div class="fixed-action-btn vertical" style="bottom: 45px; right: 24px;">
+        <a class="btn-floating btn-large sucon-background-orange">
+            <i class="large material-icons">mode_edit</i>
+        </a>
+        <ul>
+            <li><a href="#modal1" class="teal btn-floating waves-effect waves-light sucon-background-orange modal-trigger tooltipped" data-position="left" data-delay="20" data-tooltip="Neue Datei hinzufügen"><i class="material-icons">description</i></a></li>
+            <li><a href="{{ url('snippets/create') }}" class="btn-floating deep-orange tooltipped" data-position="left" data-delay="20" data-tooltip="Neues Snippet anlegen"><i class="material-icons">receipt</i></a></li>
+        </ul>
     </div>
 
     @include('partials.modals.addFileModal', ['type' => $snippet, 'typeClass' => 'snippet'])
