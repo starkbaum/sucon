@@ -61,7 +61,12 @@ class StatisticsController extends Controller
             $allPageViews[$pageView['date']] = [$pageView['total']];
         }
 
+        //  dd($allPageViews);
+
+
         return $allPageViews;
+
+
     }
 
     public function getAllRoutes()
