@@ -144,6 +144,33 @@ class DataController extends Controller
         return readfile($filename);
     }
 
+    public function getVideo($id)
+    {
+
+        $foundFile = Data::findOrFail($id);
+        $filename = $foundFile->path; /* Note: Always use .pdf at the end. */
+
+
+        //header('Content-Disposition: inline; filename="' . $filename . '"');
+       header('Content-Transfer-Encoding: binary');
+        header('Accept-Ranges: bytes');
+
+        header('Content-Type: video/mp4');
+        header('Expires: 0');
+        header('Cache-Control: must-revalidate');
+
+        return readfile($filename);
+//        //dd($path);
+//
+//        //$fileContents = Storage::disk('local')->get($path);
+//        $fileContents = storage_path('courses/php-fuer-beginner/rr_kvd.mp4');
+//        $response = Response::make($fileContents, 200);
+//        $response->header('Content-Type', "video/mp4");
+//
+//        return $response;
+
+    }
+
     public function acceptData($id)
     {
         $data = Data::findOrFail($id);
