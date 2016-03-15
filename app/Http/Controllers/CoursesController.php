@@ -83,7 +83,7 @@ class CoursesController extends Controller
         //fetches all data where course id is given id
         $data = Data::where('courseId', $course->id)->where('extension', '!=', 'mp4')->accepted()->get();
         //fetches all Videos
-        $videos = Data::where('extension', 'AVI')->orWhere('extension', 'avi')->orWhere('extension', 'mp4')->get();
+        $videos = Data::where('courseId', $course->id)->Where('extension', 'mp4')->accepted()->get();
         //fetches all comments where course id is given id
         $comments = Comment::where('courseId', $course->id)->get();
         //fetches all keywords
