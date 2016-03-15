@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Data;
+use App\VideoStream;
 use Auth;
 use File;
 use Illuminate\Http\Request;
@@ -144,30 +145,28 @@ class DataController extends Controller
         return readfile($filename);
     }
 
+    //TODO set MIME Type dynamically
     public function getVideo($id)
     {
+
+
 
         $foundFile = Data::findOrFail($id);
         $filename = $foundFile->path; /* Note: Always use .pdf at the end. */
 
-
-        //header('Content-Disposition: inline; filename="' . $filename . '"');
-       header('Content-Transfer-Encoding: binary');
-        header('Accept-Ranges: bytes');
-
-        header('Content-Type: video/mp4');
-        header('Expires: 0');
-        header('Cache-Control: must-revalidate');
-
-        return readfile($filename);
-//        //dd($path);
+//        //header('Content-Disposition: inline; filename="' . $filename . '"');
+//        header('Content-Transfer-Encoding: binary');
+//        header('Accept-Ranges: bytes');
 //
-//        //$fileContents = Storage::disk('local')->get($path);
-//        $fileContents = storage_path('courses/php-fuer-beginner/rr_kvd.mp4');
-//        $response = Response::make($fileContents, 200);
-//        $response->header('Content-Type', "video/mp4");
+//        header('Content-Type: video/mp4');
+//        header('Expires: 0');
+//        header('Cache-Control: must-revalidate');
 //
-//        return $response;
+//        return readfile($filename);
+        $stream = new VideoStream($filename);
+         return $stream->start();
+
+
 
     }
 
