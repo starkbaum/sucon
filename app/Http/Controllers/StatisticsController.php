@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Course;
+use App\Snippet;
 use DB;
 use Illuminate\Http\Request;
 
@@ -24,8 +25,9 @@ class StatisticsController extends Controller
         //dd($numberOfPageViews);
         $numberOfViewsPerCourse = $this->numberOfViewsPerCourse();
         //dd($numberOfViewsPerCourse);
+        $numberOfViewsPerSnippet = $this->numberOfViewsPerSnippet();
 
-        return view('admin.statistics.index', compact('numberOfPageViews', 'numberOfViewsPerCourse'));
+        return view('admin.statistics.index', compact('numberOfPageViews', 'numberOfViewsPerCourse', 'numberOfViewsPerSnippet'));
     }
 
 
@@ -48,6 +50,30 @@ class StatisticsController extends Controller
         $tracker = Tracker::logByRouteName('courses.show')->where(function($query) use ($course) {
             $query->where('path', 'courses/' . $course->slug);
         }, $course)->count();
+
+        return $tracker;
+    }
+
+
+    public function numberOfViewsPerSnippet() {
+
+        $snippets = Snippet::all();
+
+        $viewsPerSnippet = [];
+
+        foreach($snippets as $snippet) {
+
+            $viewsPerSnippet[$snippet->name] = [$this->getCountOfViewsPerSnippet($snippet)];
+        }
+
+        return $viewsPerSnippet;
+    }
+
+    public function getCountOfViewsPerSnippet($snippet)
+    {
+        $tracker = Tracker::logByRouteName('snippets.show')->where(function($query) use ($snippet) {
+            $query->where('path', 'snippets/' . $snippet->slug);
+        }, $snippet)->count();
 
         return $tracker;
     }
