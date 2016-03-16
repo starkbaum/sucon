@@ -42,7 +42,7 @@
                 <div class="card-action right-align">
                     <!-- TODO only Admin -->
                     @if(Auth::user()->isUserAdmin())
-                        <a href="{{ url('courses/delete', $course->id) }}" class="grey lighten-4 sucon-text-orange waves-effect waves-light btn"><i class="material-icons right">delete</i>Löschen</a>
+                        <a href="{{ url('courses/delete', $course->id) }}" class="grey lighten-4 sucon-text-orange waves-effect waves-light btn"><i class="material-icons right">delete</i>Kurs löschen</a>
                     @endif
                     <a href="{{ url('courses/like', $course->id) }}" class="grey lighten-4 sucon-text-orange waves-effect waves-light btn">{{ $course->likesCount }}<i class="material-icons right">loyalty</i> Likes</a>
                 </div>

@@ -21,8 +21,10 @@
                     <p>programmiert für: {{ $snippet->customer()->first()->name }}</p>
                     <p>{{ $snippet->description }}</p>
                 </div>
-                <div class="card-action">
-                    <a href="{{ url('/snippets/delete') . '/' . $snippet->id }}"><i class="small material-icons sucon-text-orange">delete</i></a>
+                <div class="card-action right-align">
+                    @if(Auth::user()->isUserAdmin())
+                        <a href="{{ url('snippets/delete', $snippet->id) }}" class="grey lighten-4 sucon-text-orange waves-effect waves-light btn"><i class="material-icons right">delete</i>Snippet löschen</a>
+                    @endif
                 </div>
             </div>
         </div>
