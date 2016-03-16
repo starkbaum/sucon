@@ -82,8 +82,8 @@
             <i class="large material-icons">mode_edit</i>
         </a>
         <ul>
-            <li><a href="{{ url('persons/create') }}" class="btn-floating teal"><i class="material-icons">contacts</i></a></li>
-            <li><a href="{{ url('snippets/create') }}" class="btn-floating deep-orange"><i class="material-icons">receipt</i></a></li>
+            <li><a href="{{ url('persons/create') }}" class="btn-floating teal tooltipped" data-position="left" data-delay="20" data-tooltip="Neue Kontaktperson"><i class="material-icons">contacts</i></a></li>
+            <li><a href="{{ url('snippets/create') }}" class="btn-floating deep-orange tooltipped" data-position="left" data-delay="20" data-tooltip="Neues Snippet"><i class="material-icons">receipt</i></a></li>
         </ul>
     </div>
 
