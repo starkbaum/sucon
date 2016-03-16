@@ -124,7 +124,13 @@ class CoursesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        //TODO check if user is admin
+        if (\Auth::user()->isUserAdmin()) {
+            $course = Course::where('id', $id)->orWhere('slug', $id)->firstOrFail();
+            File::deleteDirectory($course->path_to_material);
+            $course->delete();
+            return redirect('/courses');
+        }
     }
 
     public function toggleLike($id)

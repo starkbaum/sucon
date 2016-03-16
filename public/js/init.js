@@ -4,7 +4,8 @@ $(document).ready(function(){
     $('.parallax').parallax();
     $('.tooltipped').tooltip({delay: 50});
     $('.slider').slider({
-        interval: 50
+        interval: 50,
+        height: 745,
     });
     $('ul.tabs').tabs();
     // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered

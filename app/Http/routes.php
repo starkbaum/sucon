@@ -21,6 +21,7 @@ Route::get('data/accept/{id}', 'DataController@acceptData');
 # Courses
 Route::resource('courses', 'CoursesController');
 Route::get('courses/like/{id}', 'CoursesController@toggleLike');
+Route::get('courses/delete/{id}', 'CoursesController@destroy');
 Route::get('courses/{param}', 'CoursesController@showParam');
 
 # Snippets
