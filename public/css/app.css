@@ -48,3 +48,9 @@ video {
     background: #ACCB17;
     color: white;
 }
+
+/* search */
+
+#searchForm {
+    padding-right: 2em;
+}

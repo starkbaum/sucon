@@ -5,7 +5,7 @@
         </li>
         <li>
             <button class="btn-floating waves-effect waves-light sucon-background-orange" type="submit">
-                <i class="large material-icons right">search</i>
+                <i class="tiny material-icons right">search</i>
             </button>
         </li>
     </ul>

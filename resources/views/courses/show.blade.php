@@ -72,7 +72,7 @@
         </ul>
     </div>
 
-    @include('partials.modals.addFileModal', ['type' => $course, 'typeClass' => 'course', 'keywords' => $keywords])
+    @include('partials.modals.addFileModal', ['type' => $course, 'typeClass' => 'course'])
 
 
 @endsection

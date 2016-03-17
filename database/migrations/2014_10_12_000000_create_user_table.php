@@ -20,8 +20,6 @@ class CreateUserTable extends Migration
             $table->boolean('is_admin');
             $table->rememberToken();
             $table->timestamps();
-            //TODO make not nullable after testing
-            $table->unsignedInteger('roleId')->nullable();
         });
     }
 
