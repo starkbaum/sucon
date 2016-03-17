@@ -25,6 +25,7 @@ class PersonsRequest extends Request
     {
         return [
             'name'      => 'required|min:5|max:50',
+            'email'     => 'required|email|unique:persons',
             'phoneNo'   => 'required|min:5|max:15',
         ];
     }

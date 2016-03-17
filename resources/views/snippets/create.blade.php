@@ -15,20 +15,19 @@
 @section('content')
 
     <div class="row">
-        <div class="col s12 m9 m9">
+        <div class="col s12 m7 l6">
+            <div class="card">
+                <div class="card-content">
+                    <span class="card-title sucon-text-green">Neues Snippet anlegen</span>
+                    {!! Form::open(['url' => 'snippets']) !!}
 
-            <h5>Ein neues Snippet anlegen</h5>
-            <div class="divider"></div>
+                    @include('snippets._form', ['submitButtonText' => 'Snippet anlegen'])
 
-            @include('errors.errorListing')
-
-            {!! Form::open(['url' => 'snippets']) !!}
-
-            @include('snippets._form', ['submitButtonText' => 'Snippet anlegen'])
-
-            {!! Form::close() !!}
-
+                    {!! Form::close() !!}
+                </div>
+            </div>
         </div>
+        @include('errors.errorListing')
     </div>
 
 @endsection

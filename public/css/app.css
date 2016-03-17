@@ -9,29 +9,18 @@ main {
     margin-left: 270px;
 }
 
+/* login and register */
+
+#login, #register {
+    padding: 1.5em;
+}
+
 /* video */
 
 #my-video {
     width: 100%;
 }
 
-/*Pagination*/
-
-.pagination li.active {
-    background: #ACCB17;
-    color: white;
-}
-
-/* Chips */
-
-.chip {
-    background: #ECB104;
-    height: 28px;
-    line-height: 28px;
-}
-
-
-/* Search */
 
 .video-js .vjs-tech {
     position: absolute;
@@ -51,4 +40,11 @@ main {
 video {
     display: inline-block;
     vertical-align: baseline;
+}
+
+/*Pagination*/
+
+.pagination li.active {
+    background: #ACCB17;
+    color: white;
 }
