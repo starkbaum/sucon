@@ -13,7 +13,11 @@
 
     @include('partials.header')
 
-    @yield('content')
+    <div class="row">
+        <div class="container">
+            @yield('content')
+        </div>
+    </div>
 
     @include('partials.footer')
 

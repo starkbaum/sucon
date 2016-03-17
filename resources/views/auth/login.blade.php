@@ -1,10 +1,13 @@
 @extends('pages')
 
+
 @section('content')
 
-    <div class="row">
-        <div class="container">
-            <form method="POST" action="/auth/login" class="col s3 center-align">
+<div class="col s12 m6 l5">
+    <div class="card card-login">
+        <div class="card-content">
+            <span class="card-title sucon-text-green">Anmelden</span>
+            <form method="POST" action="/auth/login">
                 {!! csrf_field() !!}
                 <div class="row">
                     <div class="input-field col s12">
@@ -22,12 +25,16 @@
                     <input type="checkbox" id="login-remember" />
                     <label for="login-remember">Remember me</label>
                 </div>
-                <button class="btn waves-effect waves-light" type="submit" name="action">Login
+                <button class="btn waves-effect waves-light sucon-background-green" type="submit" name="action">Anmelden
                     <i class="material-icons right">send</i>
                 </button>
             </form>
-            @include('auth._errors')
         </div>
     </div>
+</div>
+
+@include('auth._errors')
 
 @endsection
+
+
