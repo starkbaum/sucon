@@ -2,7 +2,7 @@
 
 @section('header')
 
-    @include('admin.filter')
+    @include('admin.filter', [$countNotAcceptedFiles])
 
 @endsection
 

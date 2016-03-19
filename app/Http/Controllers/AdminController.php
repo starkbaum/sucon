@@ -27,8 +27,9 @@ class AdminController extends Controller
     public function fileAcceptance()
     {
         $dataForAcceptance = Data::notAccepted()->get();
+        $countNotAcceptedFiles = count($dataForAcceptance);
 
-        return view('admin.management.fileAcceptance', compact('dataForAcceptance'));
+        return view('admin.management.fileAcceptance', compact('dataForAcceptance', 'countNotAcceptedFiles'));
     }
 
     public function changeUserAdminRole($id) {

@@ -54,3 +54,16 @@ video {
 #searchForm {
     padding-right: 2em;
 }
+
+/* badges */
+
+span.badge.neue{
+    font-weight:300;
+    font-size:0.8rem;
+    color:#fff;
+    border-radius:2px;
+    padding: 0.2em;
+}
+span.badge.neue:after{
+    content:" neue"
+}
