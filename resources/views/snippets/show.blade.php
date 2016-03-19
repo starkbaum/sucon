@@ -4,7 +4,7 @@
 
     <nav class="sucon-background-green-darker">
         <ul class="left hide-on-med-and-down" style="margin-left: 270px;">
-            <li><a href="{{ URL::previous() }}" style="font-size: 20px;">&#8592;</a></li>
+            <li><a href="{{ url('snippets')  }}" style="font-size: 20px;">&#8592;</a></li>
             <li><a href="" class="disabled">{{ $snippet->name }}</a></li>
         </ul>
     </nav>
