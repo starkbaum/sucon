@@ -20,8 +20,10 @@ class AdminController extends Controller
     public function userManagement()
     {
         $users = User::all();
+        $dataForAcceptance = Data::notAccepted()->get();
+        $countNotAcceptedFiles = count($dataForAcceptance);
 
-        return view('admin.management.userManagement', compact('users'));
+        return view('admin.management.userManagement', compact('users', 'countNotAcceptedFiles'));
     }
 
     public function fileAcceptance()

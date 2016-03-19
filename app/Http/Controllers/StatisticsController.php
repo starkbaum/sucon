@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Course;
+use App\Data;
 use App\Snippet;
 use DB;
 use Illuminate\Http\Request;
@@ -26,8 +27,11 @@ class StatisticsController extends Controller
         $numberOfViewsPerCourse = $this->numberOfViewsPerCourse();
         //dd($numberOfViewsPerCourse);
         $numberOfViewsPerSnippet = $this->numberOfViewsPerSnippet();
+        //Data for menu
+        $dataForAcceptance = Data::notAccepted()->get();
+        $countNotAcceptedFiles = count($dataForAcceptance);
 
-        return view('admin.statistics.index', compact('numberOfPageViews', 'numberOfViewsPerCourse', 'numberOfViewsPerSnippet'));
+        return view('admin.statistics.index', compact('numberOfPageViews', 'numberOfViewsPerCourse', 'numberOfViewsPerSnippet', 'countNotAcceptedFiles'));
     }
 
 

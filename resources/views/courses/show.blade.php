@@ -15,6 +15,12 @@
 
     <div class="row">
         <div class="col s12 m9 l8">
+            @include('errors.errorListing')
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col s12 m9 l8">
 
             @if( !$videos->isEmpty() )
             <div class="slider">
