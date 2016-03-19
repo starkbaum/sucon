@@ -13,7 +13,7 @@ class DataRequest extends Request
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -25,7 +25,17 @@ class DataRequest extends Request
     {
         return [
             'name'          => 'required|unique:data|min:5|max:50',
-            'customer'      => 'required',
+            'path'          => 'required|unique:data|mimes:pdf,mp4,txt'
         ];
+    }
+
+    public function messages()
+    {
+        $messages = [
+            'name'    => 'The :attribute and :other must match.',
+            'path'    => 'File must be PDF MP4 or TXT',
+        ];
+
+        return $messages;
     }
 }

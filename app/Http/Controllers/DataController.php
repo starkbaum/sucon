@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Data;
+use App\Http\Requests\DataRequest;
 use App\VideoStream;
 use Auth;
 use File;
@@ -25,36 +26,39 @@ class DataController extends Controller
         $this->middleware('auth');
     }
 
+    public function create()
+    {
+        return view('partials.addFile');
+    }
+
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param DataRequest|Request $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(DataRequest $request)
     {
-        if(Input::hasFile('file')) {
+        if($request->hasFile('path')) {
 
-            $file = Input::file('file');
-            $path = Input::get('test');
+            $file = $request->file('path');
+            $path = $request->input('test');
             $name = $file->getClientOriginalName();
             $courseId = NULL;
             $snippetId = NULL;
 
-            //TODO implement if data is already uploaded
-
             $file->move($path, $file->getClientOriginalName());
 
             //check if course or snippet
-            if (Input::get('typeClass') == 'course') {
-                $courseId = Input::get('id');
+            if ($request->input('typeClass') == 'course') {
+                $courseId = $request->input('id');
             }
-            if (Input::get('typeClass') == 'snippet') {
-                $snippetId = Input::get('id');
+            if ($request->get('typeClass') == 'snippet') {
+                $snippetId = $request->input('id');
             }
 
             $data = new Data([
-                'name'          => $request->input('filename'),
+                'name'          => $request->input('name'),
                 'path'          => $path . '/' . $name,
                 'author'        => Auth::user()->name,
                 'size'          => $file->getSize(),
@@ -68,40 +72,6 @@ class DataController extends Controller
 
             return redirect(URL::previous());
         }
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //TODO implement link to google docs viewer
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
     }
 
     /**
@@ -145,37 +115,20 @@ class DataController extends Controller
         return readfile($filename);
     }
 
-    //TODO set MIME Type dynamically
     public function getVideo($id)
     {
-
-
-
         $foundFile = Data::findOrFail($id);
-        $filename = $foundFile->path; /* Note: Always use .pdf at the end. */
-
-//        //header('Content-Disposition: inline; filename="' . $filename . '"');
-//        header('Content-Transfer-Encoding: binary');
-//        header('Accept-Ranges: bytes');
-//
-//        header('Content-Type: video/mp4');
-//        header('Expires: 0');
-//        header('Cache-Control: must-revalidate');
-//
-//        return readfile($filename);
+        //must have .pdf at end
+        $filename = $foundFile->path;
         $stream = new VideoStream($filename);
-         return $stream->start();
 
-
-
+        return $stream->start();
     }
 
     public function acceptData($id)
     {
         $data = Data::findOrFail($id);
-
         $data->is_accepted = true;
-
         $data->save();
 
         return Redirect::action('AdminController@fileAcceptance');

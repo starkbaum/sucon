@@ -13,8 +13,8 @@
                 <!-- Filename -->
                 <div class="row">
                     <div class="input-field col s6">
-                        <input id="filename" name="filename" type="text" class="validate">
-                        <label for="filename">Dateiname</label>
+                        <input id="name" name="name" type="text" class="validate">
+                        <label for="name">Dateiname</label>
                     </div>
                 </div>
                 <!-- File Selection -->
@@ -22,7 +22,7 @@
                     <div class="file-field input-field col s6">
                         <div class="btn">
                             <span>Datei</span>
-                            <input type="file" name="file" id="file" accept=".pdf">
+                            <input type="file" name="path" id="path" accept=".pdf">
                         </div>
                         <div class="file-path-wrapper">
                             <input class="file-path validate" type="text">
