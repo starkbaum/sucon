@@ -18,6 +18,8 @@ class CreateCustomerSnippetTable extends Migration
             $table->unsignedInteger('snippet_id')->index();
             $table->foreign('snippet_id')->references('id')->on('snippets')->onDelete('cascade');
             $table->timestamps();
+
+
         });
     }
 
