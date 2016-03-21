@@ -22,6 +22,7 @@
                     <div class="file-field input-field col s6">
                         <div class="btn">
                             <span>Datei</span>
+                            <!-- TODO remove accept attribute -->
                             <input type="file" name="path" id="path" accept=".pdf">
                         </div>
                         <div class="file-path-wrapper">

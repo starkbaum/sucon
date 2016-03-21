@@ -48,14 +48,4 @@ class Course extends Model implements SluggableInterface
             'courses.description' => 10,
         ]
     ];
-
-    /**
-     * get the Keywords associated with the Course
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
-     */
-    public function keywords() {
-        return $this->belongsToMany('App\Keyword');
-    }
-
 }

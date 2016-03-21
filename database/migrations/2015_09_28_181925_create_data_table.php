@@ -22,7 +22,6 @@ class CreateDataTable extends Migration
             $table->boolean('is_accepted')->defaul(false);
             $table->unsignedInteger('courseId')->nullable();    // foreign key
             $table->unsignedInteger('snippetId')->nullable();   // foreign key
-            $table->unsignedInteger('languageId')->nullable();  // foreign key
             $table->timestamps();                               //adds created_at and updated_at columns
         });
     }

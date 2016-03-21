@@ -29,10 +29,4 @@ class Data extends Model
     public function scopeAccepted($query) {
         $query->where('is_accepted', '=', 1);
     }
-
-    public function keywords()
-    {
-        return $this->belongsToMany('App\Keyword')->withTimestamps();
-    }
-
 }

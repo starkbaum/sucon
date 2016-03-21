@@ -15,13 +15,10 @@ class CreateSnippetsTable extends Migration
         Schema::create('snippets', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            //TODO make slug not nullable
             $table->string('slug');
             $table->text('description')->nullable();
             //TODO maybe not nullable
             $table->string('path_to_material')->nullable();
-            $table->unsignedInteger('customer_id')->nullable();
-            $table->unsignedInteger('language_id')->nullable();
             $table->timestamps();
         });
     }
