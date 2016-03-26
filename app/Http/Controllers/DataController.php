@@ -65,8 +65,6 @@ class DataController extends Controller
                 'extension'     => $file->getClientOriginalExtension(),
                 'courseId'      => $courseId,
                 'snippetId'     => $snippetId,
-                //TODO remove
-                'languageId'    => 1
             ]);
             $data->save();
 
