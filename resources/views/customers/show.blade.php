@@ -39,43 +39,42 @@
             </div>
         </div>
 
+        @if ($persons)
         <div class="col s12 m4 l4">
-            @if (true)
-                <div class="col s12 m12 l12">
-                    <ul class="collection z-depth-1">
-                        @foreach($persons as $person)
-                            <li class="collection-item avatar">
-                                <img src="{{ Avatar::create($person->name)->toBase64() }}" alt="" class="circle">
-                                <span class="title">{{ $person->name }}</span>
-                                <p>{{ $person->phoneNo }}</p>
-                                <p><a href="mailto:{{ $person->email }}">{{ $person->email }}</a></p>
-                            </li>
-                        @endforeach
-                    </ul>
-                </div>
-            @else
-
-            @endif
+            <div class="col s12 m12 l12">
+                <ul class="collection z-depth-1">
+                    @foreach($persons as $person)
+                    <li class="collection-item avatar">
+                        <img src="{{ Avatar::create($person->name)->toBase64() }}" alt="" class="circle">
+                        <span class="title">{{ $person->name }}</span>
+                        <p>{{ $person->phoneNo }}</p>
+                        <p><a href="mailto:{{ $person->email }}">{{ $person->email }}</a></p>
+                    </li>
+                    @endforeach
+                </ul>
+            </div>
         </div>
+        @endif
     </div>
 
+
+    @if($snippets)
     <div class="row">
         <div class="col s12 m9 l8">
-
             <ul class="collection z-depth-1">
                 @foreach($snippets as $snippet)
-                    <li class="collection-item avatar">
-                        <img src="{{ Avatar::create($snippet->customer()->first()->name)->toBase64() }}" alt="" class="circle">
-                        <span class="title">{{ $snippet->name }}</span>
-                        <p>Beschreibung:</p>
-                        <p>{{ $snippet->description }}</p>
-                        <a href="/snippets/{{ $snippet->slug }}" class="secondary-content">Zum Snippet</a>
-                    </li>
+                <li class="collection-item avatar">
+                    <img src="{{ Avatar::create($snippet->customer()->first()->name)->toBase64() }}" alt="" class="circle">
+                    <span class="title">{{ $snippet->name }}</span>
+                    <p>Beschreibung:</p>
+                    <p>{{ $snippet->description }}</p>
+                    <a href="/snippets/{{ $snippet->slug }}" class="secondary-content">Zum Snippet</a>
+                </li>
                 @endforeach
             </ul>
-
         </div>
     </div>
+    @endif
 
     <div class="fixed-action-btn vertical" style="bottom: 45px; right: 24px;">
         <a class="btn-floating btn-large sucon-background-orange">

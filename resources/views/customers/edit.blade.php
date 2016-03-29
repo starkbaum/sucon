@@ -13,9 +13,21 @@
 @endsection
 
 @section('content')
-    {!! Form::model($customer, ['method' => 'PATCH', 'action' => ['CustomersController@update', $customer->id]]) !!}
 
-    @include('customers._form', ['submitButtonText' => 'Kunden ändern'])
+    <div class="row">
+        <div class="col s12 m7 l6">
+            <div class="card">
+                <div class="card-content">
+                    <span class="card-title sucon-text-green">Kundendaten ändern</span>
+                    {!! Form::model($customer, ['method' => 'PATCH', 'action' => ['CustomersController@update', $customer->id]]) !!}
 
-    {!! Form::close() !!}
+                    @include('customers._form', ['submitButtonText' => 'Kunden ändern'])
+
+                    {!! Form::close() !!}
+                </div>
+            </div>
+        </div>
+        @include('errors.errorListing')
+    </div>
+
 @endsection
