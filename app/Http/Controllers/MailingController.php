@@ -12,6 +12,7 @@ use App\Http\Controllers\Controller;
 use Input;
 use Mail;
 use Redirect;
+use Validator;
 
 class MailingController extends Controller
 {
@@ -34,15 +35,12 @@ class MailingController extends Controller
         $file = Data::findOrFail($id);
         $pathToFile = $file->path;
 
-        //dd($file);
-
         Mail::raw(Input::get('body'), function ($message) use ($pathToFile, $file) {
             $message->to(Input::get('email'));
             $message->subject(Input::get('subject'));
             $message->attach($pathToFile, ['as' => $file->name, 'mime' => 'application/pdf']);
         });
 
-        //TODO correct redirect
         if($file->courseId != null) {
 
             $course = Course::findOrFail($file->courseId);

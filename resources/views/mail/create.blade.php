@@ -8,17 +8,17 @@
 
             <div class="input-field">
                 {!! Form::label('email', 'Empfänger') !!}
-                {!! Form::email('email', null, ['class' => 'form-control']) !!}
+                {!! Form::email('email', null, ['class' => 'form-control', 'required']) !!}
             </div>
 
             <div class="input-field">
                 {!! Form::label('subject', 'Betreff') !!}
-                {!! Form::text('subject', null, ['class' => 'form-control']) !!}
+                {!! Form::text('subject', null, ['class' => 'form-control', 'required']) !!}
             </div>
 
             <div class="input-field">
                 {!! Form::label('body', 'Nachricht') !!}
-                {!! Form::textarea('body', null, ['class' => 'materialize-textarea', 'length' => '250']) !!}
+                {!! Form::textarea('body', null, ['class' => 'materialize-textarea', 'length' => '250', 'required']) !!}
             </div>
 
             <div class="input-field">
