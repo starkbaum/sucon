@@ -25,7 +25,7 @@ class CustomerRequest extends Request
     {
         return [
             'name'          => 'required|unique:customers|min:5|max:50',
-            'city'   => 'required|min:5|max:1000',
+            'city'   => 'required|min:2|max:1000',
             'zipCode'      => 'required',
             'street'      => 'required',
             'email'      => 'required',

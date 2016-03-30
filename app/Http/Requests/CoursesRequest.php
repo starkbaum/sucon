@@ -25,7 +25,7 @@ class CoursesRequest extends Request
     {
         return [
             'name'          => 'required|unique:snippets|min:5|max:50',
-            'description'   => 'required|min:5|max:1000',
+            'description'   => 'required|min:2|max:1000',
         ];
     }
 }

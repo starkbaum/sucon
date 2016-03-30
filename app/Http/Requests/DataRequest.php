@@ -25,17 +25,8 @@ class DataRequest extends Request
     {
         return [
             'name'          => 'required|unique:data|min:5|max:50',
-            'path'          => 'required|unique:data|mimes:pdf,mp4,txt'
+            'path'          => 'required|unique:data|mimes:pdf,mp4'
         ];
     }
 
-    public function messages()
-    {
-        $messages = [
-            'name'    => 'The :attribute and :other must match.',
-            'path'    => 'File must be PDF MP4 or TXT',
-        ];
-
-        return $messages;
-    }
 }
