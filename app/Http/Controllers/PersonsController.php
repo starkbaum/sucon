@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Redirect;
 use URL;
 
 class PersonsController extends Controller
@@ -41,35 +42,14 @@ class PersonsController extends Controller
     {
         $person = Person::create($request->all());
 
-        $customer = Customer::findOrFail(1);
+        $customer = Customer::findOrFail($person->customer_id);
 
         $snippets = $customer->snippets;
         $persons = Person::where('customerId', $customer->id);
 
-        return view('customers.show', compact('customer', 'snippets', 'persons'));
-    }
+        return Redirect::action('CustomersController@show', [$customer->slug])->with([$snippets, $persons]);
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
+        //return view('customers.show', compact('customer', 'snippets', 'persons'));
     }
 
     /**
@@ -80,6 +60,10 @@ class PersonsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $person = Person::findOrFail($id);
+        $customer = Customer::findOrFail($person->customer_id);
+        $person->delete();
+
+        return Redirect::action('CustomersController@show', [$customer->slug]);
     }
 }

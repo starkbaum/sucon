@@ -11,6 +11,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
+use Redirect;
 
 class CustomersController extends Controller
 {
@@ -98,7 +99,7 @@ class CustomersController extends Controller
         $customer = Customer::findOrFail($id);
         $customer->update($request->all());
 
-        return redirect('customers');
+        return Redirect::action('CustomersController@show', [$customer->slug]);
     }
 
     /**
