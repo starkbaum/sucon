@@ -26,13 +26,13 @@
                 <div class="row">
                     <div class="input-field col s12">
                         <input id="register-password" type="password" class="validate" name="password">
-                        <label for="register-password">Password</label>
+                        <label for="register-password">Passwort</label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s12">
                         <input id="register-password-confirmation" type="password" class="validate" name="password_confirmation">
-                        <label for="register-password-confirmation">Password</label>
+                        <label for="register-password-confirmation">Passwort wiederholen</label>
                     </div>
                 </div>
                 <button class="btn waves-effect waves-light sucon-background-green" type="submit" name="action">Registrieren

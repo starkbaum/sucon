@@ -32,7 +32,7 @@
                         </tbody>
                     </table>
                 </div>
-                <div class="card-action">
+                <div class="card-action right-align">
                     <a href="{{ url('/customers/update', $customer->id) }}">Ändern</a>
                     <a href="{{ url('/customers/delete', $customer->id) }}">Löschen</a>
                 </div>
@@ -49,7 +49,9 @@
                         <span class="title">{{ $person->name }}</span>
                         <p>{{ $person->phoneNo }}</p>
                         <p><a href="mailto:{{ $person->email }}">{{ $person->email }}</a></p>
+                        <a href="{{ url('/persons/destroy', $person->id) }}" class="secondary-content sucon-text-orange"><i class="material-icons">delete</i></a>
                     </li>
+
                     @endforeach
                 </ul>
             </div>
