@@ -152,7 +152,7 @@ return [
         Intervention\Image\ImageServiceProvider::class,
         Laravolt\Avatar\ServiceProvider::class,
 
-        //TODO hast to be commented out when migratin db, check if normal
+        //TODO has to be commented out when migrating db
         PragmaRX\Tracker\Vendor\Laravel\ServiceProvider::class,
 
         Rap2hpoutre\LaravelLogViewer\LaravelLogViewerServiceProvider::class,
