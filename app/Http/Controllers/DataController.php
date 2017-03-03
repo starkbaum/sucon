@@ -8,19 +8,14 @@ use App\VideoStream;
 use Auth;
 use File;
 use Illuminate\Http\Request;
-use App\Http\Requests;
-use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Storage;
 use Redirect;
 use Response;
-use RobbieP\CloudConvertLaravel\Facades\CloudConvert;
 use URL;
-
 
 class DataController extends Controller
 {
-
     public function __construct()
     {
         $this->middleware('auth');
@@ -35,17 +30,17 @@ class DataController extends Controller
      * Store a newly created resource in storage.
      *
      * @param DataRequest|Request $request
+     *
      * @return \Illuminate\Http\Response
      */
     public function store(DataRequest $request)
     {
-        if($request->hasFile('path')) {
-
+        if ($request->hasFile('path')) {
             $file = $request->file('path');
             $path = $request->input('test');
             $name = $file->getClientOriginalName();
-            $courseId = NULL;
-            $snippetId = NULL;
+            $courseId = null;
+            $snippetId = null;
 
             $file->move($path, $file->getClientOriginalName());
 
@@ -59,7 +54,7 @@ class DataController extends Controller
 
             $data = new Data([
                 'name'          => $request->input('name'),
-                'path'          => $path . '/' . $name,
+                'path'          => $path.'/'.$name,
                 'author'        => Auth::user()->name,
                 'size'          => $file->getSize(),
                 'extension'     => $file->getClientOriginalExtension(),
@@ -75,7 +70,8 @@ class DataController extends Controller
     /**
      * Remove the specified resource from storage and database.
      *
-     * @param  int  $id
+     * @param int $id
+     *
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
@@ -83,30 +79,33 @@ class DataController extends Controller
         $file = Data::findOrFail($id);
         File::delete($file->path);
         $file->delete();
+
         return redirect(URL::previous());
     }
 
     /**
-     * Downloads file with the given id
+     * Downloads file with the given id.
      *
      * @param $id
+     *
      * @return \Symfony\Component\HttpFoundation\BinaryFileResponse
      */
     public function download($id)
     {
         $file = Data::findOrFail($id);
+
         return response()->download($file->path);
     }
 
     //TODO wenn keine fehlermeldung
     //TODO check is_accepted flag
-    public function showPdf($id) {
-
+    public function showPdf($id)
+    {
         $foundFile = Data::findOrFail($id);
         $filename = $foundFile->path; /* Note: Always use .pdf at the end. */
 
         header('Content-type: application/pdf');
-        header('Content-Disposition: inline; filename="' . $filename . '"');
+        header('Content-Disposition: inline; filename="'.$filename.'"');
         header('Content-Transfer-Encoding: binary');
         header('Accept-Ranges: bytes');
 
@@ -131,5 +130,4 @@ class DataController extends Controller
 
         return Redirect::action('AdminController@fileAcceptance');
     }
-    
 }

@@ -1,9 +1,7 @@
 <?php
 
-use Illuminate\Foundation\Testing\WithoutMiddleware;
-use Illuminate\Foundation\Testing\DatabaseMigrations;
-use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Faker\Factory as Faker;
+use Illuminate\Foundation\Testing\DatabaseTransactions;
 
 class UserManagementTest extends TestCase
 {
@@ -15,7 +13,7 @@ class UserManagementTest extends TestCase
     protected $faker;
 
     /**
-     * Setup faker
+     * Setup faker.
      */
     public function setUp()
     {
@@ -49,5 +47,4 @@ class UserManagementTest extends TestCase
         $this->seePageIs('/courses');
         $this->seeInDatabase('users', ['name' => $userName, 'email' => $userEmail]);
     }
-
 }

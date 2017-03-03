@@ -5,16 +5,10 @@ namespace App\Http\Controllers;
 use App\Customer;
 use App\Http\Requests\PersonsRequest;
 use App\Person;
-use Illuminate\Http\Request;
-
-use App\Http\Requests;
-use App\Http\Controllers\Controller;
 use Redirect;
-use URL;
 
 class PersonsController extends Controller
 {
-
     public function __construct()
     {
         $this->middleware('auth');
@@ -35,7 +29,8 @@ class PersonsController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
+     *
      * @return \Illuminate\Http\Response
      */
     public function store(PersonsRequest $request)
@@ -55,7 +50,8 @@ class PersonsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
+     *
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)

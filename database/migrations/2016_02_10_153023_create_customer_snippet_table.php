@@ -1,7 +1,7 @@
 <?php
 
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
 
 class CreateCustomerSnippetTable extends Migration
 {
@@ -18,8 +18,6 @@ class CreateCustomerSnippetTable extends Migration
             $table->unsignedInteger('snippet_id')->index();
             $table->foreign('snippet_id')->references('id')->on('snippets')->onDelete('cascade');
             $table->timestamps();
-
-
         });
     }
 

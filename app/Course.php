@@ -2,7 +2,6 @@
 
 namespace App;
 
-use Auth;
 use Cviebrock\EloquentSluggable\SluggableInterface;
 use Cviebrock\EloquentSluggable\SluggableTrait;
 use Illuminate\Database\Eloquent\Model;
@@ -10,7 +9,6 @@ use Nicolaslopezj\Searchable\SearchableTrait;
 
 class Course extends Model implements SluggableInterface
 {
-
     use SluggableTrait, SearchableTrait, Likeability;
 
     /**
@@ -21,14 +19,14 @@ class Course extends Model implements SluggableInterface
     protected $table = 'courses';
 
     /**
-     * TODO
+     * TODO.
      *
      * @var array
      */
     protected $fillable = ['name', 'slug', 'description'];
 
     /**
-     * Array to build Slugs
+     * Array to build Slugs.
      *
      * @var array
      */
@@ -44,8 +42,8 @@ class Course extends Model implements SluggableInterface
      */
     protected $searchable = [
         'columns' => [
-            'courses.name' => 10,
+            'courses.name'        => 10,
             'courses.description' => 10,
-        ]
+        ],
     ];
 }

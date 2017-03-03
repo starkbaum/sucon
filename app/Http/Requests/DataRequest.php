@@ -2,8 +2,6 @@
 
 namespace App\Http\Requests;
 
-use App\Http\Requests\Request;
-
 class DataRequest extends Request
 {
     /**
@@ -25,8 +23,7 @@ class DataRequest extends Request
     {
         return [
             'name'          => 'required|unique:data|min:5|max:50',
-            'path'          => 'required|unique:data|mimes:pdf,mp4'
+            'path'          => 'required|unique:data|mimes:pdf,mp4',
         ];
     }
-
 }

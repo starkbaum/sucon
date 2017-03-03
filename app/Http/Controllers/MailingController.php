@@ -5,14 +5,9 @@ namespace App\Http\Controllers;
 use App\Course;
 use App\Data;
 use App\Snippet;
-use Illuminate\Http\Request;
-
-use App\Http\Requests;
-use App\Http\Controllers\Controller;
 use Input;
 use Mail;
 use Redirect;
-use Validator;
 
 class MailingController extends Controller
 {
@@ -41,17 +36,15 @@ class MailingController extends Controller
             $message->attach($pathToFile, ['as' => $file->name, 'mime' => 'application/pdf']);
         });
 
-        if($file->courseId != null) {
-
+        if ($file->courseId != null) {
             $course = Course::findOrFail($file->courseId);
 
             return Redirect::action('CoursesController@showParam', [$course->slug]);
         }
-        if($file->snippetId != null) {
+        if ($file->snippetId != null) {
             $snippet = Snippet::findOrFail($file->snippetId);
 
             return Redirect::action('CoursesController@show', [$snippet->slug]);
         }
-
     }
 }

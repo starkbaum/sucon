@@ -2,14 +2,15 @@
 
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 
-class LikesTest extends TestCase {
-
+class LikesTest extends TestCase
+{
     use DatabaseTransactions;
 
     protected $course;
     protected $user;
 
-    function setUp(){
+    public function setUp()
+    {
         @session_start();
         parent::setUp();
 
@@ -25,13 +26,12 @@ class LikesTest extends TestCase {
         $this->course->like();
 
         $this->seeInDatabase('likes', [
-            'user_id' => $this->user->id,
-            'likeable_id' => $this->course->id,
-            'likeable_type' => get_class($this->course)
+            'user_id'       => $this->user->id,
+            'likeable_id'   => $this->course->id,
+            'likeable_type' => get_class($this->course),
         ]);
 
         $this->assertTrue($this->course->isLiked());
-
     }
 
     /** @test */
@@ -41,13 +41,13 @@ class LikesTest extends TestCase {
         $this->course->unlike();
 
         $this->NotSeeInDatabase('likes', [
-            'user_id' => $this->user->id,
-            'likeable_id' => $this->course->id,
-            'likeable_type' => get_class($this->course)
+            'user_id'       => $this->user->id,
+            'likeable_id'   => $this->course->id,
+            'likeable_type' => get_class($this->course),
         ]);
         $this->assertFalse($this->course->isLiked());
     }
-    
+
     /** @test */
     public function a_user_may_toggle_a_courses_like_status()
     {

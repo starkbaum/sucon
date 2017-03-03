@@ -9,7 +9,7 @@ use Nicolaslopezj\Searchable\SearchableTrait;
 
 class Customer extends Model implements SluggableInterface
 {
-    /**
+    /*
      * makes Model use the needed methods of SluggableInterface
      */
     use SluggableTrait, SearchableTrait;
@@ -17,7 +17,7 @@ class Customer extends Model implements SluggableInterface
     protected $table = 'customers';
 
     /**
-     * Fields that may be mass assigned
+     * Fields that may be mass assigned.
      *
      * @var array
      */
@@ -27,11 +27,11 @@ class Customer extends Model implements SluggableInterface
         'zipCode',
         'street',
         'email',
-        'phoneNo'
+        'phoneNo',
     ];
 
     /**
-     * Array to build Slugs
+     * Array to build Slugs.
      *
      * @var array
      */
@@ -48,11 +48,11 @@ class Customer extends Model implements SluggableInterface
     protected $searchable = [
         'columns' => [
             'customers.name' => 10,
-        ]
+        ],
     ];
 
     /**
-     * Get the Snippets associated with the given Customer
+     * Get the Snippets associated with the given Customer.
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
@@ -61,7 +61,8 @@ class Customer extends Model implements SluggableInterface
         return $this->belongsToMany('App\Snippet')->withTimestamps();
     }
 
-    public function persons() {
+    public function persons()
+    {
         return $this->hasMany('\App\Person');
     }
 }

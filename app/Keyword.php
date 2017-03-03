@@ -7,20 +7,21 @@ use Illuminate\Database\Eloquent\Model;
 class Keyword extends Model
 {
     protected $fillable = [
-        'name'
+        'name',
     ];
 
-
     /**
-     * get the Courses associated with the Keyword
+     * get the Courses associated with the Keyword.
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
-    public function courses() {
+    public function courses()
+    {
         return $this->belongsToMany('App\Course');
     }
 
-    public function snippets() {
+    public function snippets()
+    {
         return $this->belongsToMany('App\Data');
     }
 }

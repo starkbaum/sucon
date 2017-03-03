@@ -1,7 +1,7 @@
 <?php
 
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
 
 class CreateCoursesTable extends Migration
 {
@@ -32,6 +32,5 @@ class CreateCoursesTable extends Migration
         DB::statement('SET FOREIGN_KEY_CHECKS = 0');
         Schema::drop('courses');
         DB::statement('SET FOREIGN_KEY_CHECKS = 1');
-
     }
 }

@@ -2,8 +2,6 @@
 
 namespace App\Http\Requests;
 
-use App\Http\Requests\Request;
-
 class CustomerRequest extends Request
 {
     /**
@@ -25,11 +23,11 @@ class CustomerRequest extends Request
     {
         return [
             'name'          => 'required|unique:customers|min:5|max:50',
-            'city'   => 'required|min:2|max:1000',
-            'zipCode'      => 'required',
-            'street'      => 'required',
-            'email'      => 'required',
-            'phoneNo'      => 'required',
+            'city'          => 'required|min:2|max:1000',
+            'zipCode'       => 'required',
+            'street'        => 'required',
+            'email'         => 'required',
+            'phoneNo'       => 'required',
         ];
     }
 }
