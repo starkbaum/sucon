@@ -1,24 +1,28 @@
-<?php namespace App;
+<?php
+
+namespace App;
 
 use Auth;
 
-trait Likeability {
-
+trait Likeability
+{
     public function like()
     {
         $like = new Like(['user_id' => Auth::id()]);
         $this->likes()->save($like);
     }
 
-    public function unlike() {
+    public function unlike()
+    {
         $this->likes()->where('user_id', Auth::id())->delete();
     }
 
     public function toggleLike()
     {
-        if( $this->isLiked() ) {
+        if ($this->isLiked()) {
             return $this->unlike();
         }
+
         return $this->like();
     }
 
@@ -30,12 +34,11 @@ trait Likeability {
     public function isLiked()
     {
         // !! cast to boolean
-        return !! $this->likes()->where('user_id', Auth::id())->count();
+        return (bool) $this->likes()->where('user_id', Auth::id())->count();
     }
 
     public function getLikesCountAttribute()
     {
         return $this->likes()->count();
     }
-
 }

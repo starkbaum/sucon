@@ -6,11 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Person extends Model
 {
-
     protected $table = 'persons';
 
     /**
-     * fields that may be mass-assigned
+     * fields that may be mass-assigned.
      *
      * @var array
      */
@@ -18,10 +17,11 @@ class Person extends Model
         'name',
         'phoneNo',
         'email',
-        'customer_id'
+        'customer_id',
     ];
 
-    public function customers() {
+    public function customers()
+    {
         return $this->belongsTo('App\Customer');
     }
 }

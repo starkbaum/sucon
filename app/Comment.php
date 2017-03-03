@@ -14,7 +14,7 @@ class Comment extends Model
     protected $table = 'comments';
 
     /**
-     * TODO
+     * TODO.
      *
      * @var array
      */

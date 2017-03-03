@@ -12,18 +12,18 @@ class Snippet extends Model implements SluggableInterface
     use SluggableTrait, SearchableTrait;
 
     /**
-     * fields that may be mass-assigned
+     * fields that may be mass-assigned.
      *
      * @var array
      */
     protected $fillable = [
         'name',
         'slug',
-        'description'
+        'description',
     ];
 
     /**
-     * Array to build Slugs
+     * Array to build Slugs.
      *
      * @var array
      */
@@ -39,11 +39,10 @@ class Snippet extends Model implements SluggableInterface
      */
     protected $searchable = [
         'columns' => [
-            'snippets.name' => 10,
+            'snippets.name'        => 10,
             'snippets.description' => 10,
-        ]
+        ],
     ];
-
 
     public function customer()
     {
@@ -59,5 +58,4 @@ class Snippet extends Model implements SluggableInterface
     {
         return $this->belongsToMany('App\Keyword')->withTimestamps();
     }
-
 }

@@ -1,7 +1,7 @@
 <?php
 
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
 
 class AlterDataForeignKeys extends Migration
 {
@@ -26,6 +26,6 @@ class AlterDataForeignKeys extends Migration
     public function down()
     {
         Schema::table('data', function (Blueprint $table) {
-       });
+        });
     }
 }

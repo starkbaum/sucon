@@ -2,7 +2,6 @@
 
 use App\Customer;
 use Illuminate\Database\Seeder;
-use \Faker\Factory as Faker;
 
 class CustomersTableSeeder extends Seeder
 {
@@ -30,6 +29,5 @@ class CustomersTableSeeder extends Seeder
         $spengergasse->email = 'contact@spengergasse.at';
         $spengergasse->phoneNo = '0660606060';
         $spengergasse->save();
-
     }
 }

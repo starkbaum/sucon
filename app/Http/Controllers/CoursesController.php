@@ -6,19 +6,12 @@ use App\Comment;
 use App\Course;
 use App\Data;
 use App\Http\Requests\CoursesRequest;
-use App\Keyword;
-use App\Language;
 use Illuminate\Http\Request;
-use App\Http\Requests;
-use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\File;
-use MercurySeries\Flashy\Flashy;
 use Redirect;
-use UxWeb\SweetAlert\SweetAlert;
 
 class CoursesController extends Controller
 {
-
     public function __construct()
     {
         $this->middleware('auth');
@@ -49,21 +42,22 @@ class CoursesController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
+     *
      * @return \Illuminate\Http\Response
      */
     public function store(CoursesRequest $request)
     {
         $course = Course::create($request->all());
 
-        $pathToCourse = storage_path() . '/courses/';
+        $pathToCourse = storage_path().'/courses/';
         echo $pathToCourse;
 
         if (!File::isDirectory($pathToCourse)) {
             File::makeDirectory($pathToCourse);
         }
-        File::makeDirectory($pathToCourse . $course->slug);
-        $course->path_to_material = $pathToCourse . $course->slug;
+        File::makeDirectory($pathToCourse.$course->slug);
+        $course->path_to_material = $pathToCourse.$course->slug;
         $course->save();
 
         return redirect('courses');
@@ -72,7 +66,8 @@ class CoursesController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
+     *
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -88,7 +83,8 @@ class CoursesController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
+     *
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -99,8 +95,9 @@ class CoursesController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int                      $id
+     *
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -111,7 +108,8 @@ class CoursesController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
+     *
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
@@ -121,6 +119,7 @@ class CoursesController extends Controller
             $course = Course::where('id', $id)->orWhere('slug', $id)->firstOrFail();
             File::deleteDirectory($course->path_to_material);
             $course->delete();
+
             return redirect('/courses');
         }
     }
@@ -129,7 +128,7 @@ class CoursesController extends Controller
     {
         $course = Course::findOrFail($id);
         $course->toggleLike();
+
         return Redirect::action('CoursesController@show', [$course->slug]);
     }
-
 }

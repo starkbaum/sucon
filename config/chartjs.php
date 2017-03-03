@@ -1,4 +1,5 @@
 <?php
+
 return [
 
     /*
@@ -49,7 +50,7 @@ return [
             'rgba(149, 165, 166,1.0)',
             'rgba(243, 156, 18,1.0)',
             'rgba(211, 84, 0,1.0)',
-            'rgba(192, 57, 43,1.0)'
+            'rgba(192, 57, 43,1.0)',
         ],
 
         'radar' => [
@@ -72,27 +73,26 @@ return [
             'rgba(192, 57, 43,1.0)',
         ],
 
-        /**
+        /*
          * If the number of data exceeds the number of colors configured,
          * the data will use default color definied in ChartPieAndDougnhut.php
          */
         'pie' => [
             [
-                'colour' => "#F7464A",
-                'highlight' => "#FF5A5E"
+                'colour'    => '#F7464A',
+                'highlight' => '#FF5A5E',
             ],
             [
-                'colour' => "#46BFBD",
-                'highlight' => "#5AD3D1"
+                'colour'    => '#46BFBD',
+                'highlight' => '#5AD3D1',
             ],
             [
-                'colour' => "#FDB45C",
-                'highlight' => "#FFC870"
+                'colour'    => '#FDB45C',
+                'highlight' => '#FFC870',
             ],
 
-        ]
+        ],
     ],
-
 
     /*
     |--------------------------------------------------------------------------
